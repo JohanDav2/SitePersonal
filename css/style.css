@@ -1,15 +1,5 @@
 <style>
 
-.banner {
-  position: relative;
-  height: 500px;
-  background: url('https://lh3.googleusercontent.com/d/1TBzUfi-WUexUYjb9cb_vyinbn6tvQz3D=w1000') no-repeat center center/cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
 .banner::before, 
 .banner::after {
   content: '';
