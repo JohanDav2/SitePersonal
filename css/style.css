@@ -1,1 +1,123 @@
+<style>
+.banner {
+  position: relative;
+  height: 500px;
+  background: url('https://lh3.googleusercontent.com/d/1TBzUfi-WUexUYjb9cb_vyinbn6tvQz3D=w1000') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.banner::before, 
+.banner::after {
+  content: '';
+  position: absolute;
+  background: rgba(244, 193, 15, 0.4); /* Yellow with 40% transparency */
+  z-index: 1;
+}
+
+/* Left triangle */
+.banner::before {
+  clip-path: polygon(0 0, 100px 0, 0 100px); /* Creates the left triangle */
+  width: 100px;
+  height: 100px;
+  top: 0;
+  left: 0;
+}
+
+/* Bottom triangle */
+.banner::after {
+  clip-path: polygon(100% 100%, 100% 80%, 80% 100%); /* Creates the bottom triangle */
+  width: 20%;
+  height: 20%;
+  bottom: 0;
+  right: 0;
+}
+        
+.banner-overlay {
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-content {
+  text-align: center; /* Horizontal centering */
+  color: white;
+  animation: fadeIn 1.5s ease-in-out; /* Smooth fade-in animation */
+  padding: 20px;
+  display: flex; /* Flexbox model */
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+}
+
+.banner-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.banner-content h1 span {
+  color: #f4c10f; /* Highlighted color for emphasis */
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  margin: 0 auto; /* Center the paragraph */
+  max-width: 600px; /* Limit width for readability */
+  line-height: 1.6;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #f4c10f; /* Call-to-action button color */
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 30px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+}
+
+.cta-button:hover {
+  background: #e0a70d;
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .banner-content h1 {
+    font-size: 2rem; /* Adjust heading size for smaller screens */
+  }
+
+  .banner-content p {
+    font-size: 1rem; /* Adjust paragraph size */
+    max-width: 90%; /* Allow more space on small screens */
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+  </style>
 
