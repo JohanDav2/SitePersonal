@@ -8,10 +8,7 @@
   align-items: center;
   overflow: hidden;
 }
-    
-
-    
-    
+        
 .banner-overlay {
   background: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
   width: 100%;
