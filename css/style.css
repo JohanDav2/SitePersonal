@@ -1,4 +1,10 @@
 <style>
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
 .banner {
   position: relative;
   height: 500px;
