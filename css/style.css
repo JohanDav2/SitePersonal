@@ -1,39 +1,4 @@
 <style>
-/* barra de navegacion*/  
-/* barra de navegacion*/  
-.navbar {
-  background-color: #212529; 
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.nav-link {
-  color: #ffc107 !important; /* Texto amarillo */
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #fff !important; /* Cambio a blanco al pasar el mouse */
-}
-
-.navbar-brand {
-  font-size: 1.5rem;
-}
-
-.logo {
-  height: 40px;
-  width: auto;
-}
-
-@media (max-width: 991px) {
-  .navbar-nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-/* barra de navegacion*/  
-/* barra de navegacion*/  
-
  /* Banner Inicio*/       
 /* Banner Inicio*/  
 /* Banner Inicio*/  
