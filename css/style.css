@@ -104,9 +104,10 @@
 .nav-right a {
     text-decoration: none;
     color: #ffd700;
-    margin: 0 5px;
-    font-weight: bold;
+    margin: 0 15px;
+    font-weight: 600;
     transition: color 0.3s;
+    font-size: 12px;
 }
 
 .nav-left a:hover,
