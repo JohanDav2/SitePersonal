@@ -104,7 +104,7 @@
 .nav-right a {
     text-decoration: none;
     color: #ffd700;
-    margin: 0 10px;
+    margin: 10px 15px;
     font-weight: bold;
     transition: color 0.3s;
 }
