@@ -95,8 +95,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: url('ruta/de/tu/imagen.jpg'); /* Agrega la imagen de fondo */
- https://drive.google.com/file/d/1ZaGyMa86lD_bXjXyR7kalGqxTVBiGQI0/view?usp=drive_link
+    background-image: url('https://lh3.googleusercontent.com/d/1ZaGyMa86lD_bXjXyR7kalGqxTVBiGQI0=w1000'); /* Agrega la imagen de fondo */
     background-size: cover; /* Hace que la imagen cubra todo el espacio */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-position: center; /* Centra la imagen */
