@@ -96,7 +96,7 @@ body .navbar {
     justify-content: space-between;
     align-items: center;
     background-color: unset; /* O elimina la línea si no es necesaria */
-    background: linear-gradient(135deg, #000000, #1c1c1c);
+    background: linear-gradient(135deg, #0f0f0f, #1c1c1c, #2b2b2b, #3b3b3b);
     color: #ffd700;
     padding: 20px 20px;
 }
