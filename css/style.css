@@ -95,7 +95,7 @@ body .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: linear-gradient(180deg, #817888 0, #847887 5.56%, #867785 11.11%, #887783 16.67%, #8a7681 22.22%, #8b767f 27.78%, #8c767d 33.33%, #8d767a 38.89%, #8e7678 44.44%, #8e7676 50%, #8e7674 55.56%, #8d7772 61.11%, #8d7770 66.67%, #8c786f 72.22%, #8a786d 77.78%, #89796c 83.33%, #877a6b 88.89%, #857a6b 94.44%, #837b6b 100%);
+    background-image: linear-gradient(5deg, #936d63 0, #82625d 16.67%, #6e5654 33.33%, #574949 50%, #413c3d 66.67%, #2e3231 83.33%, #1e2826 100%);
     color: #ffd700;
     padding: 20px 20px;
 }
