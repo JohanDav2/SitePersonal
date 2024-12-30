@@ -95,7 +95,7 @@ body .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: linear-gradient(5deg, #936d63 0, #82625d 16.67%, #6e5654 33.33%, #574949 50%, #413c3d 66.67%, #2e3231 83.33%, #1e2826 100%);
+    background-image: linear-gradient(5deg, #5489ac 0, #476175 25%, #343a40 50%, #1d1810 75%, #000000 100%);
     color: #ffd700;
     padding: 20px 20px;
 }
