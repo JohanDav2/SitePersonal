@@ -167,8 +167,9 @@ body .navbar {
 /* Index content*/
 
 .section-title {
+    margin: 20px auto;
+    width: 85%; /* Alinea el título al ancho de las tarjetas */
     text-align: left;
-    margin: 20px 20px;
 }
 
 .section-title h2 {
@@ -196,6 +197,7 @@ body .navbar {
     flex-direction: column;
     gap: 20px;
     flex: 2;
+    align-items: center; /* Centra las tarjetas horizontalmente */
 }
 
 /* Tarjetas de proyecto */
@@ -206,6 +208,7 @@ body .navbar {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    max-width: 90%; /* Reduce el ancho de las tarjetas */
 }
 
 .card-image img {
@@ -219,7 +222,7 @@ body .navbar {
     color: #fff;
     text-align: center;
     padding: 10px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-transform: uppercase;
 }
 
@@ -272,11 +275,6 @@ button:hover {
     }
 
     .projects-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .media-container {
         align-items: flex-start;
     }
 
