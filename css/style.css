@@ -251,7 +251,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    flex: 1.5;
+    flex: 1.2;
 }
 
 .video iframe {
