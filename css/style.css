@@ -208,7 +208,7 @@ body .navbar {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    max-width: 85%; /* Reduce el ancho de las tarjetas */
+    max-width: 90%; /* Reduce el ancho de las tarjetas */
 }
 
 .card-image img {
