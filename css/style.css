@@ -168,7 +168,7 @@ body .navbar {
 
 .section-title {
     margin: 20px auto;
-    width: 85%; /* Alinea el título al ancho de las tarjetas */
+    width: 70%; /* Alinea el título al ancho de las tarjetas */
     text-align: left;
 }
 
