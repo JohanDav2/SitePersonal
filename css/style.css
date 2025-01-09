@@ -177,49 +177,13 @@ body .navbar {
     justify-content: center;
 }
 
-.section-title {
-    margin: 20px auto;
-    width: 85%; /* Alinea el título al ancho de las tarjetas */
-    text-align: left;
-}
-
-.section-title h2 {
-    font-size: 2.5rem;
-    color: #d4a017;
-    margin: 0;
-    border-left: 5px solid #d4a017;
-    padding-left: 10px;
-}
-
-/* Contenedor principal */
-.content-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Contenedor de proyectos */
-.projects-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    flex: 2;
-    align-items: center; /* Centra las tarjetas horizontalmente */
-}
-
-/* Tarjetas de proyecto */
 .card {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    max-width: 90%; /* Reduce el ancho de las tarjetas */
+    width: 300px; /* Ancho fijo para las tarjetas */
+    text-align: center;
 }
 
 .card-image img {
@@ -229,9 +193,8 @@ body .navbar {
 }
 
 .card-header {
-    background: #464444;
-    color: #d9bf1b;
-    text-align: center;
+    background: #d4a017;
+    color: #fff;
     padding: 10px;
     font-size: 1rem;
     text-transform: uppercase;
@@ -239,7 +202,6 @@ body .navbar {
 
 .card-body {
     padding: 15px;
-    flex-grow: 1;
 }
 
 button {
@@ -255,43 +217,6 @@ button {
 
 button:hover {
     background: #b38414;
-}
-
-/* Contenedor multimedia */
-.media-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    flex: 1.2;
-}
-
-.video iframe {
-    width: 100%;
-    height: 200px;
-    border: none;
-}
-
-.welcome {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive */
-@media (min-width: 768px) {
-    .content-container {
-        flex-wrap: nowrap;
-    }
-
-    .projects-container {
-        align-items: flex-start;
-    }
-
-    .video iframe {
-        height: 350px;
-    }
 }
   </style>
 
