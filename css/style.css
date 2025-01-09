@@ -397,7 +397,9 @@ button:hover {
 .footer-bottom strong {
     color: #000;
 }
-
+/*MODAL*/
+/*MODAL*/
+/*MODAL*/
 .icon-container {
   border-radius: 50%;
   width: 150px;
@@ -406,6 +408,22 @@ button:hover {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.whatsapp-image {
+  width: 90%;
+  border-radius: 50%;
 }
 
   </style>
