@@ -275,6 +275,10 @@ button:hover {
         flex-wrap: nowrap;
     }
 
+ .card {
+        flex: 1 1 calc(50% - 20px); /* En pantallas medianas, ocupa la mitad */
+    }
+
     .projects-container {
         align-items: flex-start;
     }
