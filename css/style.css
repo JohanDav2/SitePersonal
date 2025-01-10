@@ -195,7 +195,7 @@ body .navbar {
 /* Contenedor de proyectos */
 .projects-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 20px;
     flex: 2;
     align-items: center; /* Centra las tarjetas horizontalmente */
