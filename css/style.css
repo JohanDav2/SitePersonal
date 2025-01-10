@@ -203,14 +203,13 @@ body .navbar {
 
 /* Tarjetas de proyecto */
 .card {
-    flex: 1 1 calc(100% - 20px); /* Por defecto, ocupa toda la fila */
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    max-width: 95%; /* Reduce el ancho de las tarjetas */
+    max-width: 90%; /* Reduce el ancho de las tarjetas */
 }
 
 .card-image img {
@@ -223,7 +222,7 @@ body .navbar {
     background: #464444;
     color: #d9bf1b;
     text-align: center;
-    padding: 15px 10px 15px 10px;
+    padding: 20px 20px 20px 20px;
     text-transform: uppercase;
 }
 
@@ -273,10 +272,6 @@ button:hover {
 @media (min-width: 768px) {
     .content-container {
         flex-wrap: nowrap;
-    }
-
- .card {
-        flex: 1 1 calc(50% - 20px); /* En pantallas medianas, ocupa la mitad */
     }
 
     .projects-container {
