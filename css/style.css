@@ -177,7 +177,8 @@ body .navbar {
     color: #d4a017;
     margin: 0;
     border-left: 5px solid #d4a017;
-    padding-left: 30px;
+    padding-left: 20px;
+    font-weight: 800;
 }
 
 /* Contenedor principal */
@@ -222,7 +223,7 @@ body .navbar {
     color: #d9bf1b;
     text-align: center;
     padding: 10px;
-    font-size: 0.3rem;
+    font-size: 10px;
     text-transform: uppercase;
 }
 
