@@ -209,7 +209,7 @@ body .navbar {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    max-width: 90%; /* Reduce el ancho de las tarjetas */
+    max-width: 100%; /* Reduce el ancho de las tarjetas */
 }
 
 .card-image img {
@@ -222,7 +222,7 @@ body .navbar {
     background: #464444;
     color: #d9bf1b;
     text-align: center;
-    padding: 20px 20px 20px 20px;
+    padding: 10px;
     text-transform: uppercase;
 }
 
