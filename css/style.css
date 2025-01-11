@@ -170,7 +170,7 @@ body .navbar {
     margin: 10px 0; /* Márgenes superiores e inferiores */
     width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
     text-align: left;
-    padding-left: 10%; /* Alinea el texto con las tarjetas */
+    padding-left: 20px; /* Alinea el texto con las tarjetas */
 }
 
 .section-title h2 {
