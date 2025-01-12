@@ -272,10 +272,20 @@ button:hover {
     border: 1px solid #d4a017; /* Borde decorativo */
 }
 
+.welcome {
+    background: linear-gradient(145deg, #f8f9fa, #e8e8e8); /* Fondo con gradiente sutil */
+    padding: 20px;
+    border-radius: 15px; /* Bordes redondeados */
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra más suave */
+    margin: 20px 0; /* Espaciado vertical */
+    border: 1px solid #d4a017; /* Borde decorativo */
+}
+
 .welcome-img {
-    width: 150px; /* Tamaño fijo para la imagen */
-    height: 150px;
-    border: 3px solid #d4a017; /* Añade un borde dorado alrededor de la imagen */
+    width: 120px; /* Tamaño fijo para la imagen */
+    height: 120px;
+    border: 3px solid #d4a017; /* Borde dorado */
     padding: 5px; /* Espaciado dentro del borde */
     margin-bottom: 15px;
 }
@@ -294,7 +304,6 @@ button:hover {
     line-height: 1.5;
     margin: 10px 0;
 }
-
 
 /* Responsive */
 @media (min-width: 768px) {
