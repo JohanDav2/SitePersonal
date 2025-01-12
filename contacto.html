@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banner Responsive</title>
+  <style>
+    /* Estilos generales para el banner */
+    .banner {
+      position: relative;
+      background: url('https://via.placeholder.com/1920x500') no-repeat center center/cover;
+      color: #fff;
+      padding: 60px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+    }
+
+    .banner-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6); /* Oscurece el fondo */
+      z-index: 1;
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .banner-content h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .banner-content p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .banner-content .cta-button {
+      background: #ffc107;
+      color: #000;
+      font-weight: bold;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .banner-content .cta-button:hover {
+      background: #ffdd57;
+    }
+
+    /* Estilos para elementos decorativos */
+    .banner-decoration {
+      position: absolute;
+      z-index: 0;
+    }
+
+    .banner-decoration.left-triangle {
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 100px;
+      background: #ffc107;
+      clip-path: polygon(0 0, 100% 50%, 0 100%);
+    }
+
+    .banner-decoration.bottom-stripes {
+      bottom: 0;
+      left: 50px;
+      width: 150px;
+      height: 30px;
+      background: repeating-linear-gradient(
+        45deg,
+        #ffc107,
+        #ffc107 10px,
+        transparent 10px,
+        transparent 20px
+      );
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .banner {
+        flex-direction: column;
+        padding: 40px 10px;
+      }
+
+      .banner-content h1 {
+        font-size: 1.5rem;
+      }
+
+      .banner-content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <!-- Capa de superposición -->
+    <div class="banner-overlay"></div>
+    <!-- Contenido principal -->
+    <div class="banner-content">
+      <h1>¿TIENES UNA IDEA?</h1>
+      <p>Contáctanos, nos encantaría escucharte. Tu éxito comienza hoy.</p>
+      <a href="#proyectos" class="cta-button">Nuestros proyectos</a>
+    </div>
+    <!-- Elementos decorativos -->
+    <div class="banner-decoration left-triangle"></div>
+    <div class="banner-decoration bottom-stripes"></div>
+  </div>
+</body>
+</html>
