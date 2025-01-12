@@ -90,7 +90,7 @@
                 </div>
               <div class="contact-form">
     <h3>Contáctanos</h3>
-    <form>
+    <form id="miFormulario">
         <label for="name">Nombre:</label>
         <input type="text" id="name" name="name" placeholder="Ingresa tu nombre">
         
@@ -114,6 +114,22 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
 <br><div data-include="footer.html"></div>
 <script src="js/include.js"></script>  
+  <script>
+    document.getElementById('miFormulario').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(event.target);
+      const scriptURL = 'https://script.google.com/macros/s/AKfycby-kuizloz_6xhvDpvyO8SQepeelWD0ONZtobjsfjeroKY-RTqTX8wOd-5Oi0bXiuRsgA/exec';
+
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => response.text())
+        .then(responseText => {
+          alert('Formulario enviado correctamente');
+          event.target.reset();
+        })
+        .catch(error => console.error('Error al enviar el formulario:', error));
+    });
+  </script>
 </body>
 <style>
 body {
