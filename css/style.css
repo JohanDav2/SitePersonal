@@ -263,17 +263,6 @@ button:hover {
 
 .welcome {
     background: linear-gradient(145deg, #f8f9fa, #e8e8e8); /* Fondo con gradiente sutil */
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra más suave */
-    max-width: 350px; /* Ancho fijo para que no se extienda demasiado */
-    margin: 20px auto; /* Centrar horizontalmente */
-    border: 1px solid #d4a017; /* Borde decorativo */
-}
-
-.welcome {
-    background: linear-gradient(145deg, #f8f9fa, #e8e8e8); /* Fondo con gradiente sutil */
     padding: 20px;
     border-radius: 15px; /* Bordes redondeados */
     text-align: center;
@@ -304,6 +293,7 @@ button:hover {
     line-height: 1.5;
     margin: 10px 0;
 }
+
 
 /* Responsive */
 @media (min-width: 768px) {
