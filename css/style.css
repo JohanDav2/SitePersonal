@@ -262,12 +262,39 @@ button:hover {
 }
 
 .welcome {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
+    background: linear-gradient(145deg, #f8f9fa, #e8e8e8); /* Fondo con gradiente sutil */
+    padding: 30px;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra más suave */
+    max-width: 350px; /* Ancho fijo para que no se extienda demasiado */
+    margin: 20px auto; /* Centrar horizontalmente */
+    border: 1px solid #d4a017; /* Borde decorativo */
 }
+
+.welcome-img {
+    width: 150px; /* Tamaño fijo para la imagen */
+    height: 150px;
+    border: 3px solid #d4a017; /* Añade un borde dorado alrededor de la imagen */
+    padding: 5px; /* Espaciado dentro del borde */
+    margin-bottom: 15px;
+}
+
+.welcome h3 {
+    color: #d4a017; /* Color dorado para el título */
+    font-size: 1.8rem;
+    margin: 10px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.welcome p {
+    font-size: 1rem;
+    color: #464444; /* Color oscuro suave para el texto */
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
 
 /* Responsive */
 @media (min-width: 768px) {
