@@ -25,6 +25,43 @@
       </div>
     </div>
   </section>
+    <section class="contact-section d-flex flex-wrap align-items-center">
+    <div class="image-container col-12 col-md-6 text-center">
+      <img src="https://via.placeholder.com/400x300" alt="Imagen contacto" class="img-fluid">
+    </div>
+    <div class="form-container col-12 col-md-6 p-4">
+      <h2 class="text-warning">CONTACTANOS</h2>
+      <p>Mantente en contacto</p>
+      <p>Ya sea que tengas una idea de proyecto o quieras mejorar tu negocio con soluciones tecnológicas, estamos listos para escuchar. ¡Hablemos!</p>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombres</label>
+          <input type="text" class="form-control" id="name" placeholder="Nombres">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Ingresa tu correo electrónico</label>
+          <input type="email" class="form-control" id="email" placeholder="Correo electrónico">
+        </div>
+        <div class="mb-3">
+          <label for="service" class="form-label">Selecciona un servicio</label>
+          <select class="form-select" id="service">
+            <option selected>Selecciona...</option>
+            <option value="1">Servicio 1</option>
+            <option value="2">Servicio 2</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="project" class="form-label">Describe brevemente tu proyecto</label>
+          <textarea class="form-control" id="project" rows="3"></textarea>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="notRobot">
+          <label class="form-check-label" for="notRobot">No soy un robot</label>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Enviar Solicitud</button>
+      </form>
+    </div>
+  </section>
 </body>
   <hr>
   <style>
@@ -128,7 +165,52 @@ body {
     font-size: 1rem;
   }
 }
+    /*Contacto content*/
+    /*Contacto content*/
+    /*Contacto content*/
+    .contact-section {
+  min-height: 100vh;
+  padding: 20px;
+}
 
+.image-container {
+  background: linear-gradient(135deg, #ffcc00, #ffa500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.image-container img {
+  max-width: 80%;
+  border-radius: 15px;
+}
+
+.form-container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+  }
+
+  .image-container {
+    order: 2;
+    margin-top: 20px;
+  }
+
+  .form-container {
+    order: 1;
+  }
+}
+    
   </style>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
