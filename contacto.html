@@ -222,10 +222,17 @@ body {
 
   .image-container {
     height: auto; /* Ajustar automáticamente en pantallas pequeñas */
-    width: 80%;
+    width: 100%;
     align-self: stretch;
     padding: 20px;
   }
+
+  .image-container img {
+  width: 70%; /* Cambia el tamaño relativo al ancho del contenedor */
+  max-width: 300px; /* Tamaño máximo de la imagen */
+  height: auto; /* Mantener proporción de aspecto */
+  margin: 0 auto; /* Centrar la imagen */
+}
 
   .form-container {
     width: 90%;
