@@ -176,15 +176,19 @@ body {
     /*Contacto content*/
    .contact-section {
   min-height: 100vh;
+  display: flex;
+  align-items: stretch;
 }
 
 .image-container {
   background: linear-gradient(135deg, #ffcc00, #ffa500);
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
   padding: 20px;
+  height: 80%; /* Ajustar al 80% del contenedor */
+  align-self: center; /* Centrar verticalmente */
 }
 
 .image-container h2 {
@@ -202,8 +206,9 @@ body {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
+  max-width: 600px; /* Ancho del formulario aumentado */
   margin: auto;
+  padding: 20px;
 }
 
 .form-container h2 {
@@ -216,7 +221,9 @@ body {
   }
 
   .image-container {
-    height: auto;
+    height: auto; /* Ajustar automáticamente en pantallas pequeñas */
+    width: 100%;
+    align-self: stretch;
     padding: 20px;
   }
 
@@ -224,6 +231,7 @@ body {
     width: 90%;
   }
 }
+
     
   </style>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
