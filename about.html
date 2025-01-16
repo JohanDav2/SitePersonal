@@ -251,20 +251,26 @@ body {
 }
 
 .number-circle {
-   width: 50px;                  /* Ancho del círculo */
-  height: 50px;                 /* Alto del círculo */
-  border-radius: 50%;           /* Esto asegura que sea un círculo */
-  background: #d4af37;          /* Color de fondo */
-  display: flex;                /* Flexbox para alinear el contenido */
-  color: white;                 /* Color del texto */
-  justify-content: center;      /* Centrar el texto horizontalmente */
-  align-items: center;          /* Centrar el texto verticalmente */
-  font-size: 1.2rem;            /* Tamaño de la fuente, ajusta según sea necesario */
-  font-weight: bold;            /* Hacer que el texto sea más visible */
-  overflow: hidden;             /* Ocultar cualquier contenido que sobresalga */
-  margin: 0;  
+  width: 50px; /* Igual ancho */
+  height: 50px; /* Igual alto */
+  border-radius: 50%; /* Hace el elemento circular */
+  background-color: #d4af37; /* Fondo dorado */
+  display: flex; /* Centra el contenido */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  color: white; /* Texto blanco */
+  font-size: 1rem; /* Tamaño de la fuente */
+  font-weight: bold; /* Negrita para el número */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Opcional: Sombra */
+  margin: 0 auto; /* Centrado */
 }
-
+@media (max-width: 768px) {
+  .number-circle {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem; /* Ajustar el tamaño de fuente */
+  }
+}
 .timeline-img {
   width: 50px;
   height: 50px;
