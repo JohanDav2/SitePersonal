@@ -250,7 +250,7 @@ body {
 
 .number-circle {
   width: 60px;
-  height: 50px;
+  height: 40px;
   border-radius: 50%;
   background: #d4af37;
   color: white;
@@ -289,11 +289,11 @@ body {
 }
 
   .carousel-caption p {
-  font-size: 1rem; /* Ajuste base para pantallas grandes */
+  font-size: 1rem; /* Tamaño base para pantallas grandes */
   font-weight: 700;
   color: #f1f1f1;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-  padding: 10px 20px; /* Espaciado reducido para mejor adaptabilidad */
+  padding: 10px 20px;
   border-radius: 0 8px 8px 0;
   display: inline-block;
   text-transform: uppercase;
@@ -309,11 +309,21 @@ body {
 /* Estilos específicos para pantallas más pequeñas */
 @media (max-width: 768px) {
   .carousel-caption p {
-    font-size: 0.85rem; /* Reducir tamaño en móviles */
-    padding: 8px 15px; /* Menos espacio en móviles */
-    margin-left: 8px; /* Ajuste de margen */
+    font-size: 0.8rem; /* Tamaño más pequeño para móviles */
+    padding: 8px 15px; /* Ajuste de espaciado */
+    margin-left: 8px;
     border-radius: 0 6px 6px 0;
   }
 }
+
+@media (max-width: 576px) {
+  .carousel-caption p {
+    font-size: 0.7rem; /* Tamaño aún más reducido para pantallas muy pequeñas */
+    padding: 6px 12px;
+    margin-left: 5px;
+    border-radius: 0 5px 5px 0;
+  }
+}
+
 
 </style>
