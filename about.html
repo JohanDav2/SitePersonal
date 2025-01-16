@@ -250,8 +250,8 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  flex-wrap: wrap; /* Permite que los elementos se ajusten si es necesario */
   gap: 15px; /* Espacio entre elementos */
+  flex-wrap: wrap; /* Permite que se ajuste en móviles */
 }
 
 .number-circle {
@@ -290,6 +290,24 @@ body {
   flex-shrink: 0; /* Evita que la imagen se reduzca */
 }
 
+/* Diseño para PC */
+@media (min-width: 769px) {
+  .timeline-item {
+    flex-wrap: nowrap; /* Los elementos no se ajustan */
+    justify-content: flex-start; /* Alinea los elementos a la izquierda */
+  }
+
+  .content {
+    flex: 1; /* Ocupa el espacio restante */
+  }
+
+  .timeline-img {
+    width: 60px; /* Tamaño más grande para PC */
+    height: 60px;
+  }
+}
+
+/* Diseño para móviles */
 @media (max-width: 768px) {
   .timeline-item {
     gap: 10px; /* Reduce el espacio entre elementos */
@@ -312,6 +330,7 @@ body {
     height: 40px;
   }
 }
+
 
 /* Carrusel */
   /* Carrusel */
