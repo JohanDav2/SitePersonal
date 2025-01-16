@@ -240,7 +240,7 @@ body {
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 20px; /* Espacio entre los elementos */
 }
 
 .timeline-item {
@@ -248,49 +248,67 @@ body {
   border-radius: 8px;
   padding: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
 }
 
 .number-circle {
-  width: 50px; /* Igual ancho */
-  height: 50px; /* Igual alto */
-  border-radius: 50%; /* Hace el elemento circular */
+  width: 50px; /* Ancho fijo */
+  height: 50px; /* Altura fija */
+  border-radius: 50%; /* Hace el contenedor circular */
   background-color: #d4af37; /* Fondo dorado */
-  display: flex; /* Centra el contenido */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+  display: flex; /* Flexbox para centrar */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
   color: white; /* Texto blanco */
-  font-size: 1rem; /* Tamaño de la fuente */
-  font-weight: bold; /* Negrita para el número */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Opcional: Sombra */
-  margin: 0 auto; /* Centrado */
-}
-@media (max-width: 768px) {
-  .number-circle {
-    width: 40px;
-    height: 40px;
-    font-size: 0.9rem; /* Ajustar el tamaño de fuente */
-  }
-}
-.timeline-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
-  object-fit: contain;
+  font-size: 1.2rem; /* Tamaño del texto */
+  font-weight: bold; /* Negrita */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para darle profundidad */
+  flex-shrink: 0; /* Evita que se reduzca si el contenedor se ajusta */
 }
 
 .timeline-item h4 {
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-size: 1.1rem; /* Tamaño del título */
+  font-weight: bold; /* Título en negrita */
   margin: 0;
-  color: #343a40;
+  color: #343a40; /* Color oscuro */
 }
 
 .timeline-item p {
   margin: 5px 0 0;
-  font-size: 0.9rem;
-  color: #6c757d;
+  font-size: 0.9rem; /* Texto del párrafo más pequeño */
+  color: #6c757d; /* Color gris */
 }
 
+.timeline-img {
+  width: 50px; /* Tamaño de la imagen */
+  height: 50px;
+  border-radius: 8px; /* Bordes redondeados */
+  object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    gap: 15px; /* Reducir el espacio entre elementos en pantallas pequeñas */
+  }
+
+  .number-circle {
+    width: 40px; /* Tamaño más pequeño para móviles */
+    height: 40px;
+    font-size: 0.9rem; /* Ajustar el tamaño del texto */
+  }
+
+  .timeline-item {
+    flex-direction: column; /* Cambiar la dirección en pantallas pequeñas */
+    align-items: flex-start; /* Alinear al inicio */
+  }
+
+  .timeline-img {
+    width: 40px; /* Tamaño reducido */
+    height: 40px;
+    margin-top: 10px; /* Separación entre imagen y contenido */
+  }
+}
 /* Carrusel */
 .carousel .caption-text {
   font-weight: bold;
