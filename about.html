@@ -84,14 +84,14 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img src="https://lh3.googleusercontent.com/d/1xoNjEAojgNQjh-rzcpavd91ZqNd0se07=w1000" class="d-block w-100" alt="Primera imagen">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Innovar es la clave para transformar el futuro</h5>
+              <div class="carousel-caption">
+                <p class="caption-text">INNOVAR ES LA CLAVE PARA TRANSFORMAR EL FUTURO</p>
               </div>
             </div>
             <div class="carousel-item">
               <img src="https://lh3.googleusercontent.com/d/1vfE2lCLF-3piB4xhK4zoTmAxuL3Ydy6b=w1000" class="d-block w-100" alt="Segunda imagen">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Inspiración y esfuerzo: bases de mi crecimiento</h5>
+              <div class="carousel-caption">
+                <p class="caption-text">Inspiración y esfuerzo: bases de mi crecimiento</p>
               </div>
             </div>
           </div>
@@ -276,21 +276,12 @@ body {
 }
 
 /* Carrusel */
-.carousel-inner img {
-  width: 70%; 
-  max-height: 600px;
-  object-fit: cover;
-}
-
-
-.carousel-caption {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 5px;
-}
-
-.carousel-caption h5 {
+.carousel .caption-text {
+  font-weight: bold;
+  font-size: 1rem;
   color: #fff;
-  font-size: 1.2rem;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 </style>
