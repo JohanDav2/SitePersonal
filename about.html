@@ -21,6 +21,62 @@
       <button>Contáctame</button>
     </div>
   </section>
+  <hr>
+   <div class="container py-5">
+    <div class="row align-items-center">
+      <!-- Columna de Tarjetas -->
+      <div class="col-lg-6">
+        <h2 class="section-title">Trayectoria laboral y personal</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="icon">1</div>
+            <div class="content">
+              <h4>Practicante Profesional en Productos Naturales de la Sabana ALQUERÍA</h4>
+              <p>Durante mi pasantía en Alquería, trabajé en desarrollos web y en la creación de tableros de visualización, mejorando la accesibilidad y presentación de datos clave...</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="icon">2</div>
+            <div class="content">
+              <h4>Analista Soporte en Tecnocorp Colombia SAS</h4>
+              <p>En Tecnocorp Colombia SAS, fui responsable de atender consultas y solicitudes de ayuda, diagnosticando y solucionando incidencias técnicas...</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="icon">3</div>
+            <div class="content">
+              <h4>Crecimiento Personal y Profesional</h4>
+              <p>Desarrollo continuo de habilidades y conocimientos en el campo de la ingeniería de sistemas, incluyendo la participación en cursos...</p>
+            </div>
+          </div>
+          <!-- Agrega más items aquí -->
+        </div>
+      </div>
+
+      <!-- Columna de Imagen -->
+      <div class="col-lg-6 text-center">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="certificado.jpg" class="d-block w-100 rounded shadow" alt="Certificado">
+              <div class="carousel-caption">
+                <p class="caption-text">INNOVAR ES LA CLAVE PARA TRANSFORMAR EL FUTURO</p>
+              </div>
+            </div>
+            <!-- Puedes agregar más imágenes al carrusel -->
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
 
@@ -134,5 +190,64 @@ body {
   }
 }
 
+  .section-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #d4af37;
+  border-left: 5px solid #d4af37;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #d4af37;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.timeline-item h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
+  color: #343a40;
+}
+
+.timeline-item p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.carousel .caption-text {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
 
 </style>
