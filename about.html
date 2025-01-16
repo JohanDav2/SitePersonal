@@ -289,8 +289,31 @@ body {
 }
 
   .carousel-caption p {
-   
-    border-left: 4px solid #ffd700;
-    
+  font-size: 1rem; /* Ajuste base para pantallas grandes */
+  font-weight: 700;
+  color: #f1f1f1;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  padding: 10px 20px; /* Espaciado reducido para mejor adaptabilidad */
+  border-radius: 0 8px 8px 0;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-left: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  font-family: 'Roboto', serif;
+  text-align: center;
+  border-left: 4px solid #ffd700;
+  max-width: 90%; /* Evitar desbordamiento en pantallas pequeñas */
+}
+
+/* Estilos específicos para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .carousel-caption p {
+    font-size: 0.85rem; /* Reducir tamaño en móviles */
+    padding: 8px 15px; /* Menos espacio en móviles */
+    margin-left: 8px; /* Ajuste de margen */
+    border-radius: 0 6px 6px 0;
   }
+}
+
 </style>
