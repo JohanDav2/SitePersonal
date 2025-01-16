@@ -29,27 +29,32 @@
         <h2 class="section-title">Trayectoria laboral y personal</h2>
         <div class="timeline">
           <div class="timeline-item">
-            <div class="icon">1</div>
+            <div class="icon">
+              <img src="icon1.png" alt="Icono 1" class="icon-img">
+            </div>
             <div class="content">
               <h4>Practicante Profesional en Productos Naturales de la Sabana ALQUERÍA</h4>
               <p>Durante mi pasantía en Alquería, trabajé en desarrollos web y en la creación de tableros de visualización, mejorando la accesibilidad y presentación de datos clave...</p>
             </div>
           </div>
           <div class="timeline-item">
-            <div class="icon">2</div>
+            <div class="icon">
+              <img src="icon2.png" alt="Icono 2" class="icon-img">
+            </div>
             <div class="content">
               <h4>Analista Soporte en Tecnocorp Colombia SAS</h4>
               <p>En Tecnocorp Colombia SAS, fui responsable de atender consultas y solicitudes de ayuda, diagnosticando y solucionando incidencias técnicas...</p>
             </div>
           </div>
           <div class="timeline-item">
-            <div class="icon">3</div>
+            <div class="icon">
+              <img src="icon3.png" alt="Icono 3" class="icon-img">
+            </div>
             <div class="content">
               <h4>Crecimiento Personal y Profesional</h4>
               <p>Desarrollo continuo de habilidades y conocimientos en el campo de la ingeniería de sistemas, incluyendo la participación en cursos...</p>
             </div>
           </div>
-          <!-- Agrega más items aquí -->
         </div>
       </div>
 
@@ -58,12 +63,12 @@
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="https://lh3.googleusercontent.com/d/1xoNjEAojgNQjh-rzcpavd91ZqNd0se07=w1000" class="d-block w-100 rounded shadow" alt="Certificado">
+              <img src="certificado.jpg" class="d-block w-75 rounded shadow mx-auto" alt="Certificado">
               <div class="carousel-caption">
                 <p class="caption-text">INNOVAR ES LA CLAVE PARA TRANSFORMAR EL FUTURO</p>
               </div>
             </div>
-            <!-- Puedes agregar más imágenes al carrusel -->
+            <!-- Más imágenes pueden ser añadidas aquí -->
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -189,7 +194,7 @@ body {
     font-size: 0.9rem;
   }
 }
-
+/*Content about*/
   .section-title {
   font-size: 1.8rem;
   font-weight: bold;
@@ -207,7 +212,7 @@ body {
 
 .timeline-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 15px;
   background: #fff;
   border-radius: 8px;
@@ -216,16 +221,20 @@ body {
 }
 
 .icon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: #d4af37;
-  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
-  font-size: 1.2rem;
+  overflow: hidden;
+}
+
+.icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .timeline-item h4 {
@@ -248,6 +257,11 @@ body {
   background: rgba(0, 0, 0, 0.6);
   padding: 5px 10px;
   border-radius: 5px;
+}
+
+.carousel img {
+  max-width: 75%;
+  border-radius: 10px;
 }
 
 </style>
