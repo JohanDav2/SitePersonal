@@ -250,6 +250,8 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten si es necesario */
+  gap: 15px; /* Espacio entre elementos */
 }
 
 .number-circle {
@@ -285,11 +287,13 @@ body {
   height: 50px;
   border-radius: 8px; /* Bordes redondeados */
   object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
+  flex-shrink: 0; /* Evita que la imagen se reduzca */
 }
 
 @media (max-width: 768px) {
-  .timeline {
-    gap: 15px; /* Reducir el espacio entre elementos en pantallas pequeñas */
+  .timeline-item {
+    gap: 10px; /* Reduce el espacio entre elementos */
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
   }
 
   .number-circle {
@@ -298,15 +302,14 @@ body {
     font-size: 0.9rem; /* Ajustar el tamaño del texto */
   }
 
-  .timeline-item {
-    flex-direction: column; /* Cambiar la dirección en pantallas pequeñas */
-    align-items: flex-start; /* Alinear al inicio */
+  .content {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    min-width: 60%; /* Asegura que el texto no se haga demasiado pequeño */
   }
 
   .timeline-img {
     width: 40px; /* Tamaño reducido */
     height: 40px;
-    margin-top: 10px; /* Separación entre imagen y contenido */
   }
 }
 
