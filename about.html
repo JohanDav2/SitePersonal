@@ -230,39 +230,19 @@ body {
     font-size: 1.8rem;
     font-weight: bold;
     color: #d4af37;
-    position: relative;
-    text-align: center;
-    display: inline-block;
-    padding: 5px 15px;
-    margin-bottom: 15px;
-    letter-spacing: 4px;
-}
-
-  .section-title::before,
-  .section-title::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 5px;
-    height: 100%;
-    background-color: #d4af37;
-  }
-
-  .section-title::before {
-    left: -10px;
-    /* Línea izquierda */
-  }
-
-  .section-title::after {
-    right: -10px;
-    /* Línea derecha */
-  }
+    border-left: 5px solid #d4af37; /* Línea izquierda */
+    border-right: 5px solid #d4af37; /* Línea derecha */
+    padding-left: 5px; /* Espacio reducido a la izquierda */
+    padding-right: 5px; /* Espacio reducido a la derecha */
+    margin-bottom: 30px;
+    text-align: center; /* Centra el texto */
+    }
 
 .timeline {
   display: flex;
   flex-direction: column;
   gap: 20px; /* Espacio entre los elementos */
-}
+  }
 
 .timeline-item {
   background: #fff;
