@@ -227,10 +227,9 @@ body {
   /*Content about*/
   /*Content about*/
   .section-title {
-  font-family: 'IMPACT', sans-serif;
-    font-size: 25px;
-    font-weight: Italic;
-    color: #c9a129;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #d4af37;
     position: relative;
     text-align: center;
     display: inline-block;
@@ -247,6 +246,16 @@ body {
     width: 5px;
     height: 100%;
     background-color: ##d4af37;
+  }
+
+  .subt::before {
+    left: -10px;
+    /* Línea izquierda */
+  }
+
+  .subt::after {
+    right: -10px;
+    /* Línea derecha */
   }
 
 .timeline {
