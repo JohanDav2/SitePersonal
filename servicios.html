@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Banner Responsive</title>
+</head>
+<body>
+  <section class="banner">
+    <div class="banner-content">
+      <h1>TU PRÓXIMO PROYECTO COMIENZA <br><span>AQUÍ, IMPULSANDO TUS SUEÑOS</span></h1>
+      <p>Soluciones tecnológicas diseñadas para el éxito</p>
+      <a href="#" class="btn">Contáctanos</a>
+    </div>
+    <div class="banner-image">
+      <img src="developer.svg" alt="Ilustración de desarrollador">
+    </div>
+    <div class="banner-social">
+      <a href="#"><img src="linkedin-icon.svg" alt="LinkedIn"></a>
+      <a href="#"><img src="whatsapp-icon.svg" alt="WhatsApp"></a>
+    </div>
+  </section>
+</body>
+</html>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: #f2f2f2;
+  position: relative;
+  padding: 20px;
+}
+
+.banner::before,
+.banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.banner::before {
+  clip-path: polygon(0 0, 70% 0, 65% 100%, 0% 100%);
+  background-color: #f1c40f;
+}
+
+.banner::after {
+  clip-path: polygon(65% 0, 100% 0, 100% 100%, 70% 100%);
+  background-color: #333;
+}
+
+.banner-content {
+  flex: 1;
+  max-width: 500px;
+  padding: 20px;
+  color: #fff;
+}
+
+.banner-content h1 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.banner-content span {
+  color: #f1c40f;
+  font-weight: bold;
+}
+
+.banner-content p {
+  margin: 10px 0 20px;
+  font-size: 1rem;
+}
+
+.btn {
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #555;
+}
+
+.banner-image {
+  flex: 1;
+  max-width: 400px;
+  text-align: center;
+}
+
+.banner-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.banner-social {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.banner-social a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.banner-social img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-content, .banner-image {
+    max-width: 100%;
+  }
+
+  .banner-social {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+</style>
