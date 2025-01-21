@@ -21,9 +21,19 @@
     <div class="banner-image">
       <img src="businessman.svg" alt="Ilustración empresarial">
     </div>
+    <!-- Sección de íconos sociales -->
+    <div class="social-icons">
+      <a href="https://www.linkedin.com" target="_blank" class="social-link">
+        <img src="linkedin-icon.png" alt="LinkedIn">
+      </a>
+      <a href="https://wa.me/1234567890" target="_blank" class="social-link">
+        <img src="whatsapp-icon.png" alt="WhatsApp">
+      </a>
+    </div>
   </section>
 </body>
 </html>
+
 
 <style>
 /* Estilo general */
@@ -43,8 +53,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 500px;
-  background: url('https://lh3.googleusercontent.com/d/186SmRgqWhVaNzWx00LjJHBdJZZ9N3Lez=w750') no-repeat center center/cover;
+  height: 100vh;
+  background: url('background.jpg') no-repeat center center/cover;
   overflow: hidden;
 }
 
@@ -130,6 +140,27 @@ body {
   height: auto;
 }
 
+/* Estilo de íconos sociales */
+.social-icons {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 3;
+  display: flex;
+  gap: 15px;
+}
+
+.social-link img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-link img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 /* Responsividad */
 @media (max-width: 768px) {
   .banner {
@@ -144,6 +175,11 @@ body {
 
   .banner-image img {
     max-width: 60%;
+  }
+
+  .social-icons {
+    bottom: 10px;
+    right: 10px;
   }
 }
 
