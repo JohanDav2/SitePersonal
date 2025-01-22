@@ -36,6 +36,85 @@
     </div>
   </section>
  <hr><br>
+ <div class="container my-5">
+    <!-- Título principal -->
+    <h1 class="text-center main-title mb-4">NUESTROS SERVICIOS DE DESARROLLO</h1>
+    
+    <div class="row g-3">
+      <!-- Imagen y título de la primera parte -->
+      <div class="col-md-5 image-section">
+        <h2>Desarrollando herramientas de software</h2>
+        <p>En nuestra sección de servicios, te ofrecemos una variedad de soluciones tecnológicas adaptadas a tus necesidades.</p>
+      </div>
+
+      <!-- Carrusel de tarjetas -->
+      <div class="col-md-7">
+        <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="card">
+                    <img src="path_to_image1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Desarrollo de Aplicaciones Web</h5>
+                      <p class="card-text">Creamos aplicaciones web personalizadas que se adaptan a las necesidades específicas de tu negocio.</p>
+                      <button class="btn btn-contact">Contáctanos para más</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card">
+                    <img src="path_to_image2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Creación de Aplicaciones Móviles</h5>
+                      <p class="card-text">Desarrollamos aplicaciones móviles que funcionan en diferentes plataformas.</p>
+                      <button class="btn btn-contact">Contáctanos para más</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="card">
+                    <img src="path_to_image3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Integración de Sistemas</h5>
+                      <p class="card-text">Optimizamos procesos mediante la integración de sistemas y automatizaciones personalizadas.</p>
+                      <button class="btn btn-contact">Contáctanos para más</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card">
+                    <img src="path_to_image4.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Consultoría Técnica</h5>
+                      <p class="card-text">Brindamos asesoramiento técnico para mejorar tus operaciones tecnológicas.</p>
+                      <button class="btn btn-contact">Contáctanos para más</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Controles del carrusel -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 
@@ -189,5 +268,41 @@ body {
     right: 10px;
   }
 }
+.main-title {
+      color: #b8860b;
+      font-weight: bold;
+    }
 
+    .image-section {
+      background: url('path_to_your_image.jpg') no-repeat center center/cover;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .image-section h2 {
+      color: #b8860b;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .carousel .card {
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-contact {
+      background-color: #b8860b;
+      color: white;
+      border: none;
+    }
+
+    .btn-contact:hover {
+      background-color: #a37409;
+    }
+ 
   </style>
