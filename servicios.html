@@ -46,7 +46,7 @@
         <h2>Desarrollando herramientas de software</h2>
         <p>En nuestra sección de servicios, te ofrecemos una variedad de soluciones tecnológicas adaptadas a tus necesidades.</p>
        <br>
-       <img src="https://lh3.googleusercontent.com/d/1Zzx9W_Hecl-pBBzV0uGssBKVqtXbPtSr=w800" alt="Ilustración empresarial">
+       <img src="https://lh3.googleusercontent.com/d/1Zzx9W_Hecl-pBBzV0uGssBKVqtXbPtSr=w800" alt="Herramientas de Software">
       </div>
 
       <!-- Carrusel de tarjetas -->
@@ -278,30 +278,62 @@ body {
 .main-title {
       color: #b8860b;
       font-weight: bold;
-    }
-
-    .image-section {
-      background: url('') no-repeat center center/cover;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
 
-    .image-section h2 {
-      color: #b8860b;
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
+    .main-title::before,
+    .main-title::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background-color: #b8860b;
     }
 
+    /* Estilo de la sección de la imagen */
+    .image-section {
+      background-color: #f8f9fa;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-section img {
+      width: 100%;
+      max-width: 400px;
+      margin-top: 1rem;
+      border-radius: 8px;
+    }
+
+    /* Carrusel y tarjetas */
     .carousel .card {
       border: none;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      height: 100%;
     }
 
+    .carousel-inner {
+      display: flex;
+    }
+
+    .carousel-inner .carousel-item {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      gap: 1rem;
+    }
+
+    .carousel-inner .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    /* Botón de contacto */
     .btn-contact {
       background-color: #b8860b;
       color: white;
@@ -311,5 +343,4 @@ body {
     .btn-contact:hover {
       background-color: #a37409;
     }
- 
   </style>
