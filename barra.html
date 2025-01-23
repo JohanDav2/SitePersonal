@@ -53,22 +53,26 @@
         }
 
         .nav-center .logo {
-            height: 40px;
-            max-width: 100%;
+            height: auto; /* Ajusta automáticamente la altura en función del ancho */
+            max-height: 40px; /* Altura máxima para evitar que sea demasiado grande */
+            max-width: 100px; /* Ancho máximo para evitar que sobresalga */
+            object-fit: contain;
+            
         }
 
+        .nav-center .logo {
+          all: unset; /* Elimina cualquier estilo predeterminado */
+          display: block; /* Asegura que el logo sea tratado como un bloque */
+     }
         @media (max-width: 768px) {
     .nav-center .logo {
-        height: auto; /* Tamaño reducido del logo */
-        max-width: 5%; /* Limitar el ancho máximo del logo */
+       height: auto; /* Ajusta automáticamente la altura */
+        max-height: 25px; /* Altura máxima para dispositivos móviles */
+        max-width: 80px; /* Ancho máximo reducido */
         margin: 0 auto; /* Centrar el logo */
     }
-
-    .center-link span {
-        font-size: 14px; /* Ajustar el tamaño del texto */
-        line-height: 1.2; /* Espaciado entre líneas */
-    }
-
+            
+            
     .navbar-toggler {
         margin-right: 10px; /* Espaciado entre el botón hamburguesa y el logo */
     }
