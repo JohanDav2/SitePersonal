@@ -52,34 +52,25 @@
             color: #f39c12;
         }
 
+        /* Ajustar tamaño del logo */
         .nav-center .logo {
-            height: 35px; /* Mantener proporción del logo */
-    max-height: 10px; /* Altura máxima para computadoras */
-    max-width: 10px; /* Ancho máximo */
-    object-fit: contain; /* Evitar distorsión */
-            
+            max-height: 40px; /* Tamaño máximo para computadoras */
+            width: auto; /* Mantener proporción */
         }
 
-        .nav-center .logo {
-          all: unset; /* Elimina cualquier estilo predeterminado */
-          display: block; /* Asegura que el logo sea tratado como un bloque */
-     }
         @media (max-width: 768px) {
-    .nav-center .logo {
-        max-height: 10px; /* Reducir altura máxima en dispositivos móviles */
-        max-width: 10px; /* Reducir ancho máximo en dispositivos móviles */
-        margin: 0 auto; /* Asegurar centrado */
-    }
-            
-            
-    .navbar-toggler {
-        margin-right: 10px; /* Espaciado entre el botón hamburguesa y el logo */
-    }
+            .nav-center .logo {
+                max-height: 25px; /* Tamaño máximo en dispositivos móviles */
+            }
 
-    .center-link {
-        gap: 5px; /* Reducir la separación entre el texto y el logo */
-    }
-}
+            .navbar-toggler {
+                margin-right: 10px; /* Espaciado entre botón hamburguesa y logo */
+            }
+
+            .center-link {
+                gap: 5px; /* Reducir la separación entre texto y logo */
+            }
+        }
 
         .dropdown-menu {
             background-color: #34495e;
