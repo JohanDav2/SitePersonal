@@ -53,10 +53,10 @@
         }
 
         .nav-center .logo {
-            height: auto; /* Ajusta automáticamente la altura en función del ancho */
-            max-height: 40px; /* Altura máxima para evitar que sea demasiado grande */
-            max-width: 100px; /* Ancho máximo para evitar que sobresalga */
-            object-fit: contain;
+            height: auto; /* Mantener proporción del logo */
+    max-height: 35px; /* Altura máxima para computadoras */
+    max-width: 120px; /* Ancho máximo */
+    object-fit: contain; /* Evitar distorsión */
             
         }
 
@@ -66,10 +66,9 @@
      }
         @media (max-width: 768px) {
     .nav-center .logo {
-       height: auto; /* Ajusta automáticamente la altura */
-        max-height: 25px; /* Altura máxima para dispositivos móviles */
-        max-width: 80px; /* Ancho máximo reducido */
-        margin: 0 auto; /* Centrar el logo */
+        max-height: 25px; /* Reducir altura máxima en dispositivos móviles */
+        max-width: 90px; /* Reducir ancho máximo en dispositivos móviles */
+        margin: 0 auto; /* Asegurar centrado */
     }
             
             
