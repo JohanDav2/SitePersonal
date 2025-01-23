@@ -4,36 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barra de Navegación</title>
-    <link rel="stylesheet" href="css/style.css">
     <script src="js/include.js"></script>
+    <style>
+        body .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-image: linear-gradient(5deg, #4f7794 0, #343a40 50%, #100000 100%);
+            color: #ffd700;
+            padding: 10px 20px;
+        }
+
+        .nav-left a,
+        .nav-right a {
+            text-decoration: none;
+            color: #ffd700;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 16px;
+        }
+
+        .nav-left a:hover,
+        .nav-right a:hover {
+            color: #fff;
+        }
+
+        .nav-center {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-center img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: #ffd700;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            display: none;
+            flex-direction: column;
+            background-color: #343a40;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .dropdown-menu a {
+            padding: 10px 0;
+            border-bottom: 1px solid #4f7794;
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #4f7794;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .nav-left, .nav-right {
+                display: none;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .dropdown-menu {
+                display: none;
+            }
+
+            .navbar.active .dropdown-menu {
+                display: flex;
+            }
+
+            .nav-center {
+                flex: 1;
+                justify-content: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-left">
-            <a href="about.html">ACERCA</a>
-            <a href="#proyectos">PROYECTOS</a>
-        </div>
         <div class="nav-center">
+            <button class="menu-button" onclick="toggleMenu()">☰</button>
             <a href="index.html" class="center-link">
-                <span>INNOVACIÓN</span>
                 <img src="https://drive.google.com/thumbnail?id=12il_kEi5dpZyPkrsPxuB159GHQexkhPz" alt="Logo" class="logo">
-                <span>SOLUCIONES</span>
+                <span>INNOVACIÓN Y SOLUCIONES</span>
             </a>
         </div>
-        <div class="nav-right">
-            <li class="dropdown">
-        <a class="nav-link" href="servicios.html">SERVICIOS</a>
-        <ul class="dropdown-content">
-          <li><a href="servicios.html">Desarrollo De Software</a></li>
-          <li><a href="servicios_m.html">Herramientas De Microsoft</a></li>
-          <li><a href="servicios_g.html">Herramientas De Google</a></li>
-          <li><a href="servicios_s.html">Soporte Tecnico Y Mantemiento</a></li>
-        </ul>
-      </li>
+        <div class="dropdown-menu">
+            <a href="about.html">ACERCA</a>
+            <a href="#proyectos">PROYECTOS</a>
+            <a href="servicios.html">SERVICIOS</a>
             <a href="contacto.html">CONTACTO</a>
         </div>
     </nav>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.navbar').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
+
 
 
