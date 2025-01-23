@@ -3,27 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barra de Navegación</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/include.js"></script>
+    <title>Responsive Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .nav-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            position: relative;
+        }
+
+        .center-link {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .center-link:hover {
+            color: #ffd700;
+        }
+
+        .nav-center .logo {
+            height: 35px;
+        }
+
+        .center-link span::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #ffd700;
+            margin-top: 5px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffd700 !important;
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-left">
-            <a href="about.html">ACERCA</a>
-            <a href="#proyectos">PROYECTOS</a>
-        </div>
-        <div class="nav-center">
-            <a href="index.html" class="center-link">
-                <span>INNOVACIÓN</span>
-                <img src="https://drive.google.com/thumbnail?id=12il_kEi5dpZyPkrsPxuB159GHQexkhPz" alt="Logo" class="logo">
-                <span>SOLUCIONES</span>
-            </a>
-        </div>
-        <div class="nav-right">
-            <a href="servicios.html">Desarrollo De Software</a>
-            <a href="contacto.html">CONTACTO</a>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <!-- Mobile Hamburger Button and Logo -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="nav-center">
+                <a href="index.html" class="center-link">
+                    <span>INNOVACIÓN</span>
+                    <img src="https://drive.google.com/thumbnail?id=12il_kEi5dpZyPkrsPxuB159GHQexkhPz" alt="Logo" class="logo">
+                    <span>SOLUCIONES</span>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="acerca.html">Acerca</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="proyectos.html">Proyectos</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Servicios
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Servicios_Desarrollo.html">Desarrollo De Software</a></li>
+                            <li><a class="dropdown-item" href="Servicios_microsoft.html">Herramientas De Microsoft</a></li>
+                            <li><a class="dropdown-item" href="Servicios_google.html">Herramientas De Google</a></li>
+                            <li><a class="dropdown-item" href="Servicios_soporte.html">Soporte Técnico Y Mantenimiento</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
