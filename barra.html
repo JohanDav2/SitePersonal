@@ -58,12 +58,25 @@
         }
 
         @media (max-width: 768px) {
-            .nav-center .logo {
-                height: 20px; /* Ajusta el tamaño del logo en dispositivos móviles */
-                max-width: 10%;
-            }
-            
-        }
+    .nav-center .logo {
+        height: 25px; /* Tamaño reducido del logo */
+        max-width: 50%; /* Limitar el ancho máximo del logo */
+        margin: 0 auto; /* Centrar el logo */
+    }
+
+    .center-link span {
+        font-size: 14px; /* Ajustar el tamaño del texto */
+        line-height: 1.2; /* Espaciado entre líneas */
+    }
+
+    .navbar-toggler {
+        margin-right: 10px; /* Espaciado entre el botón hamburguesa y el logo */
+    }
+
+    .center-link {
+        gap: 5px; /* Reducir la separación entre el texto y el logo */
+    }
+}
 
         .dropdown-menu {
             background-color: #34495e;
