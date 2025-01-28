@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,10 +14,17 @@
         <!-- Capa de degradado -->
         <div class="overlay"></div>
 
+        <!-- Formas de nubes -->
+        <div class="clouds">
+            <div class="cloud cloud1"></div>
+            <div class="cloud cloud2"></div>
+            <div class="cloud cloud3"></div>
+        </div>
+
         <!-- Contenido principal -->
         <div class="content">
             <div class="text">
-                <h1>NUESTROS <span>PROYECTOS</span></h1>
+                <h1>PROJECT <span>MANAGEMENT</span></h1>
                 <p>Discover effective techniques and tools to enhance project efficiency and communication.</p>
                 <a href="#get-started" class="btn">GET MORE</a>
             </div>
@@ -50,7 +58,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://lh3.googleusercontent.com/d/1ThhKwzZH_79weKxQ12jlGlACyVfOu_Eb=w750') no-repeat center center/cover;
+    background-image: url('your-image.jpg');
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -63,8 +71,47 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(249, 231, 159, 0.7), rgba(244, 208, 63, 0.5));
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.7), rgba(255, 165, 0, 0.5));
     z-index: 2;
+}
+
+/* Formas de nubes */
+.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.cloud {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0.6;
+    filter: blur(15px);
+}
+
+.cloud1 {
+    width: 150px;
+    height: 80px;
+    top: 20%;
+    left: 10%;
+}
+
+.cloud2 {
+    width: 200px;
+    height: 100px;
+    top: 50%;
+    left: 30%;
+}
+
+.cloud3 {
+    width: 180px;
+    height: 90px;
+    top: 70%;
+    right: 10%;
 }
 
 .navbar {
@@ -72,7 +119,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 10px 0;
-    z-index: 3;
+    z-index: 4;
     position: absolute;
     top: 0;
 }
@@ -98,7 +145,7 @@ body {
 
 .content {
     position: relative;
-    z-index: 3;
+    z-index: 4;
     max-width: 800px;
     padding: 20px;
 }
