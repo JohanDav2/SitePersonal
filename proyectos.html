@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,15 +9,26 @@
 </head>
 <body>
     <section class="banner">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#blog">BLOG</a></li>
+                <li><a href="#issues">ISSUES</a></li>
+                <li><a href="#team">TEAM</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+            </ul>
+        </nav>
         <div class="content">
             <div class="text">
                 <h1>PROJECT <span>MANAGEMENT</span></h1>
                 <p>Learn more about project management techniques and tools for better efficiency and communication.</p>
                 <a href="#get-started" class="btn">GET MORE</a>
             </div>
-            <div class="illustration">
-                <img src="your-image-here.png" alt="Project Management Illustration">
-            </div>
+        </div>
+        <div class="shapes">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
         </div>
     </section>
 </body>
@@ -29,29 +41,54 @@ body {
 }
 
 .banner {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background: linear-gradient(135deg, #fffbe6, #fff0b3);
     min-height: 500px;
-    padding: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #fff9cc;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #664d00;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #e6b800;
 }
 
 .content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    width: 100%;
-    margin-top: 50px;
-}
-
-.text {
-    max-width: 500px;
+    z-index: 2;
+    max-width: 800px;
 }
 
 .text h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: #4d3900;
     margin: 0;
 }
@@ -63,7 +100,7 @@ body {
 .text p {
     font-size: 1.2rem;
     color: #665c00;
-    margin: 20px 0;
+    margin: 20px 0 40px;
 }
 
 .btn {
@@ -81,9 +118,94 @@ body {
     background-color: #cc9a00;
 }
 
-.illustration img {
-    max-width: 600px;
+/* Shapes (cloud-like decorations) */
+.shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.cloud {
+    position: absolute;
+    background: #fff9cc;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.cloud-1 {
+    width: 200px;
+    height: 120px;
+    top: 20%;
+    left: 10%;
+}
+
+.cloud-2 {
+    width: 300px;
+    height: 160px;
+    top: 50%;
+    left: 70%;
+}
+
+.cloud-3 {
+    width: 250px;
+    height: 140px;
+    top: 75%;
+    left: 25%;
+}
+
+/* Cloud blending for aesthetic */
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: #fff9cc;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.cloud-1::before {
+    width: 150px;
+    height: 100px;
+    top: -40px;
+    left: 50px;
+}
+
+.cloud-1::after {
+    width: 180px;
+    height: 120px;
+    top: 20px;
+    left: -60px;
+}
+
+.cloud-2::before {
+    width: 200px;
+    height: 130px;
+    top: -30px;
+    left: 70px;
+}
+
+.cloud-2::after {
+    width: 250px;
+    height: 150px;
+    top: 30px;
+    left: -80px;
+}
+
+.cloud-3::before {
+    width: 180px;
+    height: 110px;
+    top: -30px;
+    left: 60px;
+}
+
+.cloud-3::after {
+    width: 200px;
+    height: 140px;
+    top: 20px;
+    left: -70px;
 }
 </style>
