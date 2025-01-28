@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,20 +7,29 @@
 </head>
 <body>
     <section class="banner">
+        <!-- Fondo de imagen -->
+        <div class="background-image"></div>
+
+        <!-- Capa de degradado -->
+        <div class="overlay"></div>
+
+        <!-- Contenido principal -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#blog">BLOG</a></li>
+                <li><a href="#issues">ISSUES</a></li>
+                <li><a href="#team">TEAM</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+            </ul>
+        </nav>
+
         <div class="content">
             <div class="text">
                 <h1>PROJECT <span>MANAGEMENT</span></h1>
-                <p>Learn more about project management techniques and tools for better efficiency and communication.</p>
+                <p>Discover effective techniques and tools to enhance project efficiency and communication.</p>
                 <a href="#get-started" class="btn">GET MORE</a>
             </div>
-            <div class="illustration">
-                <img src="your-image-here.png" alt="Project Management Illustration">
-            </div>
-        </div>
-        <div class="shapes">
-            <div class="cloud cloud-1"></div>
-            <div class="cloud cloud-2"></div>
-            <div class="cloud cloud-3"></div>
         </div>
     </section>
 </body>
@@ -40,47 +47,93 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #f9e79f, #f4d03f);
-    min-height: 500px;
+    min-height: 100vh;
     overflow: hidden;
     text-align: center;
+    color: #fff;
 }
 
-.content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
+/* Fondo de imagen fija */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    margin-top: 50px;
+    height: 100%;
+    background-image: url('your-image.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+/* Capa de degradado */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
     z-index: 2;
 }
 
-.text {
-    max-width: 500px;
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #f9d342;
+}
+
+.content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    padding: 20px;
 }
 
 .text h1 {
     font-size: 3.5rem;
-    color: #4d3900;
     margin: 0;
+    color: #f9d342;
 }
 
 .text h1 span {
-    color: #c27d00;
+    color: #fff;
 }
 
 .text p {
     font-size: 1.2rem;
-    color: #665c00;
     margin: 20px 0 40px;
+    color: #e6e6e6;
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #c27d00;
-    color: #fff;
+    background-color: #f9d342;
+    color: #000;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
@@ -88,103 +141,6 @@ body {
 }
 
 .btn:hover {
-    background-color: #a56600;
-}
-
-.illustration img {
-    max-width: 600px;
-    width: 100%;
-    height: auto;
-    z-index: 2;
-}
-
-/* Shapes (cloud-like decorations) */
-.shapes {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.cloud {
-    position: absolute;
-    background: #fef9e7;
-    border-radius: 50%;
-    opacity: 0.8;
-}
-
-.cloud-1 {
-    width: 200px;
-    height: 120px;
-    top: 20%;
-    left: 10%;
-}
-
-.cloud-2 {
-    width: 300px;
-    height: 160px;
-    top: 50%;
-    left: 70%;
-}
-
-.cloud-3 {
-    width: 250px;
-    height: 140px;
-    top: 75%;
-    left: 25%;
-}
-
-.cloud::before,
-.cloud::after {
-    content: '';
-    position: absolute;
-    background: #fef9e7;
-    border-radius: 50%;
-    opacity: 0.8;
-}
-
-.cloud-1::before {
-    width: 150px;
-    height: 100px;
-    top: -40px;
-    left: 50px;
-}
-
-.cloud-1::after {
-    width: 180px;
-    height: 120px;
-    top: 20px;
-    left: -60px;
-}
-
-.cloud-2::before {
-    width: 200px;
-    height: 130px;
-    top: -30px;
-    left: 70px;
-}
-
-.cloud-2::after {
-    width: 250px;
-    height: 150px;
-    top: 30px;
-    left: -80px;
-}
-
-.cloud-3::before {
-    width: 180px;
-    height: 110px;
-    top: -30px;
-    left: 60px;
-}
-
-.cloud-3::after {
-    width: 200px;
-    height: 140px;
-    top: 20px;
-    left: -70px;
+    background-color: #e6c030;
 }
 </style>
