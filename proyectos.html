@@ -9,11 +9,23 @@
 </head>
 <body>
     <section class="banner">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#blog">BLOG</a></li>
+                <li><a href="#issues">ISSUES</a></li>
+                <li><a href="#team">TEAM</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+            </ul>
+        </nav>
         <div class="content">
             <div class="text">
                 <h1>PROJECT <span>MANAGEMENT</span></h1>
                 <p>Learn more about project management techniques and tools for better efficiency and communication.</p>
                 <a href="#get-started" class="btn">GET MORE</a>
+            </div>
+            <div class="illustration">
+                <img src="your-image-here.png" alt="Project Management Illustration">
             </div>
         </div>
         <div class="shapes">
@@ -37,8 +49,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #fffbe6, #fff0b3);
-    min-height: 500px;
+    background: linear-gradient(135deg, #f9e79f, #f4d03f);
+    min-height: 100vh;
     overflow: hidden;
     text-align: center;
 }
@@ -47,7 +59,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: #fff9cc;
+    background-color: #f7dc6f;
     padding: 10px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: absolute;
@@ -64,18 +76,27 @@ body {
 
 .navbar ul li a {
     text-decoration: none;
-    color: #664d00;
+    color: #5d4300;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 .navbar ul li a:hover {
-    color: #e6b800;
+    color: #c27d00;
 }
 
 .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 50px;
     z-index: 2;
-    max-width: 800px;
+}
+
+.text {
+    max-width: 500px;
 }
 
 .text h1 {
@@ -85,7 +106,7 @@ body {
 }
 
 .text h1 span {
-    color: #e6b800;
+    color: #c27d00;
 }
 
 .text p {
@@ -97,7 +118,7 @@ body {
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #e6b800;
+    background-color: #c27d00;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -106,7 +127,14 @@ body {
 }
 
 .btn:hover {
-    background-color: #cc9a00;
+    background-color: #a56600;
+}
+
+.illustration img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    z-index: 2;
 }
 
 /* Shapes (cloud-like decorations) */
@@ -122,9 +150,9 @@ body {
 
 .cloud {
     position: absolute;
-    background: #fff9cc;
+    background: #fef9e7;
     border-radius: 50%;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .cloud-1 {
@@ -148,14 +176,13 @@ body {
     left: 25%;
 }
 
-/* Cloud blending for aesthetic */
 .cloud::before,
 .cloud::after {
     content: '';
     position: absolute;
-    background: #fff9cc;
+    background: #fef9e7;
     border-radius: 50%;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .cloud-1::before {
