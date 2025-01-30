@@ -28,9 +28,12 @@
     </section>
    <hr>
    <div class="container my-5">
-  <h2 class="text-center mb-4">Nuestros Proyectos de Desarrollo</h2>
-      <p class="parra2">Descubre mis proyectos más destacados en ingeniería de sistemas, donde la innovación, la
-      eficiencia y la calidad son clave, desde desarrollos web hasta soluciones de visualización de datos. </p>
+  <div class="text-center mb-5">
+  <h2 class="section-title">Nuestros Proyectos de Desarrollo</h2>
+  <p class="section-subtitle">Descubre mis proyectos más destacados en ingeniería de sistemas, donde la innovación, la
+    eficiencia y la calidad son clave, desde desarrollos web hasta soluciones de visualización de datos.</p>
+</div>
+
   <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <!-- Grupo 1 -->
@@ -310,4 +313,34 @@ body {
       background-color: #d4ac0d;
       color: #fff;
     }
+
+   <style>
+  .section-title {
+    font-size: 2.5rem; /* Tamaño grande y profesional */
+    font-weight: 700; /* Negrita */
+    color: #333; /* Color oscuro para buena legibilidad */
+    text-transform: uppercase; /* Texto en mayúsculas para mayor impacto */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    margin-bottom: 0.5rem; /* Espaciado con el subtítulo */
+  }
+
+  .section-title::after {
+    content: ""; /* Línea decorativa debajo del título */
+    display: block;
+    width: 60px; /* Ancho de la línea */
+    height: 4px; /* Altura de la línea */
+    background: #f1c40f; /* Color amarillo para resaltar */
+    margin: 0.5rem auto 0; /* Centrado y espaciado */
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem; /* Tamaño ligeramente mayor al texto estándar */
+    color: #555; /* Color gris para complementar */
+    line-height: 1.8; /* Altura de línea para facilitar la lectura */
+    max-width: 800px; /* Limitar el ancho del subtítulo */
+    margin: 0 auto; /* Centrado horizontal */
+    font-style: italic; /* Añade un toque elegante */
+  }
+</style>
+
 </style>
