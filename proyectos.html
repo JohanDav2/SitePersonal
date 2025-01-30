@@ -11,20 +11,13 @@
 </head>
 <body>
     <section class="banner">
-        <!-- Fondo de imagen -->
         <div class="background-image"></div>
-
-        <!-- Capa de degradado -->
         <div class="overlay"></div>
-
-        <!-- Formas de nubes -->
         <div class="clouds">
             <div class="cloud cloud1"></div>
             <div class="cloud cloud2"></div>
             <div class="cloud cloud3"></div>
         </div>
-
-        <!-- Contenido principal -->
         <div class="content">
             <div class="text">
                 <h1>CONOCE <span>NUESTROS PROYECTOS</span></h1>
@@ -33,6 +26,105 @@
             </div>
         </div>
     </section>
+   <hr>
+   <div class="container my-5">
+  <h2 class="text-center mb-4">Nuestros Proyectos</h2>
+  <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <!-- Grupo 1 -->
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">Aplicación Móvil - Noticias Moon</div>
+              <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Proyecto 1">
+              <div class="card-body">
+                <p class="card-text">Este proyecto desarrolla una aplicación móvil con un inicio de sesión y una pantalla principal que presenta varios noticieros.</p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-custom">Descargar APK</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">Aplicación Web - Inicio de Sesión Sencillo</div>
+              <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Proyecto 2">
+              <div class="card-body">
+                <p class="card-text">Sistema de inicio de sesión básico desarrollado con Apps Script y Google Sheets.</p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-custom">Ver Página</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">Desarrollo de Software - Gestión de Inventario</div>
+              <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Proyecto 3">
+              <div class="card-body">
+                <p class="card-text">Aplicación de escritorio diseñada para gestionar inventarios y optimizar la administración de stock.</p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-custom">Ver Archivo</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Grupo 2 -->
+      <div class="carousel-item">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">Proyecto 4</div>
+              <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Proyecto 4">
+              <div class="card-body">
+                <p class="card-text">Descripción breve del proyecto 4.</p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-custom">Más Información</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">Proyecto 5</div>
+              <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Proyecto 5">
+              <div class="card-body">
+                <p class="card-text">Descripción breve del proyecto 5.</p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-custom">Más Información</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">Proyecto 6</div>
+              <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Proyecto 6">
+              <div class="card-body">
+                <p class="card-text">Descripción breve del proyecto 6.</p>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-custom">Más Información</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Controles del Carrusel -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
     <div data-include="footer.html"></div>
 </html>
@@ -158,4 +250,41 @@ body {
 .btn:hover {
     background-color: #e6c030;
 }
+   /*PROYECTOS CONTENT*/
+   /*PROYECTOS CONTENT*/
+   /*PROYECTOS CONTENT*/
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .card-header {
+      background-color: #f1c40f;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 10px 10px 0 0;
+    }
+    .card img {
+      border-radius: 0 0 10px 10px;
+    }
+    .card-body {
+      padding: 20px;
+    }
+    .card-footer {
+      background-color: transparent;
+      border: none;
+      text-align: center;
+    }
+    .btn-custom {
+      background-color: #f1c40f;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    .btn-custom:hover {
+      background-color: #d4ac0d;
+      color: #fff;
+    }
 </style>
