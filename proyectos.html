@@ -291,6 +291,18 @@ body {
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+   
+   @media (max-width: 768px) {
+    .card {
+      margin-bottom: 20px; /* Ajusta el espacio según sea necesario */
+    }
+
+    /* Opcional: Quita el último margen */
+    .row .card:last-child {
+      margin-bottom: 0;
+    }
+  }
+   
     .card-header {
       background-color: #f1c40f;
       color: #fff;
