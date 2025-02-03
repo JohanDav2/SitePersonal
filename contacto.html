@@ -43,7 +43,7 @@
     <!-- Contenedor del formulario -->
     <div class="form-container col-12 col-md-6 p-5">
       <h2 class="text-warning text-center mb-4">CONTACTANOS</h2>
-      <form>
+      <form id="form2">
         <div class="mb-3">
           <label for="name" class="form-label">Nombres</label>
           <input type="text" class="form-control" id="name" placeholder="Nombres">
@@ -56,8 +56,10 @@
           <label for="service" class="form-label">Selecciona un servicio</label>
           <select class="form-select" id="service">
             <option selected>Selecciona...</option>
-            <option value="1">Servicio 1</option>
-            <option value="2">Servicio 2</option>
+            <option value="1">Desarrollo Web</option>
+            <option value="2">Desarrollo Movil</option>
+            <option value="3">Consultoria de software</option>
+
           </select>
         </div>
         <div class="mb-3">
@@ -73,6 +75,22 @@
     </div>
   </section>
 </body>
+  <script>
+    document.getElementById('form2').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(event.target);
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxG4_NAAL1ufCUpLnOBJoNPGRvVBpaBxSpQL88kzrz-B5HdHQZvpULPlSm3jhTN3KE/exec';
+
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => response.text())
+        .then(responseText => {
+          alert('Formulario enviado correctamente');
+          event.target.reset();
+        })
+        .catch(error => console.error('Error al enviar el formulario:', error));
+    });
+  </script>
   <hr>
   <style>
 body {
