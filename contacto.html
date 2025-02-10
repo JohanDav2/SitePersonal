@@ -77,24 +77,24 @@
   </section>
 </body>
   <script>
-      document.getElementById('form2').addEventListener('submit', function (event) {
+    document.getElementById('form2').addEventListener('submit', function (event) {
         event.preventDefault();
 
-        const formData = new FormData(event.target);
-        const params = new URLSearchParams(formData);
+        const form = event.target;
+        const formData = new FormData(form);
+
+        // Agregar el checkbox manualmente
+        formData.append("notRobot", document.getElementById('notRobot').checked ? "Yes" : "No");
 
         const scriptURL = 'https://script.google.com/macros/s/AKfycbyHc3lf4ODi1BFUVYySz-1j7O2yokrdUQvUFYIgh_aO5qkUDeFVOSQjN1I4GLOqKPfm/exec';
 
-        fetch(scriptURL, {
-            method: 'POST',
-            body: params
-        })
-        .then(response => response.text())
-        .then(responseText => {
-            alert('Formulario enviado correctamente');
-            event.target.reset();
-        })
-        .catch(error => console.error('Error al enviar el formulario:', error));
+        fetch(scriptURL, { method: 'POST', body: formData })
+            .then(response => response.text())
+            .then(responseText => {
+                alert('Formulario enviado correctamente');
+                form.reset();
+            })
+            .catch(error => console.error('Error al enviar el formulario:', error));
     });
   </script>
   <hr>
