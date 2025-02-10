@@ -44,34 +44,33 @@
     <div class="form-container col-12 col-md-6 p-5">
       <h2 class="text-warning text-center mb-4">CONTACTANOS</h2>
       <form id="form2">
-        <div class="mb-3">
-          <label for="name" class="form-label">Nombres</label>
-          <input type="text" class="form-control" id="name" placeholder="Nombres">
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Ingresa tu correo electrónico</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico">
-        </div>
-        <div class="mb-3">
-          <label for="service" class="form-label">Selecciona un servicio</label>
-          <select class="form-select" id="service" name="service">
-            <option selected>Selecciona...</option>
-            <option value="1">Desarrollo Web</option>
-            <option value="2">Desarrollo Movil</option>
-            <option value="3">Consultoria de software</option>
-
-          </select>
-        </div>
-        <div class="mb-3">
-          <label for="project" class="form-label">Describe brevemente tu proyecto</label>
-          <textarea class="form-control" id="project" name="project" rows="3"></textarea>
-        </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="notRobot" name="notRobot">
-          <label class="form-check-label" for="notRobot" >No soy un robot</label>
-        </div>
-        <button type="submit" class="btn btn-primary w-100">Enviar Solicitud</button>
-      </form>
+    <div class="mb-3">
+        <label for="name" class="form-label">Nombres</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Nombres" required>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Ingresa tu correo electrónico</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico" required>
+    </div>
+    <div class="mb-3">
+        <label for="service" class="form-label">Selecciona un servicio</label>
+        <select class="form-select" id="service" name="service" required>
+            <option value="" disabled selected>Selecciona...</option>
+            <option value="Desarrollo Web">Desarrollo Web</option>
+            <option value="Desarrollo Móvil">Desarrollo Móvil</option>
+            <option value="Consultoría de Software">Consultoría de Software</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="project" class="form-label">Describe brevemente tu proyecto</label>
+        <textarea class="form-control" id="project" name="project" rows="3" required></textarea>
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="notRobot">
+        <label class="form-check-label" for="notRobot">No soy un robot</label>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Enviar Solicitud</button>
+</form>
     </div>
   </section>
 </body>
@@ -85,7 +84,7 @@
         // Agregar el checkbox manualmente
         formData.append("notRobot", document.getElementById('notRobot').checked ? "Yes" : "No");
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxG4_NAAL1ufCUpLnOBJoNPGRvVBpaBxSpQL88kzrz-B5HdHQZvpULPlSm3jhTN3KE/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxsF2B1fR4qARBlAdJwkY9UfXdn9MoxxQ2k9bTUU8GU0QlgftB8w1kSdyrr2_mJHYuj/exec';
 
         fetch(scriptURL, { method: 'POST', body: formData })
             .then(response => response.text())
