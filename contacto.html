@@ -86,7 +86,7 @@
         // Agregar el checkbox manualmente
         formData.append("notRobot", document.getElementById('notRobot').checked ? "Yes" : "No");
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbz6edCWUJxPrz5yC4JOdZLCsjvqPE_gHgc5g5M_OTZVhZX9RZvlJwAxGqceamlsTXqa/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyl3samfrzpF6IGbsvdFLs8R5Ygzo_83lNGcFxXwzpIOSGrX_sGsnLBa5WFsl9qF9an/exec';
 
         fetch(scriptURL, { method: 'POST', body: formData })
             .then(response => response.text())
