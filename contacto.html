@@ -50,11 +50,11 @@
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Ingresa tu correo electrónico</label>
-          <input type="email" class="form-control" id="email" placeholder="Correo electrónico">
+          <input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico">
         </div>
         <div class="mb-3">
           <label for="service" class="form-label">Selecciona un servicio</label>
-          <select class="form-select" id="service">
+          <select class="form-select" id="service" name="service">
             <option selected>Selecciona...</option>
             <option value="1">Desarrollo Web</option>
             <option value="2">Desarrollo Movil</option>
@@ -64,11 +64,11 @@
         </div>
         <div class="mb-3">
           <label for="project" class="form-label">Describe brevemente tu proyecto</label>
-          <textarea class="form-control" id="project" rows="3"></textarea>
+          <textarea class="form-control" id="project" name="project" rows="3"></textarea>
         </div>
         <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="notRobot">
-          <label class="form-check-label" for="notRobot">No soy un robot</label>
+          <input type="checkbox" class="form-check-input" id="notRobot" name="notRobot">
+          <label class="form-check-label" for="notRobot" >No soy un robot</label>
         </div>
         <button type="submit" class="btn btn-primary w-100">Enviar Solicitud</button>
       </form>
@@ -76,19 +76,24 @@
   </section>
 </body>
   <script>
-    document.getElementById('form2').addEventListener('submit', function (event) {
-      event.preventDefault();
+      document.getElementById('form2').addEventListener('submit', function (event) {
+        event.preventDefault();
 
-      const formData = new FormData(event.target);
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbxG4_NAAL1ufCUpLnOBJoNPGRvVBpaBxSpQL88kzrz-B5HdHQZvpULPlSm3jhTN3KE/exec';
+        const form = event.target;
+        const formData = new FormData(form);
 
-      fetch(scriptURL, { method: 'POST', body: formData })
-        .then(response => response.text())
-        .then(responseText => {
-          alert('Formulario enviado correctamente');
-          event.target.reset();
-        })
-        .catch(error => console.error('Error al enviar el formulario:', error));
+        // Agregar el checkbox manualmente
+        formData.append("notRobot", document.getElementById('notRobot').checked ? "Yes" : "No");
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxG4_NAAL1ufCUpLnOBJoNPGRvVBpaBxSpQL88kzrz-B5HdHQZvpULPlSm3jhTN3KE/exec';
+
+        fetch(scriptURL, { method: 'POST', body: formData })
+            .then(response => response.text())
+            .then(responseText => {
+                alert('Formulario enviado correctamente');
+                form.reset();
+            })
+            .catch(error => console.error('Error al enviar el formulario:', error));
     });
   </script>
   <hr>
