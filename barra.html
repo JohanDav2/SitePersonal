@@ -68,7 +68,7 @@
             min-width: 0;
         }
 
-        /* Avatar cuadrado con iniciales */
+        /* Avatar cuadrado con ícono de código */
         .jd-avatar {
             width: 42px;
             height: 42px;
@@ -77,14 +77,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.95rem;
-            font-weight: 800;
             color: #0A0A0A;
-            letter-spacing: 0.5px;
             flex-shrink: 0;
             box-shadow: 0 0 0 2px rgba(201,168,76,0.35), 0 4px 16px rgba(201,168,76,0.25);
             transition: box-shadow 0.3s, transform 0.3s;
             user-select: none;
+        }
+
+        .jd-avatar svg {
+            display: block;
         }
 
         .jd-brand:hover .jd-avatar {
@@ -438,7 +439,12 @@
 
         <!-- ① BRAND -->
         <a href="index.html" class="jd-brand" aria-label="Inicio">
-            <div class="jd-avatar" aria-hidden="true">JD</div>
+            <div class="jd-avatar" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+            </div>
             <div class="jd-brand-info">
                 <span class="jd-brand-name">Johan Duitama</span>
                 <span class="jd-brand-sub">Ing. Sistemas &amp; Desarrollo</span>
