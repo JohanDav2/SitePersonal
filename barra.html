@@ -338,78 +338,247 @@
         .jd-ham.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
         .jd-ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-        /* ━━━━━━━━━━━━━━━━━━━━━━━━
-           MOBILE DRAWER
-        ━━━━━━━━━━━━━━━━━━━━━━━━ */
+        /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           MOBILE DRAWER — Diseño premium
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
         #jd-drawer {
             position: fixed;
             top: var(--h);
             left: 0;
             width: 100%;
-            background: rgba(8,8,8,0.97);
-            backdrop-filter: blur(22px);
-            -webkit-backdrop-filter: blur(22px);
-            border-bottom: 1px solid var(--border);
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.42s cubic-bezier(.4,0,.2,1);
+            height: calc(100dvh - var(--h));
+            background: #0A0A0A;
+            border-top: 1px solid rgba(201,168,76,0.18);
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
             z-index: 9998;
+            /* Oculto por defecto: desliza desde arriba */
+            transform: translateY(-8px);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 0.36s cubic-bezier(.4,0,.2,1),
+                        opacity   0.28s ease;
         }
-        #jd-drawer.open { max-height: 540px; }
+        #jd-drawer.open {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
 
-        .jd-drawer-inner { padding: 12px 20px 24px; }
+        /* ── Scrollbar discreta ── */
+        #jd-drawer::-webkit-scrollbar { width: 4px; }
+        #jd-drawer::-webkit-scrollbar-track { background: transparent; }
+        #jd-drawer::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.25); border-radius: 4px; }
+
+        /* ── Inner wrapper ── */
+        .jd-drawer-inner {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            padding: 0 0 32px;
+        }
+
+        /* ── Tarjeta de perfil ── */
+        .jd-m-profile {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 22px 24px 20px;
+            border-bottom: 1px solid rgba(201,168,76,0.10);
+            /* Animación de entrada */
+            opacity: 0;
+            transform: translateY(-6px);
+            transition: opacity 0.35s 0.05s ease, transform 0.35s 0.05s ease;
+        }
+        #jd-drawer.open .jd-m-profile {
+            opacity: 1; transform: translateY(0);
+        }
+
+        .jd-m-profile-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 13px;
+            background: linear-gradient(145deg, var(--gold-dark) 0%, var(--gold) 60%, var(--gold-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0A0A0A;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 2px rgba(201,168,76,0.35), 0 4px 14px rgba(201,168,76,0.25);
+        }
+
+        .jd-m-profile-text { display: flex; flex-direction: column; line-height: 1.2; }
+        .jd-m-profile-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: 0.01em;
+        }
+        .jd-m-profile-sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.60rem;
+            font-weight: 500;
+            color: var(--gold);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        /* ── Lista de links ── */
+        .jd-m-nav {
+            display: flex;
+            flex-direction: column;
+            padding: 12px 16px 0;
+            gap: 2px;
+            flex: 1;
+        }
+
+        /* Animación escalonada de los items */
+        .jd-m-item {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: opacity 0.32s ease, transform 0.32s ease;
+        }
+        #jd-drawer.open .jd-m-item:nth-child(1) { opacity:1; transform:none; transition-delay: 0.08s; }
+        #jd-drawer.open .jd-m-item:nth-child(2) { opacity:1; transform:none; transition-delay: 0.13s; }
+        #jd-drawer.open .jd-m-item:nth-child(3) { opacity:1; transform:none; transition-delay: 0.18s; }
+        #jd-drawer.open .jd-m-item:nth-child(4) { opacity:1; transform:none; transition-delay: 0.23s; }
+        #jd-drawer.open .jd-m-item:nth-child(5) { opacity:1; transform:none; transition-delay: 0.28s; }
 
         .jd-m-link {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 12px;
             width: 100%;
-            padding: 13px 16px;
+            padding: 14px 16px;
             font-family: 'Inter', sans-serif;
-            font-size: 0.88rem;
+            font-size: 0.92rem;
             font-weight: 500;
             color: rgba(242,242,242,0.82);
             text-decoration: none;
             background: none;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             letter-spacing: 0.02em;
             cursor: pointer;
             text-align: left;
             transition: background 0.18s, color 0.18s;
+            -webkit-tap-highlight-color: transparent;
         }
-        .jd-m-link:hover { background: rgba(201,168,76,0.09); color: var(--gold-light); }
+        .jd-m-link:hover,
+        .jd-m-link:active { background: rgba(201,168,76,0.09); color: var(--gold-light); }
 
+        /* Ícono del link */
+        .jd-m-link-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 9px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.07);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+            transition: background 0.18s, border-color 0.18s;
+        }
+        .jd-m-link:hover .jd-m-link-icon,
+        .jd-m-link:active .jd-m-link-icon {
+            background: rgba(201,168,76,0.12);
+            border-color: rgba(201,168,76,0.30);
+        }
+
+        .jd-m-link-label { flex: 1; }
+
+        /* Chevron derecho en links normales */
+        .jd-m-chevron {
+            opacity: 0.30;
+            transition: opacity 0.18s, transform 0.28s;
+        }
+        .jd-m-link:hover .jd-m-chevron { opacity: 0.7; transform: translateX(3px); }
+
+        /* Flecha del acordeón Servicios */
+        .jd-m-accord-arrow {
+            display: inline-block;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 5px solid currentColor;
+            opacity: 0.45;
+            transition: transform 0.28s;
+            flex-shrink: 0;
+        }
+        .jd-m-item.serv-open .jd-m-accord-arrow { transform: rotate(180deg); }
+
+        /* Separador visual */
+        .jd-m-sep {
+            height: 1px;
+            background: rgba(201,168,76,0.08);
+            margin: 6px 16px;
+        }
+
+        /* Submenú acordeón */
         .jd-m-sub {
             overflow: hidden;
             max-height: 0;
-            transition: max-height 0.30s ease;
+            transition: max-height 0.32s cubic-bezier(.4,0,.2,1);
         }
-        .jd-m-sub.open { max-height: 280px; }
+        .jd-m-sub.open { max-height: 300px; }
+
+        .jd-m-sub-inner {
+            padding: 4px 16px 8px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
 
         .jd-m-sub a {
             display: flex;
             align-items: center;
-            gap: 9px;
-            padding: 10px 16px 10px 32px;
+            gap: 10px;
+            padding: 11px 14px 11px 16px;
             font-family: 'Inter', sans-serif;
-            font-size: 0.80rem;
+            font-size: 0.83rem;
+            font-weight: 400;
             color: rgba(242,242,242,0.58);
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
             transition: color 0.18s, background 0.18s;
+            -webkit-tap-highlight-color: transparent;
         }
-        .jd-m-sub a:hover { color: var(--gold-light); background: rgba(201,168,76,0.08); }
+        .jd-m-sub a:hover,
+        .jd-m-sub a:active { color: var(--gold-light); background: rgba(201,168,76,0.08); }
 
-        .jd-m-cta {
-            margin-top: 14px;
+        .jd-m-sub-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 7px;
+            background: rgba(255,255,255,0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            flex-shrink: 0;
         }
+
+        /* ── CTA mobile ── */
+        .jd-m-cta {
+            padding: 20px 16px 0;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.35s 0.32s ease, transform 0.35s 0.32s ease;
+        }
+        #jd-drawer.open .jd-m-cta { opacity: 1; transform: translateY(0); }
+
         .jd-m-cta .jd-btn {
             width: 100%;
             justify-content: center;
-            border-radius: 12px;
-            padding: 13px;
-            font-size: 0.88rem;
+            border-radius: 14px;
+            padding: 15px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            box-shadow: 0 6px 24px rgba(201,168,76,0.35);
         }
 
         /* ── Spacer ── */
@@ -423,9 +592,11 @@
             .jd-ham { display: flex; }
         }
 
-        @media (max-width: 420px) {
-            .jd-inner { padding: 0 16px; }
-            .jd-brand-info { display: none; }
+        /* Pantallas muy pequeñas: reducir padding del navbar */
+        @media (max-width: 400px) {
+            .jd-inner { padding: 0 14px; }
+            .jd-brand-name { font-size: 0.84rem; }
+            .jd-brand-sub  { font-size: 0.55rem; }
         }
     </style>
 </head>
@@ -505,26 +676,86 @@
 </nav>
 
 <!-- MOBILE DRAWER -->
-<div id="jd-drawer" role="dialog" aria-label="Menú de navegación">
+<div id="jd-drawer" role="dialog" aria-label="Menú de navegación" aria-modal="true">
     <div class="jd-drawer-inner">
-        <a class="jd-m-link" href="index.html">Inicio</a>
-        <a class="jd-m-link" href="about.html">Acerca de mí</a>
-        <a class="jd-m-link" href="proyectos.html">Proyectos</a>
 
-        <!-- Acordeón Servicios -->
-        <button class="jd-m-link" id="m-serv-btn" aria-expanded="false">
-            Servicios <span class="dd-arrow" id="m-serv-arrow"></span>
-        </button>
-        <div class="jd-m-sub" id="m-serv-sub">
-            <a href="servicios.html"><span>💻</span>Desarrollo de Software</a>
-            <a href="microsoft-servicios.html"><span>🪟</span>Herramientas Microsoft</a>
-            <a href="google-servicios.html"><span>🔍</span>Herramientas Google</a>
-            <a href="soporte-servicios.html"><span>🛠️</span>Soporte Técnico</a>
+        <!-- Tarjeta de perfil -->
+        <div class="jd-m-profile">
+            <div class="jd-m-profile-avatar" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+            </div>
+            <div class="jd-m-profile-text">
+                <span class="jd-m-profile-name">Johan Duitama</span>
+                <span class="jd-m-profile-sub">Ing. Sistemas &amp; Desarrollo</span>
+            </div>
         </div>
 
+        <!-- Links de navegación -->
+        <nav class="jd-m-nav" aria-label="Navegación móvil">
+
+            <div class="jd-m-item">
+                <a class="jd-m-link" href="index.html">
+                    <span class="jd-m-link-icon">🏠</span>
+                    <span class="jd-m-link-label">Inicio</span>
+                    <svg class="jd-m-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+            </div>
+
+            <div class="jd-m-item">
+                <a class="jd-m-link" href="about.html">
+                    <span class="jd-m-link-icon">👤</span>
+                    <span class="jd-m-link-label">Acerca de mí</span>
+                    <svg class="jd-m-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+            </div>
+
+            <div class="jd-m-item">
+                <a class="jd-m-link" href="proyectos.html">
+                    <span class="jd-m-link-icon">🚀</span>
+                    <span class="jd-m-link-label">Proyectos</span>
+                    <svg class="jd-m-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+            </div>
+
+            <div class="jd-m-sep"></div>
+
+            <!-- Acordeón Servicios -->
+            <div class="jd-m-item" id="m-serv-item">
+                <button class="jd-m-link" id="m-serv-btn" aria-expanded="false">
+                    <span class="jd-m-link-icon">⚙️</span>
+                    <span class="jd-m-link-label">Servicios</span>
+                    <span class="jd-m-accord-arrow" id="m-serv-arrow"></span>
+                </button>
+                <div class="jd-m-sub" id="m-serv-sub">
+                    <div class="jd-m-sub-inner">
+                        <a href="servicios.html">
+                            <span class="jd-m-sub-icon">💻</span>Desarrollo de Software
+                        </a>
+                        <a href="microsoft-servicios.html">
+                            <span class="jd-m-sub-icon">🪟</span>Herramientas Microsoft
+                        </a>
+                        <a href="google-servicios.html">
+                            <span class="jd-m-sub-icon">🔍</span>Herramientas Google
+                        </a>
+                        <a href="soporte-servicios.html">
+                            <span class="jd-m-sub-icon">🛠️</span>Soporte Técnico
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+
+        <!-- CTA -->
         <div class="jd-m-cta">
-            <a href="contacto.html" class="jd-btn">Contáctame</a>
+            <a href="contacto.html" class="jd-btn">
+                ✉️&nbsp; Contáctame
+            </a>
         </div>
+
     </div>
 </div>
 
@@ -568,9 +799,10 @@
     });
 
     /* ── Mobile services accordion ── */
+    const mServItem = document.getElementById('m-serv-item');
     mBtn.addEventListener('click', () => {
         const open = mSub.classList.toggle('open');
-        mArr.style.transform = open ? 'rotate(180deg)' : '';
+        mServItem.classList.toggle('serv-open', open);
         mBtn.setAttribute('aria-expanded', open);
     });
 
