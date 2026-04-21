@@ -1,156 +1,691 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegant Navbar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .navbar {
-            background-color: #2c3e50;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /* =============================================
+           NAVBAR PROFESIONAL - JOHAN DUITAMA
+        ============================================= */
+
+        :root {
+            --gold: #d4a017;
+            --gold-light: #f0c040;
+            --gold-dark: #a87c10;
+            --dark: #0d0d0d;
+            --dark-2: #141414;
+            --dark-3: #1e1e1e;
+            --text-light: #f0f0f0;
+            --text-muted: #9a9a9a;
+            --navbar-height: 72px;
         }
 
-        .navbar-nav .nav-link {
-            color: #ecf0f1 !important;
-            font-size: 16px;
-            font-weight: 500;
-            transition: color 0.3s;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .navbar-nav .nav-link:hover {
-            color: #f39c12 !important;
-        }
-
-        .navbar-toggler {
-            border: none;
-            outline: none;
-        }
-
-        .navbar-toggler-icon {
-            background-image: url('data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" fill="%23ecf0f1"%3e%3cpath stroke="rgba(0, 0, 0, 0.5)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3e%3c/svg%3e');
-        }
-
-        .nav-center {
+        /* ── Navbar Base ── */
+        .pro-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            height: var(--navbar-height);
             display: flex;
             align-items: center;
-            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: transparent;
+            font-family: 'Inter', sans-serif;
         }
 
-        .center-link {
+        /* Estado inicial: transparente con glassmorphism suave */
+        .pro-navbar.nav-top {
+            background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%);
+            backdrop-filter: blur(0px);
+            border-bottom: 1px solid transparent;
+        }
+
+        /* Estado scrolleado: sólido oscuro con efecto glass */
+        .pro-navbar.nav-scrolled {
+            background: rgba(13, 13, 13, 0.92);
+            backdrop-filter: blur(20px) saturate(1.8);
+            -webkit-backdrop-filter: blur(20px) saturate(1.8);
+            border-bottom: 1px solid rgba(212, 160, 23, 0.25);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .pro-navbar .container-xl {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ── Logo / Brand ── */
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .nav-brand-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: 2px solid rgba(212, 160, 23, 0.6);
+            object-fit: cover;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .nav-brand:hover .nav-brand-logo {
+            border-color: var(--gold);
+            transform: rotate(5deg) scale(1.08);
+        }
+
+        .nav-brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .nav-brand-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-light);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .nav-brand-title {
+            font-size: 0.65rem;
+            font-weight: 400;
+            color: var(--gold);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        /* ── Links ── */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            list-style: none;
+        }
+
+        .nav-links .nav-item {
+            position: relative;
+        }
+
+        .nav-links .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: rgba(240, 240, 240, 0.85) !important;
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            border-radius: 8px;
+            transition: color 0.25s, background 0.25s;
+            position: relative;
+        }
+
+        .nav-links .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            border-radius: 2px;
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links .nav-link:hover {
+            color: #ffffff !important;
+            background: rgba(212, 160, 23, 0.08);
+        }
+
+        .nav-links .nav-link:hover::after {
+            width: calc(100% - 32px);
+        }
+
+        .nav-links .nav-link.active-link {
+            color: var(--gold) !important;
+        }
+
+        .nav-links .nav-link.active-link::after {
+            width: calc(100% - 32px);
+        }
+
+        /* ── Dropdown ── */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-toggle {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .dropdown-arrow {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 5px solid currentColor;
+            transition: transform 0.3s;
+            margin-left: 2px;
+        }
+
+        .nav-dropdown:hover .dropdown-arrow,
+        .nav-dropdown.open .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: calc(100% + 12px);
+            left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            min-width: 220px;
+            background: rgba(18, 18, 18, 0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 160, 23, 0.2);
+            border-radius: 12px;
+            padding: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.04);
+            list-style: none;
+        }
+
+        /* Triangulito superior del dropdown */
+        .nav-dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 6px solid rgba(212, 160, 23, 0.2);
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu,
+        .nav-dropdown.open .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .nav-dropdown-menu li a {
             display: flex;
             align-items: center;
             gap: 10px;
-            color: #ecf0f1;
-            font-size: 18px;
-            font-weight: bold;
-            transition: color 0.3s;
+            padding: 10px 14px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: rgba(240, 240, 240, 0.8);
+            text-decoration: none;
+            border-radius: 8px;
+            letter-spacing: 0.03em;
+            transition: background 0.2s, color 0.2s, padding-left 0.2s;
         }
 
-        .center-link:hover {
-            color: #f39c12;
-        }
-        .center-link span::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #ffd700;
-    margin-top: 3px; /* Espaciado entre texto y línea */
-}
-
-
-        /* Ajustar tamaño del logo */
-        .nav-center .logo {
-            max-height: 40px; /* Tamaño máximo para computadoras */
-            width: auto; /* Mantener proporción */
+        .nav-dropdown-menu li a:hover {
+            background: rgba(212, 160, 23, 0.12);
+            color: var(--gold-light);
+            padding-left: 20px;
         }
 
-        @media (max-width: 768px) {
-            .nav-center .logo {
-                max-height: 20px; /* Reducir tamaño máximo en dispositivos móviles */
-                width: auto; /* Mantener proporción */
-            }
-
-            .navbar-toggler {
-                margin-right: 10px; /* Espaciado entre botón hamburguesa y logo */
-            }
-
-            .center-link {
-                gap: 5px; /* Reducir la separación entre texto y logo */
-            }
+        .nav-dropdown-menu li a .menu-icon {
+            font-size: 0.9rem;
+            opacity: 0.7;
         }
 
-        .dropdown-menu {
-            background-color: #34495e;
-            border: none;
+        .nav-dropdown-menu .menu-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.06);
+            margin: 6px 8px;
         }
 
-        .dropdown-item {
-            color: #ecf0f1;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .dropdown-item:hover {
-            background-color: #f39c12;
-            color: #2c3e50;
-        }
-
-        .navbar-collapse {
-            justify-content: space-between;
-        }
-
-        .left-nav, .right-nav {
+        /* ── CTA Button ── */
+        .nav-cta {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .btn-nav-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 9px 20px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: #fff !important;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(212, 160, 23, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-nav-contact::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .btn-nav-contact:hover::before {
+            opacity: 1;
+        }
+
+        .btn-nav-contact:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 160, 23, 0.5);
+            color: #fff !important;
+        }
+
+        .btn-nav-contact span {
+            position: relative;
+        }
+
+        /* ── Hamburger ── */
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 38px;
+            height: 38px;
+            padding: 6px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            flex-shrink: 0;
+        }
+
+        .nav-hamburger:hover {
+            background: rgba(212, 160, 23, 0.15);
+        }
+
+        .nav-hamburger span {
+            display: block;
+            height: 2px;
+            background: var(--text-light);
+            border-radius: 2px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Animación X */
+        .nav-hamburger.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .nav-hamburger.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .nav-hamburger.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* ── Mobile Menu ── */
+        .nav-mobile-menu {
+            position: fixed;
+            top: var(--navbar-height);
+            left: 0;
+            width: 100%;
+            background: rgba(13, 13, 13, 0.97);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(212, 160, 23, 0.2);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 9998;
+        }
+
+        .nav-mobile-menu.open {
+            max-height: 600px;
+        }
+
+        .nav-mobile-inner {
+            padding: 16px 24px 24px;
+        }
+
+        .nav-mobile-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 13px 16px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: rgba(240, 240, 240, 0.85);
+            text-decoration: none;
+            border-radius: 10px;
+            letter-spacing: 0.03em;
+            transition: background 0.2s, color 0.2s;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .nav-mobile-link:hover {
+            background: rgba(212, 160, 23, 0.1);
+            color: var(--gold-light);
+        }
+
+        .nav-mobile-sub {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease;
+        }
+
+        .nav-mobile-sub.open {
+            max-height: 300px;
+        }
+
+        .nav-mobile-sub a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px 10px 30px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 400;
+            color: rgba(240, 240, 240, 0.6);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: color 0.2s, background 0.2s;
+        }
+
+        .nav-mobile-sub a:hover {
+            color: var(--gold-light);
+            background: rgba(212, 160, 23, 0.08);
+        }
+
+        .nav-mobile-cta {
+            margin-top: 16px;
+        }
+
+        .btn-mobile-contact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 13px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 12px;
+            border: none;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .btn-mobile-contact:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+            color: #fff;
+        }
+
+        /* ── Spacer para que el contenido no quede debajo del navbar fijo ── */
+        .navbar-spacer {
+            height: var(--navbar-height);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 991px) {
+            .nav-links,
+            .nav-cta {
+                display: none;
+            }
+
+            .nav-hamburger {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pro-navbar .container-xl {
+                padding: 0 18px;
+            }
+
+            .nav-brand-text {
+                display: none;
+            }
+
+            .nav-brand-logo {
+                width: 36px;
+                height: 36px;
+            }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <!-- Mobile Hamburger Button -->
-            <div class="d-flex align-items-center">
-                <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a href="index.html" class="center-link d-lg-none">
-                    <span>INNOVACIÓN</span>
-                    <img src="https://drive.google.com/thumbnail?id=12il_kEi5dpZyPkrsPxuB159GHQexkhPz" alt="Logo" class="logo" style="width: 30px;">
-                    <span>SOLUCIONES</span>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="pro-navbar nav-top" id="proNavbar" role="navigation" aria-label="Navegación principal">
+        <div class="container-xl">
+
+            <!-- Brand / Logo -->
+            <a href="index.html" class="nav-brand" aria-label="Inicio - Johan Duitama">
+                <img
+                    src="https://drive.google.com/thumbnail?id=12il_kEi5dpZyPkrsPxuB159GHQexkhPz"
+                    alt="Logo Johan Duitama"
+                    class="nav-brand-logo"
+                    onerror="this.style.display='none'"
+                >
+                <div class="nav-brand-text">
+                    <span class="nav-brand-name">Johan Duitama</span>
+                    <span class="nav-brand-title">Ing. de Sistemas &amp; Desarrollo</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <ul class="nav-links" role="list">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" id="nav-inicio">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html" id="nav-acerca">Acerca</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="proyectos.html" id="nav-proyectos">Proyectos</a>
+                </li>
+
+                <!-- Dropdown Servicios -->
+                <li class="nav-item nav-dropdown" id="navDropdown">
+                    <a class="nav-link nav-dropdown-toggle" href="#" role="button"
+                       aria-haspopup="true" aria-expanded="false" id="nav-servicios"
+                       onclick="return false;">
+                        Servicios
+                        <span class="dropdown-arrow"></span>
+                    </a>
+                    <ul class="nav-dropdown-menu" role="menu" aria-label="Menú de servicios">
+                        <li role="menuitem">
+                            <a href="servicios.html">
+                                <span class="menu-icon">💻</span>
+                                Desarrollo de Software
+                            </a>
+                        </li>
+                        <li role="menuitem">
+                            <a href="microsoft-servicios.html">
+                                <span class="menu-icon">🪟</span>
+                                Herramientas de Microsoft
+                            </a>
+                        </li>
+                        <li role="menuitem">
+                            <a href="google-servicios.html">
+                                <span class="menu-icon">🔍</span>
+                                Herramientas de Google
+                            </a>
+                        </li>
+                        <div class="menu-divider"></div>
+                        <li role="menuitem">
+                            <a href="soporte-servicios.html">
+                                <span class="menu-icon">🛠️</span>
+                                Soporte Técnico
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- Desktop CTA -->
+            <div class="nav-cta">
+                <a href="contacto.html" class="btn-nav-contact" id="nav-contacto-cta">
+                    <span>Contáctame</span>
                 </a>
             </div>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="left-nav navbar-nav">
-                    <a class="nav-link" href="about.html">Acerca</a>
-                    <a class="nav-link" href="proyectos.html">Proyectos</a>
-                </div>
-                <div class="nav-center d-none d-lg-flex">
-                    <a href="index.html" class="center-link">
-                        <span>INNOVACIÓN</span>
-                        <img src="https://drive.google.com/thumbnail?id=12il_kEi5dpZyPkrsPxuB159GHQexkhPz" alt="Logo" class="logo">
-                        <span>SOLUCIONES</span>
-                    </a>
-                </div>
-                <div class="right-nav navbar-nav">
-                    <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Servicios
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="servicios.html">Desarrollo De Software</a></li>
-                            <li><a class="dropdown-item" href="microsoft-servicios.html">Herramientas De Microsoft</a></li>
-                            <li><a class="dropdown-item" href="google-servicios.html">Herramientas De Google</a></li>
-                            <li><a class="dropdown-item" href="soporte-servicios.html">Soporte Técnico Y Mantenimiento</a></li>
-                        </ul>
-                    </div>
-                    <a class="nav-link" href="contacto.html">Contacto</a>
-                </div>
-            </div>
+            <!-- Hamburger (mobile) -->
+            <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+    <!-- Mobile Menu -->
+    <div class="nav-mobile-menu" id="navMobileMenu" role="dialog" aria-label="Menú móvil">
+        <div class="nav-mobile-inner">
+            <a class="nav-mobile-link" href="index.html">Inicio</a>
+            <a class="nav-mobile-link" href="about.html">Acerca de mí</a>
+            <a class="nav-mobile-link" href="proyectos.html">Proyectos</a>
+
+            <!-- Acordeón Servicios mobile -->
+            <div>
+                <button class="nav-mobile-link" style="width:100%; background:none; border:none; cursor:pointer; text-align:left; color:rgba(240,240,240,0.85);" id="mobileServicesToggle" aria-expanded="false">
+                    Servicios
+                    <span class="dropdown-arrow" id="mobileServicesArrow"></span>
+                </button>
+                <div class="nav-mobile-sub" id="mobileServicesSub">
+                    <a href="servicios.html"><span>💻</span> Desarrollo de Software</a>
+                    <a href="microsoft-servicios.html"><span>🪟</span> Herramientas de Microsoft</a>
+                    <a href="google-servicios.html"><span>🔍</span> Herramientas de Google</a>
+                    <a href="soporte-servicios.html"><span>🛠️</span> Soporte Técnico</a>
+                </div>
+            </div>
+
+            <div class="nav-mobile-cta">
+                <a href="contacto.html" class="btn-mobile-contact" id="nav-contacto-mobile">
+                    ✉️ Contáctame
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spacer (evita que el contenido quede oculto bajo el navbar fijo) -->
+    <div class="navbar-spacer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (function () {
+            const navbar      = document.getElementById('proNavbar');
+            const hamburger   = document.getElementById('navHamburger');
+            const mobileMenu  = document.getElementById('navMobileMenu');
+            const dropdown    = document.getElementById('navDropdown');
+            const mobileServToggle = document.getElementById('mobileServicesToggle');
+            const mobileServSub    = document.getElementById('mobileServicesSub');
+            const mobileServArrow  = document.getElementById('mobileServicesArrow');
+
+            // ── Scroll effect ──
+            function onScroll() {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('nav-scrolled');
+                    navbar.classList.remove('nav-top');
+                } else {
+                    navbar.classList.add('nav-top');
+                    navbar.classList.remove('nav-scrolled');
+                }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            // ── Active link ──
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links .nav-link').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && href !== '#' && currentPage.includes(href.replace('.html', ''))) {
+                    link.classList.add('active-link');
+                }
+            });
+
+            // ── Hamburger toggle ──
+            hamburger.addEventListener('click', function () {
+                const isOpen = mobileMenu.classList.toggle('open');
+                hamburger.classList.toggle('open', isOpen);
+                hamburger.setAttribute('aria-expanded', isOpen);
+            });
+
+            // ── Mobile services accordion ──
+            mobileServToggle.addEventListener('click', function () {
+                const isOpen = mobileServSub.classList.toggle('open');
+                mobileServArrow.style.transform = isOpen ? 'rotate(180deg)' : '';
+                mobileServToggle.setAttribute('aria-expanded', isOpen);
+            });
+
+            // ── Close mobile menu on link click ──
+            document.querySelectorAll('.nav-mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                    hamburger.classList.remove('open');
+                    hamburger.setAttribute('aria-expanded', false);
+                });
+            });
+
+            // ── Close mobile menu on outside click ──
+            document.addEventListener('click', function (e) {
+                if (!navbar.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    mobileMenu.classList.remove('open');
+                    hamburger.classList.remove('open');
+                    hamburger.setAttribute('aria-expanded', false);
+                }
+            });
+
+            // ── Keyboard: close dropdown on Escape ──
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    mobileMenu.classList.remove('open');
+                    hamburger.classList.remove('open');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
