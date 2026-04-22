@@ -9,20 +9,40 @@
   <div data-include="barra.html"></div>
   <script src="js/include.js"></script>
 </head>
-<body style="background-color: #EDEEEC">
-  <section class="banner">
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-    <div class="content">
-      <h1>Descubre mas sobre mi</h1>
-      <p>Transformo <span>ideas en resultados efectivos.</span></p>
-      <p>Con una sólida formación en desarrollo y un enfoque práctico, busco aportar valor en cada iniciativa.</p>
-      <button>Contáctame</button>
+<body style="background: #0A0A0A; color: #F2F2F2;">
+  <section class="hero-cinema">
+    <!-- Video de fondo (Iframe adaptado) -->
+    <div class="video-bg-container">
+      <iframe 
+        src="https://drive.google.com/file/d/1Csqm_U564PTRh3hMKv2wCxAmb2gz-gN-/preview?autoplay=1&mute=1" 
+        frameborder="0" 
+        allow="autoplay; encrypted-media" 
+        class="video-bg-iframe">
+      </iframe>
+      <div class="video-bg-overlay"></div>
+    </div>
+
+    <div class="hero-cinema-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        EXPERIENCIA E INNOVACIÓN
+      </div>
+      <h1 class="hero-cinema-title">
+        Ingeniería que <span class="hero-accent">transforma</span><br>
+        el futuro digital.
+      </h1>
+      <p class="hero-cinema-sub">
+        Especialista en soluciones de software, automatización y análisis de datos. 
+        Mi trayectoria es una fusión de curiosidad técnica y resultados estratégicos.
+      </p>
+      <div class="hero-cinema-ctas">
+        <a href="#trayectoria" class="hero-btn-primary">Ver mi trayectoria</a>
+        <a href="contacto.html" class="hero-btn-secondary">Hablemos ahora</a>
+      </div>
     </div>
   </section>
   <hr>
-   <div class="container py-5">
+   <div class="container py-5" id="trayectoria">
     <h2 class="section-title">Trayectoria laboral y personal</h2>
 
     <!-- Layout de columnas -->
@@ -111,11 +131,14 @@
     </div>
   </div>
   <hr>
- <div class="row align-items-center text-center mx-0" style="background-color: #c9a129; width: 100%; margin: 0 auto; padding: 15px 0;">
-  <h1 class="col-12 text-white fw-bold m-0" style="font-family: 'Arial Black', Gadget, sans-serif; font-size: 1rem; line-height: 1.3;">
-    "La tecnología no es nada. Lo importante es tener fe en las personas que la manejan."
-  </h1>
-</div>
+  <!-- ══════════════════════════════
+       QUOTE BAR
+  ══════════════════════════════ -->
+  <div class="quote-bar">
+    <h2 class="quote-text">
+      "La tecnología no es nada. Lo importante es tener fe en las personas que la manejan."
+    </h2>
+  </div>
   <hr>
    <div class="container py-5">
     <h2 class="section-title">Trayectoria Educativa</h2>
@@ -218,242 +241,274 @@
   <br><div data-include="footer.html"></div>
 </html>
 
-<style>
-/* Archivo styles.css */
+:root {
+  --gold:       #C9A84C;
+  --gold-light: #E8C96A;
+  --gold-dark:  #9A7A2E;
+  --bg:         #0A0A0A;
+  --bg-card:    #111111;
+  --text:       #F2F2F2;
+  --text-muted: #7A7A7A;
+  --font-main:  'Inter', sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: var(--font-main), Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
-.banner {
+/* =============================================
+   HERO CINEMA (Video Background)
+============================================= */
+.hero-cinema {
   position: relative;
-  background: url('https://lh3.googleusercontent.com/d/1sywyERDnPTFVIBz5V3euUt35nxFknddE=w750') no-repeat center/cover;
-  height: 500px;
+  height: 85vh;
+  min-height: 600px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  color: #fff;
+  justify-content: center;
   overflow: hidden;
+  background: #000;
 }
 
-/* Fondo opacado */
-.banner::before {
-  content: '';
+.video-bg-container {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Opacidad del fondo */
+  inset: 0;
+  z-index: 0;
+}
+
+.video-bg-iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 ratio */
+  min-height: 100vh;
+  min-width: 177.77vh; /* 16:9 ratio */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0.5; /* Atenuado para elegancia */
+  filter: grayscale(30%) brightness(0.8);
+}
+
+.video-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, 
+    rgba(10,10,10,0.7) 0%, 
+    rgba(10,10,10,0.4) 50%, 
+    rgba(10,10,10,0.9) 100%);
   z-index: 1;
 }
 
-.banner .content {
+.hero-cinema-content {
   position: relative;
+  z-index: 10;
   text-align: center;
-  z-index: 5;
-  padding: 20px;
+  max-width: 900px;
+  padding: 0 40px;
+  animation: heroCinemaFadeUp 1s ease-out;
 }
 
-.banner h1 {
-  font-size: 3rem;
-  margin: 0;
-  letter-spacing: 1.5px;
+@keyframes heroCinemaFadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.banner p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.banner p span {
-  font-weight: bold;
-  color: #f4c10f;
-}
-
-.banner button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  width: 50%;
+.hero-cinema-title {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  margin-bottom: 24px;
   color: #fff;
-  background-color: #f39c12;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.banner button:hover {
-  background-color: #d78c0f;
+.hero-cinema-sub {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255,255,255,0.7);
+  max-width: 650px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
 }
 
-/* Ondas amarillas */
-.wave1, .wave2, .wave3 {
-  position: absolute;
-  width: 100%;
-  height: 50%;
-  z-index: 2;
-  background: rgba(255, 193, 7, 0.2); /* Color amarillo con opacidad */
+.hero-cinema-ctas {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 
-.wave1 {
-  top: 0;
-  clip-path: ellipse(100% 40% at 50% 0%);
+/* Reutilizando botones anteriores con ajustes */
+.hero-btn-primary {
+  padding: 16px 32px;
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 60%);
+  color: #0A0A0A;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 50px; /* Más redondo para cine */
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(201,168,76,0.3);
 }
 
-.wave2 {
-  top: 30%;
-  clip-path: ellipse(80% 60% at 50% 30%);
+.hero-btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(201,168,76,0.5);
 }
 
-.wave3 {
-  bottom: 0;
-  clip-path: ellipse(100% 50% at 50% 100%);
+.hero-btn-secondary {
+  padding: 16px 32px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .banner h1 {
-    font-size: 2rem;
-  }
-
-  .banner p {
-    font-size: 1rem;
-  }
-
-  .banner button {
-    font-size: 0.9rem;
-  }
+.hero-btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--gold);
 }
-/*Content about*/
-  /*Content about*/
-  /*Content about*/
-  .section-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #d4af37;
-    border-left: 5px solid #d4af37; /* Línea izquierda */
-    border-right: 5px solid #d4af37; /* Línea derecha */
-    padding-left: 5px; /* Espacio reducido a la izquierda */
-    padding-right: 5px; /* Espacio reducido a la derecha */
-    margin-bottom: 30px;
-    text-align: center; /* Centra el texto */
-    }
 
+/* =============================================
+   ESTILOS DE SECCIONES (Ajustes)
+============================================= */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--gold);
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent);
+  margin: 60px 0;
+}
+
+/* Timeline */
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Espacio entre los elementos */
-  }
+  gap: 24px;
+}
 
 .timeline-item {
-  background: #fff;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  gap: 15px; /* Espacio entre elementos */
-  flex-wrap: wrap; /* Permite que se ajuste en móviles */
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 24px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.timeline-item:hover {
+  border-color: rgba(201,168,76,0.3);
+  transform: translateX(8px);
 }
 
 .number-circle {
-  width: 50px; /* Ancho fijo */
-  height: 50px; /* Altura fija */
-  border-radius: 50%; /* Hace el contenedor circular */
-  background-color: #d4af37; /* Fondo dorado */
-  display: flex; /* Flexbox para centrar */
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center; /* Centra el contenido verticalmente */
-  color: white; /* Texto blanco */
-  font-size: 1.2rem; /* Tamaño del texto */
-  font-weight: bold; /* Negrita */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para darle profundidad */
-  flex-shrink: 0; /* Evita que se reduzca si el contenedor se ajusta */
+  width: 44px;
+  height: 44px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  font-weight: 800;
+  border-radius: 50%;
 }
 
 .timeline-item h4 {
-  font-size: 1.1rem; /* Tamaño del título */
-  font-weight: bold; /* Título en negrita */
-  margin: 0;
-  color: #343a40; /* Color oscuro */
+  color: var(--text);
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
 .timeline-item p {
-  margin: 5px 0 0;
-  font-size: 0.9rem; /* Texto del párrafo más pequeño */
-  color: #6c757d; /* Color gris */
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
 .timeline-img {
-  width: 50px; /* Tamaño de la imagen */
-  height: 50px;
-  border-radius: 8px; /* Bordes redondeados */
-  object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
-  flex-shrink: 0; /* Evita que la imagen se reduzca */
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Diseño para PC */
-@media (min-width: 769px) {
-  .timeline-item {
-    flex-wrap: nowrap; /* Los elementos no se ajustan */
-    justify-content: flex-start; /* Alinea los elementos a la izquierda */
+/* Quote Bar */
+.quote-bar {
+  background: linear-gradient(90deg, var(--gold-dark) 0%, var(--gold) 100%);
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.quote-text {
+  color: #0A0A0A !important;
+  font-size: 1.1rem !important;
+  font-style: italic;
+  max-width: 800px;
+  margin: 0 auto !important;
+}
+
+/* Carousel */
+.carousel {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.caption-text {
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(5px);
+  padding: 10px 20px;
+  border-radius: 10px;
+  border-left: 3px solid var(--gold);
+}
+
+/* =============================================
+   RESPONSIVE
+============================================= */
+@media (max-width: 992px) {
+  .hero-about-inner {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 60px;
   }
 
-  .content {
-    flex: 1; /* Ocupa el espacio restante */
+  .hero-about-left {
+    max-width: 100%;
   }
 
-  .timeline-img {
-    width: 60px; /* Tamaño más grande para PC */
-    height: 60px;
+  .hero-badge, .hero-about-ctas {
+    justify-content: center;
+  }
+
+  .hero-about-right {
+    width: 100%;
+  }
+
+  .video-container-premium {
+    max-width: 100%;
   }
 }
 
-/* Diseño para móviles */
-@media (max-width: 768px) {
-  .timeline-item {
-    gap: 10px; /* Reduce el espacio entre elementos */
-    justify-content: space-between; /* Distribuye los elementos horizontalmente */
-  }
-
-  .number-circle {
-    width: 40px; /* Tamaño más pequeño para móviles */
-    height: 40px;
-    font-size: 0.9rem; /* Ajustar el tamaño del texto */
-  }
-
-  .content {
-    flex: 1; /* Ocupa todo el espacio disponible */
-    min-width: 60%; /* Asegura que el texto no se haga demasiado pequeño */
-  }
-
-  .timeline-img {
-    width: 40px; /* Tamaño reducido */
-    height: 40px;
-  }
+@media (max-width: 576px) {
+  .hero-about-title { font-size: 2.2rem; }
+  .hero-about-ctas { flex-direction: column; }
+  .timeline-item { flex-direction: column; align-items: flex-start !important; }
+  .timeline-img { margin-top: 15px; margin-left: 0 !important; }
 }
-
-
-/* Carrusel */
-  /* Carrusel */
-  /* Carrusel */
-.carousel .caption-text {
-  font-weight: bold;
-  font-size: 1rem;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-  .carousel-caption p {
-  border-left: 4px solid #ffd700;
-}
-
-
-
-</style>
