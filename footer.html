@@ -1,96 +1,444 @@
-<head>
-  <base target="_top">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+    /* ════════════════════════════════════════════════
+       FOOTER DESIGN SYSTEM
+    ════════════════════════════════════════════════ */
+    :root {
+        --gold: #C9A84C;
+        --gold-light: #E8C96A;
+        --gold-dark: #9A7A2E;
+        --bg-footer: #0A0A0A;
+        --text-footer: #F2F2F2;
+        --text-muted-footer: #888888;
+        --border-footer: rgba(201, 168, 76, 0.15);
+        --font-main: 'Inter', sans-serif;
+    }
 
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<footer class="footer">
-    <div class="footer-container">
-        <!-- Sección ¿Qué hacemos? -->
-        <div class="footer-section">
-            <h3>¿Qué hacemos?</h3>
-            <p>
-                Ofrecemos soluciones tecnológicas innovadoras que impulsan el crecimiento y la eficiencia de tu negocio. Desde desarrollos web hasta visualización de datos, estamos aquí para ayudarte a alcanzar tus objetivos.
+    .jd-footer {
+        background-color: var(--bg-footer);
+        color: var(--text-footer);
+        font-family: var(--font-main);
+        padding: 80px 0 0;
+        border-top: 1px solid var(--border-footer);
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Decoración de fondo sutil */
+    .jd-footer::before {
+        content: '';
+        position: absolute;
+        top: -150px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 600px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(201, 168, 76, 0.05) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .jd-footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+        gap: 60px;
+    }
+
+    /* ── Columna 1: Brand ── */
+    .jd-footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .jd-footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+    }
+
+    .jd-footer-avatar {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: linear-gradient(145deg, var(--gold-dark) 0%, var(--gold) 60%, var(--gold-light) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #0A0A0A;
+        box-shadow: 0 4px 12px rgba(201, 168, 76, 0.2);
+    }
+
+    .jd-footer-brand-name {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--text-footer);
+        letter-spacing: -0.02em;
+    }
+
+    .jd-footer-brand-desc {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--text-muted-footer);
+        max-width: 280px;
+    }
+
+    /* ── Columnas de links ── */
+    .jd-footer-col h4 {
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--gold);
+        margin-bottom: 25px;
+    }
+
+    .jd-footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .jd-footer-links a {
+        color: var(--text-muted-footer);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s, transform 0.3s;
+        display: inline-block;
+    }
+
+    .jd-footer-links a:hover {
+        color: var(--gold-light);
+        transform: translateX(5px);
+    }
+
+    /* ── Columna de contacto ── */
+    .jd-footer-contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .jd-contact-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--text-muted-footer);
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .jd-contact-item:hover {
+        color: var(--text-footer);
+    }
+
+    .jd-contact-icon {
+        color: var(--gold);
+        font-size: 1rem;
+    }
+
+    .jd-footer-social {
+        margin-top: 25px;
+        display: flex;
+        gap: 12px;
+    }
+
+    .jd-social-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .jd-social-btn img {
+        width: 18px;
+        height: 18px;
+        filter: grayscale(1) brightness(2);
+        opacity: 0.7;
+        transition: all 0.3s;
+    }
+
+    .jd-social-btn:hover {
+        background: rgba(201, 168, 76, 0.15);
+        border-color: var(--gold);
+        transform: translateY(-3px);
+    }
+
+    .jd-social-btn:hover img {
+        filter: none;
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    /* ── Barra inferior ── */
+    .jd-footer-bottom {
+        margin-top: 60px;
+        padding: 25px 0;
+        border-top: 1px solid var(--border-footer);
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    .jd-footer-bottom-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .jd-copyright {
+        font-size: 0.8rem;
+        color: var(--text-muted-footer);
+    }
+
+    .jd-copyright span {
+        color: var(--text-footer);
+        font-weight: 600;
+    }
+
+    .jd-footer-legal {
+        display: flex;
+        gap: 20px;
+    }
+
+    .jd-footer-legal a {
+        font-size: 0.75rem;
+        color: var(--text-muted-footer);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .jd-footer-legal a:hover {
+        color: var(--gold);
+    }
+
+    /* ── Modales ── */
+    .modal-content {
+        background-color: #111111;
+        border: 1px solid var(--border-footer);
+        border-radius: 20px;
+        color: var(--text-footer);
+    }
+
+    .modal-body .icon-container {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+        background: rgba(201, 168, 76, 0.1);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-body img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .modal-title {
+        color: var(--gold-light);
+        font-weight: 700;
+    }
+
+    .modal-body .btn {
+        border-radius: 12px;
+        padding: 12px 30px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.05em;
+        transition: all 0.3s;
+        border: none;
+    }
+
+    .btn-linkedin { background: #0077b5; color: white; }
+    .btn-whatsapp { background: #25d366; color: white; }
+    .btn-instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color: white; }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        opacity: 0.9;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 992px) {
+        .jd-footer-container {
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .jd-footer-container {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 40px;
+        }
+
+        .jd-footer-brand, .jd-footer-logo, .jd-footer-social {
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .jd-footer-brand-desc {
+            margin: 0 auto;
+        }
+
+        .jd-footer-bottom-inner {
+            flex-direction: column;
+            gap: 15px;
+            text-align: center;
+        }
+    }
+</style>
+
+<footer class="jd-footer">
+    <div class="jd-footer-container">
+        
+        <!-- Columna 1: Brand -->
+        <div class="jd-footer-brand">
+            <a href="index.html" class="jd-footer-logo">
+                <div class="jd-footer-avatar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                </div>
+                <span class="jd-footer-brand-name">Johan Duitama</span>
+            </a>
+            <p class="jd-footer-brand-desc">
+                Ingeniero de Sistemas dedicado a crear soluciones tecnológicas de alto impacto. Innovación, eficiencia y diseño premium en cada proyecto.
             </p>
         </div>
-        <!-- Separador -->
-        <div class="footer-separator"></div>
-        <!-- Sección Síguenos -->
-        <div class="footer-section">
-            <h3>Síguenos</h3>
-            <div class="social-icons">
-                <button class="social-button" data-bs-toggle="modal" data-bs-target="#linkedinModal">
+
+        <!-- Columna 2: Navegación -->
+        <div class="jd-footer-col">
+            <h4>Navegación</h4>
+            <ul class="jd-footer-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Sobre mí</a></li>
+                <li><a href="proyectos.html">Portafolio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+            </ul>
+        </div>
+
+        <!-- Columna 3: Especialidades -->
+        <div class="jd-footer-col">
+            <h4>Especialidades</h4>
+            <ul class="jd-footer-links">
+                <li><a href="servicios.html">Desarrollo Web</a></li>
+                <li><a href="microsoft-servicios.html">Power BI</a></li>
+                <li><a href="google-servicios.html">Google Apps Script</a></li>
+                <li><a href="soporte-servicios.html">Soporte Técnico</a></li>
+            </ul>
+        </div>
+
+        <!-- Columna 4: Contacto -->
+        <div class="jd-footer-col">
+            <h4>Contacto</h4>
+            <div class="jd-footer-contact-info">
+                <a href="mailto:johandav2@gmail.com" class="jd-contact-item">
+                    <span class="jd-contact-icon">✉</span>
+                    johandav2@gmail.com
+                </a>
+                <a href="tel:+573182824129" class="jd-contact-item">
+                    <span class="jd-contact-icon">📞</span>
+                    +57 318 282 4129
+                </a>
+            </div>
+            
+            <div class="jd-footer-social">
+                <button class="jd-social-btn" data-bs-toggle="modal" data-bs-target="#linkedinModal" title="LinkedIn">
                     <img src="https://drive.google.com/thumbnail?id=1OGox9VziJH08TCxTNe34_6peZwk5QgoG" alt="LinkedIn" />
                 </button>
-                <button class="social-button" data-bs-toggle="modal" data-bs-target="#whatsappModal">
+                <button class="jd-social-btn" data-bs-toggle="modal" data-bs-target="#whatsappModal" title="WhatsApp">
                     <img src="https://drive.google.com/thumbnail?id=1DLLWobD9cJ-0vC34IF5ibbEuAMcoOOWl" alt="WhatsApp" />
                 </button>
-                <button class="social-button" data-bs-toggle="modal" data-bs-target="#instagramModal">
+                <button class="jd-social-btn" data-bs-toggle="modal" data-bs-target="#instagramModal" title="Instagram">
                     <img src="https://drive.google.com/thumbnail?id=18ASNwQitEgLTGlux9t3iTaBZqjpqdb8E" alt="Instagram" />
                 </button>
             </div>
         </div>
-        <!-- Separador -->
-        <div class="footer-separator"></div>
-        <!-- Sección Contáctanos -->
-        <div class="footer-section">
-            <h3>Contáctanos</h3>
-            <p style="color: #f6f6f6; font-weight:700;">Email: <a href="mailto:contacto@tudominio.com" style="color: #f6f6f6; font-weight:400;">johandav2@gmail.com</a></p>
-            <p style="color: #f6f6f6; font-weight:700;">Teléfono: <a href="tel:+1234567890" style="color: #f6f6f6; font-weight:400;">+57 318 2824 129</a></p>
+
+    </div>
+
+    <!-- Barra Inferior -->
+    <div class="jd-footer-bottom">
+        <div class="jd-footer-bottom-inner">
+            <p class="jd-copyright">
+                © 2024 <span>Johan David Duitama</span>. Todos los derechos reservados.
+            </p>
+            <div class="jd-footer-legal">
+                <a href="#">Privacidad</a>
+                <a href="#">Términos</a>
+                <a href="#">Cookies</a>
+            </div>
         </div>
     </div>
 </footer>
 
-<!-- Modales -->
-<div class="modal fade" id="linkedinModal" tabindex="-1" aria-labelledby="linkedinModalLabel" aria-hidden="true">
+<!-- Modales Rediseñados -->
+<div class="modal fade" id="linkedinModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-      <div class="modal-body text-center">
-        <div class="icon-container">
-          <img src="https://lh3.googleusercontent.com/d/1rVGTplWM5Y7jx_CfnUJc0xDnelaxpKqg=w1000" alt="LinkedIn Icon" class="whatsapp-image">
+            <div class="modal-body text-center p-5">
+                <div class="icon-container">
+                    <img src="https://lh3.googleusercontent.com/d/1rVGTplWM5Y7jx_CfnUJc0xDnelaxpKqg=w1000" alt="LinkedIn">
+                </div>
+                <h4 class="modal-title mb-3">Red Profesional</h4>
+                <p class="text-muted mb-4">Conectemos en LinkedIn para explorar oportunidades de colaboración y networking profesional.</p>
+                <a href="https://www.linkedin.com/in/johan-david-duitama-pedraza-4573a0304" target="_blank" class="btn btn-linkedin w-100 mb-2">Visitar Perfil</a>
+                <button type="button" class="btn btn-link text-muted" data-bs-dismiss="modal">Cerrar</button>
+            </div>
         </div>
-        <h4 class="modal-title mt-3" id="linkedinModalLabel">Conéctate en LinkedIn</h4>
-        <p class="lead">¡Construyamos una red! Conéctate conmigo para explorar oportunidades y proyectos.</p>
-        <p><strong>Perfil:</strong> <a href="https://www.linkedin.com/in/johan-david-duitama-pedraza-4573a0304" target="_blank">linkedin.com/in/johan-david-duitama-pedraza-4573a0304</a></p>
-        <a href="https://www.linkedin.com/in/johan-david-duitama-pedraza-4573a0304"><button type="button" class="btn btn-linkedin mt-3">Visitar perfil</button></a>
-      </div>
-    </div>
     </div>
 </div>
 
-<div class="modal fade" id="whatsappModal" tabindex="-1" aria-labelledby="whatsappModalLabel" aria-hidden="true">
+<div class="modal fade" id="whatsappModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-         <div class="modal-content">
-      <div class="modal-body text-center">
-        <div class="icon-container" >
-            <img src="https://lh3.googleusercontent.com/d/1XQWuFDGA2oexudK5oh7pCssi0kM0QiXa=w1000" alt="WhatsApp Icon" class="whatsapp-image">
+        <div class="modal-content">
+            <div class="modal-body text-center p-5">
+                <div class="icon-container">
+                    <img src="https://lh3.googleusercontent.com/d/1XQWuFDGA2oexudK5oh7pCssi0kM0QiXa=w1000" alt="WhatsApp">
+                </div>
+                <h4 class="modal-title mb-3">Contacto Directo</h4>
+                <p class="text-muted mb-4">Estoy disponible para consultas empresariales rápidas y soporte técnico especializado.</p>
+                <p class="fw-bold text-white mb-4">+57 318 282 4129</p>
+                <a href="https://wa.me/573182824129" target="_blank" class="btn btn-whatsapp w-100 mb-2">Enviar Mensaje</a>
+                <button type="button" class="btn btn-link text-muted" data-bs-dismiss="modal">Cerrar</button>
+            </div>
         </div>
-        <h4 class="modal-title mt-3" id="contactModalLabel">Contacto por WhatsApp</h4>
-        <p class="lead">¡Hablemos! Estoy disponible en WhatsApp para consultas empresariales y soporte técnico.</p>
-        <p><strong>Número:</strong> +57 318 282 4129</p>
-        <a href="<?=myURL();?>?page=contact"><button type="button" class="btn btn-whatsapp mt-3">Mas opciones de contacto</button></a>
-      </div>
-    </div>
     </div>
 </div>
 
-<div class="modal fade" id="instagramModal" tabindex="-1" aria-labelledby="instagramModalLabel" aria-hidden="true">
+<div class="modal fade" id="instagramModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-         <div class="modal-content">
-      <div class="modal-body text-center">
-        <div class="icon-container">
-          <img src="https://lh3.googleusercontent.com/d/1FroIP333H3aYzaAbeimg6iJ2IW3EaZg3=w1000" alt="Instagram Icon" class="whatsapp-image">
+        <div class="modal-content">
+            <div class="modal-body text-center p-5">
+                <div class="icon-container">
+                    <img src="https://lh3.googleusercontent.com/d/1FroIP333H3aYzaAbeimg6iJ2IW3EaZg3=w1000" alt="Instagram">
+                </div>
+                <h4 class="modal-title mb-3">Social & Creative</h4>
+                <p class="text-muted mb-4">Sígueme para ver actualizaciones diarias de mis proyectos y mi proceso creativo.</p>
+                <a href="https://www.instagram.com/johandav2" target="_blank" class="btn btn-instagram w-100 mb-2">Seguir en Instagram</a>
+                <button type="button" class="btn btn-link text-muted" data-bs-dismiss="modal">Cerrar</button>
+            </div>
         </div>
-        <h4 class="modal-title mt-3" id="instagramModalLabel">Sígueme en Instagram</h4>
-        <p class="lead">¡Explora mi contenido! Conéctate conmigo en Instagram para más actualizaciones y proyectos.</p>
-        <p><strong>Perfil:</strong> <a href="https://www.instagram.com/tu-perfil" target="_blank">https://www.instagram.com/johandav2?igsh=MWhyOWplNzJ2N3hxMg==</a></p>
-       <a href="https://www.instagram.com/johandav2?igsh=MWhyOWplNzJ2N3hxMg=="> <button type="button" class="btn btn-instagram mt-3">Visitar perfil</button></a>
-      </div>
-    </div>
     </div>
 </div>
-<div style="width:100%; height:30px; background-color: black; text-align: center;">
-    <h1 style="color:white; font-size:13px; padding: 4px;"><span style="color:#c4c3c3">Desarrollado por:</span> Johan
-      David Duitama Pedraza </h1>
-  </div>
