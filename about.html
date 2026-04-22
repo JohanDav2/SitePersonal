@@ -1,48 +1,50 @@
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About</title>
   <link rel="stylesheet" href="css/style.css">
   <div data-include="barra.html"></div>
   <script src="js/include.js"></script>
 </head>
-<body style="background: #0A0A0A; color: #F2F2F2;">
-  <section class="hero-cinema">
-    <!-- Video de fondo (Iframe adaptado) -->
-    <div class="video-bg-container">
-      <iframe 
-        src="https://drive.google.com/file/d/1Csqm_U564PTRh3hMKv2wCxAmb2gz-gN-/preview?autoplay=1&mute=1" 
-        frameborder="0" 
-        allow="autoplay; encrypted-media" 
-        class="video-bg-iframe">
-      </iframe>
-      <div class="video-bg-overlay"></div>
-    </div>
 
-    <div class="hero-cinema-content">
-      <div class="hero-badge">
-        <span class="hero-badge-dot"></span>
-        EXPERIENCIA E INNOVACIÓN
-      </div>
-      <h1 class="hero-cinema-title">
-        Ingeniería que <span class="hero-accent">transforma</span><br>
-        el futuro digital.
-      </h1>
-      <p class="hero-cinema-sub">
-        Especialista en soluciones de software, automatización y análisis de datos. 
-        Mi trayectoria es una fusión de curiosidad técnica y resultados estratégicos.
-      </p>
-      <div class="hero-cinema-ctas">
-        <a href="#trayectoria" class="hero-btn-primary">Ver mi trayectoria</a>
-        <a href="contacto.html" class="hero-btn-secondary">Hablemos ahora</a>
+<body style="background: #0A0A0A; color: #F2F2F2;">
+  <!-- ══════════════════════════════
+       HERO ABOUT (Fondo de Video)
+  ══════════════════════════════ -->
+  <section class="hero" id="sobre-mi-banner">
+    <!-- Imagen de fondo para toda la sección -->
+    <div class="hero-bg-image"></div>
+    <!-- Overlay oscuro para legibilidad (más oscuro a la izquierda, más claro a la derecha) -->
+    <div class="hero-bg-overlay"></div>
+
+    <div class="hero-inner" style="position: relative; z-index: 10;">
+      <!-- Columna izquierda: Texto -->
+      <div class="hero-left" style="max-width: 650px;">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          TRAYECTORIA PROFESIONAL
+        </div>
+        <h1 class="hero-title">
+          Descubre mi <span class="hero-accent">visión</span><br>
+          y experiencia.
+        </h1>
+        <p class="hero-sub">
+          Ingeniero de Sistemas apasionado por la innovación. Transformo ideas en resultados efectivos 
+          a través de la tecnología y la automatización inteligente.
+        </p>
+        <div class="hero-ctas">
+          <a href="#trayectoria" class="hero-btn-primary">Ver mi trayectoria</a>
+          <a href="contacto.html" class="hero-btn-secondary">Contáctame</a>
+        </div>
       </div>
     </div>
   </section>
   <hr>
-   <div class="container py-5" id="trayectoria">
+  <div class="container py-5" id="trayectoria">
     <h2 class="section-title">Trayectoria laboral y personal</h2>
 
     <!-- Layout de columnas -->
@@ -55,79 +57,93 @@
             <div class="number-circle d-flex justify-content-center align-items-center">1</div>
             <div class="content ms-3 flex-grow-1">
               <h4>Practicante Profesional en Productos Naturales de la Sabana ALQUERÍA</h4>
-              <p>Durante mi pasantía en Alquería, trabajé en desarrollos web y en la creación de tableros de visualización, mejorando la accesibilidad y presentación de datos clave...</p>
+              <p>Durante mi pasantía en Alquería, trabajé en desarrollos web y en la creación de tableros de
+                visualización, mejorando la accesibilidad y presentación de datos clave...</p>
             </div>
-            <img src="https://drive.google.com/thumbnail?id=1GrRAHFKzgY4knaNh8biasPtscbAU76aH" alt="Icono 1" class="timeline-img ms-3">
+            <img src="https://drive.google.com/thumbnail?id=1GrRAHFKzgY4knaNh8biasPtscbAU76aH" alt="Icono 1"
+              class="timeline-img ms-3">
           </div>
           <!-- Item 2 -->
           <div class="timeline-item d-flex align-items-center">
             <div class="number-circle d-flex justify-content-center align-items-center">2</div>
             <div class="content ms-3 flex-grow-1">
               <h4>Analista Soporte en Tecnocorp Colombia SAS</h4>
-              <p>En Tecnocorp Colombia SAS, fui responsable de atender consultas y solicitudes de ayuda, diagnosticando y solucionando incidencias técnicas...</p>
+              <p>En Tecnocorp Colombia SAS, fui responsable de atender consultas y solicitudes de ayuda, diagnosticando
+                y solucionando incidencias técnicas...</p>
             </div>
-            <img src="https://drive.google.com/thumbnail?id=1vOwJC3FJ3D8P1ngOIENqcjAelHN-Ky-T" alt="Icono 2" class="timeline-img ms-3">
+            <img src="https://drive.google.com/thumbnail?id=1vOwJC3FJ3D8P1ngOIENqcjAelHN-Ky-T" alt="Icono 2"
+              class="timeline-img ms-3">
           </div>
           <!-- Item 3 -->
           <div class="timeline-item d-flex align-items-center">
             <div class="number-circle d-flex justify-content-center align-items-center">3</div>
             <div class="content ms-3 flex-grow-1">
               <h4>Crecimiento Personal y Profesional</h4>
-              <p>Desarrollo continuo de habilidades y conocimientos en el campo de la ingeniería de sistemas, incluyendo la participación en cursos...</p>
+              <p>Desarrollo continuo de habilidades y conocimientos en el campo de la ingeniería de sistemas, incluyendo
+                la participación en cursos...</p>
             </div>
-            <img src="https://drive.google.com/thumbnail?id=11-lY1mEjex_oe7bFI5ASoXFJyCew7QWd" alt="Icono 3" class="timeline-img ms-3">
+            <img src="https://drive.google.com/thumbnail?id=11-lY1mEjex_oe7bFI5ASoXFJyCew7QWd" alt="Icono 3"
+              class="timeline-img ms-3">
           </div>
           <!-- Item 4 -->
           <div class="timeline-item d-flex align-items-center">
             <div class="number-circle d-flex justify-content-center align-items-center">4</div>
             <div class="content ms-3 flex-grow-1">
               <h4>Trabajo en Equipo</h4>
-              <p>Desarrollo de habilidades de colaboración y liderazgo, participando en proyectos grupales y trabajando en equipo para lograr metas comunes...</p>
+              <p>Desarrollo de habilidades de colaboración y liderazgo, participando en proyectos grupales y trabajando
+                en equipo para lograr metas comunes...</p>
             </div>
-            <img src="https://drive.google.com/thumbnail?id=1LpbEJkcjwBfCyv0xM4kjTXZqpbmkKR31" alt="Icono 3" class="timeline-img ms-3">
+            <img src="https://drive.google.com/thumbnail?id=1LpbEJkcjwBfCyv0xM4kjTXZqpbmkKR31" alt="Icono 3"
+              class="timeline-img ms-3">
           </div>
           <!-- Item 5 -->
           <div class="timeline-item d-flex align-items-center">
             <div class="number-circle d-flex justify-content-center align-items-center">5</div>
             <div class="content ms-3 flex-grow-1">
               <h4>Innovación y Adaptabilidad</h4>
-              <p>Capacidad para adaptarme rápidamente a nuevas tecnologías y entornos de trabajo, buscando constantemente soluciones innovadoras para problemas complejos...</p>
+              <p>Capacidad para adaptarme rápidamente a nuevas tecnologías y entornos de trabajo, buscando
+                constantemente soluciones innovadoras para problemas complejos...</p>
             </div>
-            <img src="https://drive.google.com/thumbnail?id=1O60h3Y_66qgkb9BlRym2tdUrfqdt5pgR" alt="Icono 3" class="timeline-img ms-3">
+            <img src="https://drive.google.com/thumbnail?id=1O60h3Y_66qgkb9BlRym2tdUrfqdt5pgR" alt="Icono 3"
+              class="timeline-img ms-3">
           </div>
         </div>
       </div>
 
       <!-- Columna derecha: Carrusel -->
-        
+
       <div class="col-md-6">
         <div style="width: 85%; margin: 0 auto; ">
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://lh3.googleusercontent.com/d/1xoNjEAojgNQjh-rzcpavd91ZqNd0se07=w1000" class="d-block w-100" alt="Primera imagen">
-              <div class="carousel-caption">
-                <p class="caption-text">Innovar es la clave para transformar el futuro</p>
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://lh3.googleusercontent.com/d/1xoNjEAojgNQjh-rzcpavd91ZqNd0se07=w1000"
+                  class="d-block w-100" alt="Primera imagen">
+                <div class="carousel-caption">
+                  <p class="caption-text">Innovar es la clave para transformar el futuro</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://lh3.googleusercontent.com/d/1vfE2lCLF-3piB4xhK4zoTmAxuL3Ydy6b=w1000"
+                  class="d-block w-100" alt="Segunda imagen">
+                <div class="carousel-caption">
+                  <p class="caption-text">Inspiración y esfuerzo: bases de mi crecimiento</p>
+                </div>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="https://lh3.googleusercontent.com/d/1vfE2lCLF-3piB4xhK4zoTmAxuL3Ydy6b=w1000" class="d-block w-100" alt="Segunda imagen">
-              <div class="carousel-caption">
-                <p class="caption-text">Inspiración y esfuerzo: bases de mi crecimiento</p>
-              </div>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-          </button>
         </div>
       </div>
-    </div>
     </div>
   </div>
   <hr>
@@ -140,41 +156,45 @@
     </h2>
   </div>
   <hr>
-   <div class="container py-5">
+  <div class="container py-5">
     <h2 class="section-title">Trayectoria Educativa</h2>
 
     <!-- Layout de columnas -->
     <div class="row">
       <!-- Columna derecha: Carrusel -->
-        
+
       <div class="col-md-6">
         <div style="width: 85%; margin: 0 auto; ">
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://lh3.googleusercontent.com/d/1xoNjEAojgNQjh-rzcpavd91ZqNd0se07=w1000" class="d-block w-100" alt="Primera imagen">
-              <div class="carousel-caption">
-                <p class="caption-text">El aprendizaje nunca termina</p>
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://lh3.googleusercontent.com/d/1xoNjEAojgNQjh-rzcpavd91ZqNd0se07=w1000"
+                  class="d-block w-100" alt="Primera imagen">
+                <div class="carousel-caption">
+                  <p class="caption-text">El aprendizaje nunca termina</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://lh3.googleusercontent.com/d/1vfE2lCLF-3piB4xhK4zoTmAxuL3Ydy6b=w1000"
+                  class="d-block w-100" alt="Segunda imagen">
+                <div class="carousel-caption">
+                  <p class="caption-text">La tecnología es la herramienta, la creatividad es el motor</p>
+                </div>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="https://lh3.googleusercontent.com/d/1vfE2lCLF-3piB4xhK4zoTmAxuL3Ydy6b=w1000" class="d-block w-100" alt="Segunda imagen">
-              <div class="carousel-caption">
-                <p class="caption-text">La tecnología es la herramienta, la creatividad es el motor</p>
-              </div>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-          </button>
         </div>
       </div>
-    </div>
       <!-- Columna izquierda: Enumeraciones -->
       <div class="col-md-6">
         <div class="timeline">
@@ -184,30 +204,36 @@
             <div class="content ms-3 flex-grow-1">
               <h4>Formación Básica en el Instituto Educativo Departamental Rincón Santo</h4>
               <p>Comencé mi viaje académico en el Instituto Educativo Departamental Rincón Santo, donde adquirí los
-              fundamentos esenciales que formaron la base de mi educación...</p>
+                fundamentos esenciales que formaron la base de mi educación...</p>
             </div>
-            <img src="https://drive.google.com/thumbnail?id=1ZpbUTUcJJZoni04v1zHvcUpyf7QwMS3a" alt="Icono 1" class="timeline-img ms-3">
+            <img src="https://drive.google.com/thumbnail?id=1ZpbUTUcJJZoni04v1zHvcUpyf7QwMS3a" alt="Icono 1"
+              class="timeline-img ms-3">
           </div>
           <!-- Item 2 -->
           <div class="timeline-item d-flex align-items-center">
             <div class="number-circle d-flex justify-content-center align-items-center">2</div>
             <div class="content ms-3 flex-grow-1">
               <h4>Técnicatura en Sistemas en el Servicio Nacional de Aprendizaje (SENA)</h4>
-              <p>Posteriormente, me especialicé en el área de sistemas a través de una técnicatura en el Servicio Nacional
-              de Aprendizaje (SENA), donde desarrollé habilidades prácticas y técnicas avanzadas en el campo de la informática....</p>
+              <p>Posteriormente, me especialicé en el área de sistemas a través de una técnicatura en el Servicio
+                Nacional
+                de Aprendizaje (SENA), donde desarrollé habilidades prácticas y técnicas avanzadas en el campo de la
+                informática....</p>
             </div>
-            <img src="https://drive.google.com/thumbnail?id=1vOwJC3FJ3D8P1ngOIENqcjAelHN-Ky-T" alt="Icono 2" class="timeline-img ms-3">
+            <img src="https://drive.google.com/thumbnail?id=1vOwJC3FJ3D8P1ngOIENqcjAelHN-Ky-T" alt="Icono 2"
+              class="timeline-img ms-3">
           </div>
           <!-- Item 3 -->
           <div class="timeline-item d-flex align-items-center">
             <div class="number-circle d-flex justify-content-center align-items-center">3</div>
             <div class="content ms-3 flex-grow-1">
               <h4>Ingeniería de Sistemas en la Corporación Universitaria Minuto de Dios (UNIMINUTO)</h4>
-              <p>Mi formación profesional culminó en la Corporación Universitaria Minuto de Dios (UNIMINUTO), donde obtuve
-              el título de Ingeniero de Sistemas. Durante esta etapa, profundicé en el diseño, desarrollo y gestión de
-              sistemas informáticos....</p>
+              <p>Mi formación profesional culminó en la Corporación Universitaria Minuto de Dios (UNIMINUTO), donde
+                obtuve
+                el título de Ingeniero de Sistemas. Durante esta etapa, profundicé en el diseño, desarrollo y gestión de
+                sistemas informáticos....</p>
             </div>
-            <img src="https://drive.google.com/thumbnail?id=1gaGr2O5AJ6O9Xv1c3kTDbXZcjt51LUY9" alt="Icono 3" class="timeline-img ms-3">
+            <img src="https://drive.google.com/thumbnail?id=1gaGr2O5AJ6O9Xv1c3kTDbXZcjt51LUY9" alt="Icono 3"
+              class="timeline-img ms-3">
           </div>
           <!-- Item 4 -->
           <div class="timeline-item d-flex align-items-center">
@@ -215,31 +241,66 @@
             <div class="content ms-3 flex-grow-1">
               <h4>Curso de Auditor Interno en Sistemas de Gestión de la Seguridad de la Información (ISO 27001)</h4>
               <p>Complementé mi formación con un curso especializado en Auditoría Interna de Sistemas de Gestión de la
-              Seguridad de la Información, basado en la norma ISO 27001, fortaleciendo mi capacidad para evaluar y
-              asegurar la integridad de los sistemas de información....</p>
+                Seguridad de la Información, basado en la norma ISO 27001, fortaleciendo mi capacidad para evaluar y
+                asegurar la integridad de los sistemas de información....</p>
             </div>
-            <img src="https://drive.google.com/thumbnail?id=1Fzgr-xK4Flexf36L_Ka2Cz_ciUbUuNpD" alt="Icono 3" class="timeline-img ms-3">
+            <img src="https://drive.google.com/thumbnail?id=1Fzgr-xK4Flexf36L_Ka2Cz_ciUbUuNpD" alt="Icono 3"
+              class="timeline-img ms-3">
           </div>
           <!-- Item 5 -->
           <div class="timeline-item d-flex align-items-center">
             <div class="number-circle d-flex justify-content-center align-items-center">5</div>
             <div class="content ms-3 flex-grow-1">
               <h4>Diplomado en Minería de Datos en la Universidad Minuto de Dios</h4>
-              <p>En mi búsqueda continua por el conocimiento, completé un diplomado en Minería de Datos en la Universidad
-              Minuto de Dios. Este diplomado me permitió adquirir competencias avanzadas en el análisis y manejo de
-              grandes volúmenes de datos para la toma de decisiones informadas....</p>
+              <p>En mi búsqueda continua por el conocimiento, completé un diplomado en Minería de Datos en la
+                Universidad
+                Minuto de Dios. Este diplomado me permitió adquirir competencias avanzadas en el análisis y manejo de
+                grandes volúmenes de datos para la toma de decisiones informadas....</p>
             </div>
-            <img src="https://drive.google.com/thumbnail?id=12g_4rMJpm0cC7DHTrw1W_QROkvKqKz0O" alt="Icono 3" class="timeline-img ms-3">
+            <img src="https://drive.google.com/thumbnail?id=12g_4rMJpm0cC7DHTrw1W_QROkvKqKz0O" alt="Icono 3"
+              class="timeline-img ms-3">
           </div>
         </div>
       </div>
 
-      
+
     </div>
   </div>
 </body>
-  <br><div data-include="footer.html"></div>
+<br>
+<div data-include="footer.html"></div>
+
 </html>
+
+:root {
+--gold: #C9A84C;
+--gold-light: #E8C96A;
+--gold-dark: #9A7A2E;
+--bg: #0A0A0A;
+--bg-card: #111111;
+--text: #F2F2F2;
+--text-muted: #7A7A7A;
+--font-main: 'Inter', sans-serif;
+}
+
+body {
+margin: 0;
+font-family: var(--font-main), Arial, sans-serif;
+background: var(--bg);
+color: var(--text);
+}
+
+/* =============================================
+HERO CINEMA (Video Background)
+============================================= */
+.hero-cinema {
+position: relative;
+height: 85vh;
+min-height: 600px;
+di<style>
+/* =============================================
+   HERO BANNER — Negro / Dorado (Consistencia Index)
+============================================= */
 
 :root {
   --gold:       #C9A84C;
@@ -259,123 +320,196 @@ body {
   color: var(--text);
 }
 
-/* =============================================
-   HERO CINEMA (Video Background)
-============================================= */
-.hero-cinema {
+/* ── Hero Shell ── */
+.hero {
   position: relative;
-  height: 85vh;
-  min-height: 600px;
+  background: var(--bg);
+  min-height: calc(100vh - 70px);
   display: flex;
   align-items: center;
-  justify-content: center;
+  border-bottom: 1px solid rgba(201,168,76,0.10);
   overflow: hidden;
-  background: #000;
 }
 
-.video-bg-container {
+/* ── Fondo de Imagen Full ── */
+.hero-bg-image {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://lh3.googleusercontent.com/d/1ftywf79JFumMF294vYbDDTmsrB1GHfDI');
+  background-size: cover;
+  background-position: center;
   z-index: 0;
+  filter: contrast(1.1) brightness(0.9);
 }
 
-.video-bg-iframe {
+.hero-bg-overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 56.25vw; /* 16:9 ratio */
-  min-height: 100vh;
-  min-width: 177.77vh; /* 16:9 ratio */
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  opacity: 0.5; /* Atenuado para elegancia */
-  filter: grayscale(30%) brightness(0.8);
-}
-
-.video-bg-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, 
-    rgba(10,10,10,0.7) 0%, 
-    rgba(10,10,10,0.4) 50%, 
-    rgba(10,10,10,0.9) 100%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Degradado: Oscuro donde está el texto (izquierda), transparente donde brilla el video (derecha) */
+  background: linear-gradient(90deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.85) 45%, rgba(10,10,10,0.2) 100%);
   z-index: 1;
 }
 
-.hero-cinema-content {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  max-width: 900px;
-  padding: 0 40px;
-  animation: heroCinemaFadeUp 1s ease-out;
-}
-
-@keyframes heroCinemaFadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.hero-cinema-title {
-  font-size: clamp(2.2rem, 6vw, 4rem);
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: -0.04em;
-  margin-bottom: 24px;
-  color: #fff;
-}
-
-.hero-cinema-sub {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  color: rgba(255,255,255,0.7);
-  max-width: 650px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
-}
-
-.hero-cinema-ctas {
+.hero-inner {
   display: flex;
-  gap: 20px;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  width: 100%;
 }
 
-/* Reutilizando botones anteriores con ajustes */
+/* ── Columna izquierda ── */
+.hero-left {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  animation: heroFadeIn 0.7s ease both;
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 50px;
+  font-size: 0.70rem;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  color: var(--gold-light);
+  width: fit-content;
+  text-transform: uppercase;
+}
+
+.hero-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.25);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(201,168,76,0.25); }
+  50%       { box-shadow: 0 0 0 6px rgba(201,168,76,0.10); }
+}
+
+/* Título */
+.hero-title {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.10;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.hero-accent {
+  color: var(--gold);
+  display: inline-block;
+  position: relative;
+}
+
+.hero-accent::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+  border-radius: 2px;
+  opacity: 0.50;
+}
+
+/* Subtítulo */
+.hero-sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 480px;
+  margin: 0;
+}
+
+/* CTAs */
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
 .hero-btn-primary {
-  padding: 16px 32px;
-  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 60%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 55%, var(--gold-dark) 100%);
   color: #0A0A0A;
+  font-size: 0.88rem;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   text-decoration: none;
-  border-radius: 50px; /* Más redondo para cine */
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(201,168,76,0.3);
+  border-radius: 8px;
+  border: none;
+  transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
+  box-shadow: 0 4px 20px rgba(201,168,76,0.30);
 }
 
 .hero-btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 35px rgba(201,168,76,0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201,168,76,0.50);
+  filter: brightness(1.08);
+  color: #0A0A0A;
 }
 
 .hero-btn-secondary {
-  padding: 16px 32px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  background: transparent;
+  color: rgba(242,242,242,0.80);
+  font-size: 0.88rem;
   font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   text-decoration: none;
-  border-radius: 50px;
-  transition: all 0.3s ease;
+  border-radius: 8px;
+  border: 1px solid rgba(242,242,242,0.18);
+  transition: border-color 0.25s, color 0.25s, background 0.25s;
 }
 
 .hero-btn-secondary:hover {
-  background: rgba(255,255,255,0.1);
   border-color: var(--gold);
+  color: var(--gold-light);
+  background: rgba(201,168,76,0.06);
 }
 
+/* Eliminando estilos de hero-right-video que ya no se usan como tarjeta */
+
 /* =============================================
-   ESTILOS DE SECCIONES (Ajustes)
+   SECCIONES DE CONTENIDO
 ============================================= */
 .section-title {
   font-size: 2.2rem;
@@ -430,6 +564,10 @@ hr {
   color: var(--gold-light);
   font-weight: 800;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .timeline-item h4 {
@@ -446,6 +584,46 @@ hr {
 .timeline-img {
   border-radius: 10px;
   border: 1px solid rgba(255,255,255,0.1);
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Diseño para PC Timeline */
+@media (min-width: 769px) {
+  .timeline-item {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .content {
+    flex: 1;
+  }
+  .timeline-img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Diseño para móviles Timeline */
+@media (max-width: 768px) {
+  .timeline-item {
+    gap: 10px;
+    justify-content: space-between;
+  }
+  .number-circle {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+  .content {
+    flex: 1;
+    min-width: 60%;
+  }
+  .timeline-img {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 /* Quote Bar */
@@ -483,32 +661,19 @@ hr {
    RESPONSIVE
 ============================================= */
 @media (max-width: 992px) {
-  .hero-about-inner {
+  .hero-inner {
     flex-direction: column;
     text-align: center;
     padding-top: 60px;
   }
-
-  .hero-about-left {
-    max-width: 100%;
+  .hero-left {
+    align-items: center;
   }
-
-  .hero-badge, .hero-about-ctas {
+  .hero-badge {
+    margin: 0 auto;
+  }
+  .hero-ctas {
     justify-content: center;
   }
-
-  .hero-about-right {
-    width: 100%;
-  }
-
-  .video-container-premium {
-    max-width: 100%;
-  }
 }
-
-@media (max-width: 576px) {
-  .hero-about-title { font-size: 2.2rem; }
-  .hero-about-ctas { flex-direction: column; }
-  .timeline-item { flex-direction: column; align-items: flex-start !important; }
-  .timeline-img { margin-top: 15px; margin-left: 0 !important; }
-}
+</style>
