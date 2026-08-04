@@ -1301,6 +1301,38 @@ html[data-theme="light"] .about-section .about-desc, html[data-theme="light"] .a
 html[data-theme="light"] .about-service-card { background: rgba(255,255,255,.72); border-color: rgba(61,48,118,.1); }
 @media (max-width: 820px) { .about-section .about-inner { grid-template-columns: 1fr; gap: 38px; } .about-section .about-content-col { align-items: center; text-align: center; } .about-intro { justify-content: center; text-align: left; } .about-section .about-skills, .about-section .about-ctas { justify-content: center; } .about-section .about-services { grid-template-columns: repeat(3, 1fr); } .about-service-card { min-height: 180px; padding: 19px; flex-direction: column; gap: 11px; } }
 @media (max-width: 560px) { .about-section { padding: 70px 18px; } .about-section-heading { margin-bottom: 34px; } .about-intro { flex-direction: column; text-align: center; } .about-section .about-services { grid-template-columns: 1fr; } .about-service-card { min-height: 0; flex-direction: row; } .about-section .about-photo-wrap, .about-section .about-photo { width: 108px; height: 108px; } }
+
+/* Fondo espacial unificado y estrellas distribuidas de forma orgánica */
+.hero.hero-space, .about-section { background: radial-gradient(circle at 50% 42%, #11152a 0, var(--space) 48%, #03040a 100%); }
+.hero.hero-space::before, .about-section::before, .hero.hero-space .stars {
+  background-image:
+    radial-gradient(circle at 3% 16%, rgba(255,255,255,.72) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 8% 66%, rgba(235,239,255,.88) 0 1.2px, transparent 2px),
+    radial-gradient(circle at 14% 37%, rgba(255,255,255,.55) 0 .8px, transparent 1.5px),
+    radial-gradient(circle at 19% 82%, rgba(221,226,255,.8) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 24% 11%, rgba(255,255,255,.8) 0 1.1px, transparent 1.8px),
+    radial-gradient(circle at 29% 57%, rgba(211,216,255,.65) 0 .8px, transparent 1.5px),
+    radial-gradient(circle at 34% 27%, rgba(255,255,255,.92) 0 1.3px, transparent 2px),
+    radial-gradient(circle at 39% 91%, rgba(230,232,255,.62) 0 .8px, transparent 1.5px),
+    radial-gradient(circle at 44% 7%, rgba(255,255,255,.68) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 49% 68%, rgba(230,234,255,.9) 0 1.15px, transparent 1.9px),
+    radial-gradient(circle at 54% 20%, rgba(255,255,255,.58) 0 .8px, transparent 1.5px),
+    radial-gradient(circle at 59% 48%, rgba(255,255,255,.84) 0 1.1px, transparent 1.8px),
+    radial-gradient(circle at 64% 87%, rgba(218,222,255,.66) 0 .9px, transparent 1.6px),
+    radial-gradient(circle at 69% 13%, rgba(255,255,255,.92) 0 1.25px, transparent 2px),
+    radial-gradient(circle at 73% 61%, rgba(220,225,255,.58) 0 .8px, transparent 1.5px),
+    radial-gradient(circle at 78% 33%, rgba(255,255,255,.8) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 83% 76%, rgba(235,238,255,.9) 0 1.15px, transparent 1.9px),
+    radial-gradient(circle at 88% 9%, rgba(255,255,255,.6) 0 .8px, transparent 1.5px),
+    radial-gradient(circle at 92% 46%, rgba(225,229,255,.78) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 97% 84%, rgba(255,255,255,.82) 0 1.1px, transparent 1.8px);
+  background-size: auto;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+.hero.hero-space::before, .about-section::before { opacity: .82; }
+.hero.hero-space .stars { opacity: .65; }
+html[data-theme="light"] .hero.hero-space::before, html[data-theme="light"] .about-section::before { opacity: .28; }
 </style>
 
 <script>
