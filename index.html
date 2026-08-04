@@ -10,11 +10,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <div data-include="barra.html"></div>
-  <script src="js/include.js"></script>
    
 </head>
 <body>
+  <header class="space-nav" id="site-nav">
+    <a class="space-brand" href="#inicio">JohanDuitama <span>Portfolio</span></a>
+    <nav class="space-nav-links" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <button class="space-theme-toggle" id="jd-theme-toggle" type="button" aria-label="Activar modo claro" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.5"></circle><path d="M12 2v2.2M12 19.8V22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M2 12h2.2M19.8 12H22M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56"></path></svg>
+    </button>
+  </header>
 
   <!-- ══════════════════════════════
        HERO BANNER
@@ -30,7 +41,7 @@
         <h1 class="hero-title">Hola, soy <span class="hero-accent">Johan Duitama</span></h1>
         <p class="hero-sub">Creo experiencias web y soluciones digitales modernas. Transformo ideas en productos funcionales, claros y escalables.</p>
         <div class="hero-ctas">
-          <a href="proyectos.html" class="hero-btn-primary">Ver mi trabajo</a>
+          <a href="#proyectos" class="hero-btn-primary">Ver mi trabajo</a>
         </div>
       </div>
     </div>
@@ -64,7 +75,7 @@
           de Google &amp; Microsoft, y la creación de dashboards y sistemas de análisis
           de datos que impulsan decisiones inteligentes.
         </p>
-        <div class="about-skills">
+        <div class="about-skills" id="habilidades">
           <span class="skill-chip">Desarrollo Web</span>
           <span class="skill-chip">Power BI</span>
           <span class="skill-chip">Apps Script</span>
@@ -73,10 +84,28 @@
           <span class="skill-chip">Soporte Técnico</span>
         </div>
         <div class="about-ctas">
-          <a href="about.html"    class="hero-btn-primary">Conoce más</a>
-          <a href="contacto.html" class="hero-btn-secondary">Trabajemos juntos</a>
+          <a href="#proyectos" class="hero-btn-primary">Conoce más</a>
+          <a href="#contacto" class="hero-btn-secondary">Trabajemos juntos</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="single-page-section projects-section" id="proyectos">
+    <div class="single-page-inner">
+      <span class="about-eyebrow">Proyectos</span>
+      <h2>Soluciones creadas para generar impacto</h2>
+      <p>Explora una selección de proyectos de desarrollo, automatización y análisis de datos.</p>
+      <a href="proyectos.html" class="hero-btn-primary">Explorar proyectos</a>
+    </div>
+  </section>
+
+  <section class="single-page-section contact-section" id="contacto">
+    <div class="single-page-inner">
+      <span class="about-eyebrow">Contacto</span>
+      <h2>¿Tienes una idea en mente?</h2>
+      <p>Hablemos y construyamos una solución digital para tu próximo reto.</p>
+      <a href="contacto.html" class="hero-btn-primary">Escríbeme</a>
     </div>
   </section>
 
@@ -1188,6 +1217,34 @@ html[data-theme="light"] .hero.hero-space::before { opacity: .35; }
 html[data-theme="light"] .hero.hero-space .hero-title { color: #26243d; }
 html[data-theme="light"] .hero.hero-space .hero-sub, html[data-theme="light"] .hero-kicker { color: #62647a; }
 @media (max-width: 600px) { .hero.hero-space .hero-inner { padding: 70px 18px; } .shooting-star-two { left: 42%; } }
+
+/* Navegación integrada al diseño espacial */
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+.space-nav { position: fixed; inset: 0 0 auto; z-index: 1000; height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 22px; padding: 0 max(20px, calc((100% - 930px) / 2)); background: rgba(5, 7, 16, .8); border-bottom: 1px solid rgba(255,255,255,.06); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.space-brand { color: #eef0ff; font-size: .88rem; font-weight: 800; letter-spacing: -.035em; text-decoration: none; white-space: nowrap; }
+.space-brand span { color: var(--space-accent); }
+.space-nav-links { display: flex; align-items: center; gap: 4px; }
+.space-nav-links a { position: relative; padding: 8px 10px; color: #aeb0c2; font-size: .71rem; font-weight: 600; text-decoration: none; transition: color .2s ease; }
+.space-nav-links a::after { content: ''; position: absolute; right: 10px; bottom: 3px; left: 10px; height: 1px; background: var(--space-accent); transform: scaleX(0); transition: transform .2s ease; }
+.space-nav-links a:hover, .space-nav-links a.is-active { color: #f2f3ff; }
+.space-nav-links a:hover::after, .space-nav-links a.is-active::after { transform: scaleX(1); }
+.space-theme-toggle { display: grid; place-items: center; width: 31px; height: 31px; padding: 0; color: #f1d13f; background: transparent; border: 0; border-radius: 50%; cursor: pointer; }
+.space-theme-toggle:hover { color: #a88eff; background: rgba(124,92,225,.14); }
+.space-theme-toggle svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.single-page-section { padding: 105px 24px; text-align: center; background: #090b16; border-top: 1px solid rgba(255,255,255,.06); }
+.contact-section { background: radial-gradient(circle at 50% 0, #171334, #090b16 62%); }
+.single-page-inner { max-width: 620px; margin: 0 auto; }
+.single-page-inner h2 { margin: 12px 0; color: #eef0ff; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; }
+.single-page-inner p { max-width: 520px; margin: 0 auto 25px; color: #b4b6c7; line-height: 1.65; }
+html[data-theme="light"] .space-nav { background: rgba(255,255,255,.82); border-bottom-color: rgba(55,47,100,.1); }
+html[data-theme="light"] .space-brand, html[data-theme="light"] .space-nav-links a.is-active { color: #26243d; }
+html[data-theme="light"] .space-nav-links a { color: #65677d; }
+html[data-theme="light"] .space-theme-toggle { color: #5c3cc4; }
+html[data-theme="light"] .single-page-section { background: #f4f5fb; border-color: #dedfeb; }
+html[data-theme="light"] .contact-section { background: radial-gradient(circle at 50% 0, #ebe5ff, #f4f5fb 65%); }
+html[data-theme="light"] .single-page-inner h2 { color: #292640; }
+html[data-theme="light"] .single-page-inner p { color: #63657a; }
+@media (max-width: 680px) { .space-nav { gap: 8px; padding: 0 14px; } .space-nav-links { gap: 0; overflow-x: auto; } .space-nav-links a { padding: 8px 7px; font-size: .62rem; white-space: nowrap; } .space-brand { font-size: .76rem; } }
 </style>
 
 <script>
@@ -1202,6 +1259,17 @@ document.addEventListener('click', function (event) {
 });
 document.addEventListener('DOMContentLoaded', function () {
   try { if (localStorage.getItem('jd-theme') === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {}
+  var links = Array.from(document.querySelectorAll('.space-nav-links a'));
+  var sections = links.map(function (link) { return document.querySelector(link.getAttribute('href')); }).filter(Boolean);
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        links.forEach(function (link) { link.classList.toggle('is-active', link.getAttribute('href') === '#' + entry.target.id); });
+      });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+    sections.forEach(function (section) { observer.observe(section); });
+  }
 });
 </script>
 
