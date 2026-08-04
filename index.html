@@ -394,8 +394,8 @@
   /* =============================================
    SECCIÓN PROYECTOS
 ============================================= */
-.projects-section { position: relative; isolation: isolate; overflow: hidden; padding: 105px 24px; background: radial-gradient(circle at 50% 42%, #11152a 0, var(--space) 48%, #03040a 100%); border-top: 1px solid rgba(255,255,255,.06); }
-.projects-section::before { content: ''; position: absolute; z-index: -1; inset: 0; opacity: .65; background-image: radial-gradient(circle at 6% 8%, rgba(255,255,255,.8) 0 1px, transparent 1.7px), radial-gradient(circle at 21% 84%, rgba(255,255,255,.84) 0 1px, transparent 1.7px), radial-gradient(circle at 42% 66%, rgba(255,255,255,.87) 0 1px, transparent 1.7px), radial-gradient(circle at 68% 74%, rgba(255,255,255,.83) 0 1px, transparent 1.7px), radial-gradient(circle at 89% 92%, rgba(255,255,255,.86) 0 1px, transparent 1.7px); background-repeat: no-repeat; }
+.projects-section { position: relative; isolation: isolate; overflow: hidden; padding: 105px 24px; border-top: 1px solid rgba(255,255,255,.06); }
+.projects-section::before { content: ''; position: absolute; z-index: -1; inset: 0; }
 .projects-inner { max-width: 1080px; margin: 0 auto; }
 .projects-section .expertise-heading { max-width: 640px; }
 
@@ -1473,7 +1473,7 @@ html[data-theme="light"] .single-page-inner p { color: #63657a; }
 .about-service-icon { display: grid; place-items: center; flex: 0 0 34px; width: 34px; height: 34px; color: #dd6774; background: rgba(163,33,50,.1); border-radius: 9px; font-size: 1.03rem; font-weight: 700; }
 .about-service-card h3 { margin: 0 0 5px; color: #f0f1fb; font-size: 1rem; font-weight: 700; }
 .about-service-card p { margin: 0; color: #c1c3d1; font-size: .88rem; line-height: 1.5; }
-html[data-theme="light"] .about-section { background: radial-gradient(circle at 50% 20%, #fff5f5, #f1e8e9 55%, #e7dddf); }
+html[data-theme="light"] .about-section, html[data-theme="light"] .projects-section { background: radial-gradient(circle at 50% 20%, #fff5f5, #f1e8e9 55%, #e7dddf); }
 html[data-theme="light"] .about-section::before { opacity: .25; }
 html[data-theme="light"] .about-section-heading, html[data-theme="light"] .about-section .about-title, html[data-theme="light"] .about-service-card h3 { color: #292640; }
 html[data-theme="light"] .about-section .about-desc, html[data-theme="light"] .about-service-card p { color: #626478; }
@@ -1484,8 +1484,8 @@ html[data-theme="light"] .about-section .hero-btn-secondary { color: #7b1623; ba
 @media (max-width: 560px) { .about-section { padding: 70px 18px; } .about-section-heading { margin-bottom: 34px; } .about-intro { flex-direction: column; text-align: center; } .about-section .about-services { grid-template-columns: 1fr; } .about-service-card { min-height: 0; flex-direction: row; } .about-section .about-photo-wrap, .about-section .about-photo { width: 108px; height: 108px; } }
 
 /* Fondo espacial unificado y estrellas distribuidas de forma orgánica */
-.hero.hero-space, .about-section { background: radial-gradient(circle at 50% 42%, #11152a 0, var(--space) 48%, #03040a 100%); }
-.hero.hero-space::before, .about-section::before, .hero.hero-space .stars {
+.hero.hero-space, .about-section, .projects-section { background: radial-gradient(circle at 50% 42%, #11152a 0, var(--space) 48%, #03040a 100%); }
+.hero.hero-space::before, .about-section::before, .projects-section::before, .hero.hero-space .stars {
   background-image:
     radial-gradient(circle at 3% 16%, rgba(255,255,255,.72) 0 1px, transparent 1.7px),
     radial-gradient(circle at 8% 66%, rgba(235,239,255,.88) 0 1.2px, transparent 2px),
@@ -1525,9 +1525,9 @@ html[data-theme="light"] .about-section .hero-btn-secondary { color: #7b1623; ba
   background-position: 0 0;
   background-repeat: no-repeat;
 }
-.hero.hero-space::before, .about-section::before { opacity: .82; }
+.hero.hero-space::before, .about-section::before, .projects-section::before { opacity: .82; }
 .hero.hero-space .stars { opacity: .65; }
-html[data-theme="light"] .hero.hero-space::before, html[data-theme="light"] .about-section::before { opacity: .28; }
+html[data-theme="light"] .hero.hero-space::before, html[data-theme="light"] .about-section::before, html[data-theme="light"] .projects-section::before { opacity: .28; }
 
 /* Habilidades: estructura preparada para completar con el stack real */
 .skills-section { position: relative; isolation: isolate; overflow: hidden; padding: 105px 24px; background: radial-gradient(circle at 50% 42%, #11152a 0, var(--space) 48%, #03040a 100%); }
