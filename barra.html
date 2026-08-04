@@ -600,6 +600,45 @@
         }
     </style>
 </head>
+<style>
+/* Diseño compacto del portafolio */
+#jd-navbar {
+  --nav-bg: rgba(5, 7, 16, .84);
+  --nav-text: #d7d9e6;
+  --nav-muted: #9b9dac;
+  --nav-accent: #7c5ce1;
+  height: 58px;
+  background: var(--nav-bg);
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  box-shadow: none;
+  backdrop-filter: blur(14px);
+}
+#jd-navbar .jd-inner { max-width: 930px; padding: 0 18px; }
+#jd-navbar .jd-brand-simple { display: block; color: var(--nav-text); }
+#jd-navbar .jd-brand-name { font-size: .88rem; font-weight: 800; letter-spacing: -.035em; }
+#jd-navbar .jd-brand-name em { color: var(--nav-accent); font-style: normal; }
+#jd-navbar .jd-avatar, #jd-navbar .jd-brand-sub { display: none; }
+#jd-navbar .jd-links { gap: 4px; }
+#jd-navbar .jd-links a { padding: 7px 11px; color: var(--nav-muted); font-size: .70rem; font-weight: 600; letter-spacing: 0; }
+#jd-navbar .jd-links a::after { bottom: 2px; height: 1px; background: var(--nav-accent); }
+#jd-navbar .jd-links a:hover, #jd-navbar .jd-links a.active { color: var(--nav-text); }
+#jd-navbar .jd-links a.active { color: var(--nav-accent); }
+#jd-navbar .jd-links a:hover::after, #jd-navbar .jd-links a.active::after { width: calc(100% - 22px); }
+#jd-navbar .jd-cta { display: flex; align-items: center; }
+.jd-theme-toggle { width: 30px; height: 30px; display: grid; place-items: center; padding: 0; border: 0; background: transparent; color: #f1d13f; cursor: pointer; }
+.jd-theme-toggle:hover { background: rgba(124,92,225,.14); color: var(--nav-accent); }
+.jd-theme-toggle svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+#jd-navbar .jd-ham { display: none; }
+#jd-navbar + #jd-drawer, #jd-navbar ~ #jd-drawer { display: none; }
+.jd-spacer { height: 58px; }
+html[data-theme="light"] #jd-navbar { --nav-bg: rgba(255,255,255,.86); --nav-text: #20213a; --nav-muted: #60627a; border-bottom-color: rgba(51,45,102,.10); }
+html[data-theme="light"] .jd-theme-toggle { color: #5c3cc4; }
+@media (max-width: 700px) {
+  #jd-navbar .jd-inner { padding: 0 16px; }
+  #jd-navbar .jd-links { display: none; }
+  #jd-navbar .jd-ham { display: flex; margin-left: 4px; }
+}
+</style>
 <body>
 
 <!-- ════════════════════════════════
@@ -609,62 +648,24 @@
     <div class="jd-inner">
 
         <!-- ① BRAND -->
-        <a href="index.html" class="jd-brand" aria-label="Inicio">
-            <div class="jd-avatar" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="16 18 22 12 16 6"></polyline>
-                    <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-            </div>
-            <div class="jd-brand-info">
-                <span class="jd-brand-name">Johan Duitama</span>
-                <span class="jd-brand-sub">Ing. Sistemas &amp; Desarrollo</span>
-            </div>
+        <a href="index.html" class="jd-brand jd-brand-simple" aria-label="Inicio">
+            <span class="jd-brand-name">JohanDuitama <em>Portfolio</em></span>
         </a>
 
         <!-- ② LINKS (desktop) -->
         <ul class="jd-links" role="list">
-            <li><a href="index.html"     id="nl-inicio"    >Inicio</a></li>
-            <li><a href="about.html"     id="nl-acerca"    >Acerca</a></li>
-            <li><a href="proyectos.html" id="nl-proyectos" >Proyectos</a></li>
-
-            <!-- Dropdown Servicios -->
-            <li class="jd-dd" id="jd-dd-servicios">
-                <a href="#" id="nl-servicios" aria-haspopup="true" aria-expanded="false"
-                   onclick="return false;">
-                    Servicios <span class="dd-arrow"></span>
-                </a>
-                <ul class="jd-dd-menu" role="menu">
-                    <li role="menuitem">
-                        <a href="servicios.html">
-                            <span class="dd-icon">💻</span>Desarrollo de Software
-                        </a>
-                    </li>
-                    <li role="menuitem">
-                        <a href="microsoft-servicios.html">
-                            <span class="dd-icon">🪟</span>Herramientas Microsoft
-                        </a>
-                    </li>
-                    <li role="menuitem">
-                        <a href="google-servicios.html">
-                            <span class="dd-icon">🔍</span>Herramientas Google
-                        </a>
-                    </li>
-                    <li class="dd-sep" role="separator"></li>
-                    <li role="menuitem">
-                        <a href="soporte-servicios.html">
-                            <span class="dd-icon">🛠️</span>Soporte Técnico
-                        </a>
-                    </li>
-                </ul>
-            </li>
+            <li><a href="index.html" id="nl-inicio">Inicio</a></li>
+            <li><a href="about.html" id="nl-acerca">Sobre mí</a></li>
+            <li><a href="servicios.html" id="nl-servicios">Habilidades</a></li>
+            <li><a href="proyectos.html" id="nl-proyectos">Proyectos</a></li>
+            <li><a href="contacto.html" id="nl-contacto">Contacto</a></li>
         </ul>
 
         <!-- ③ CTA (desktop) -->
         <div class="jd-cta">
-            <a href="contacto.html" class="jd-btn" id="nl-contacto">
-                Contáctame
-            </a>
+            <button class="jd-theme-toggle" id="jd-theme-toggle" type="button" aria-label="Activar modo claro" aria-pressed="false">
+                <svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.5"></circle><path d="M12 2v2.2M12 19.8V22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M2 12h2.2M19.8 12H22M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56"></path></svg>
+            </button>
         </div>
 
         <!-- Hamburger (mobile) -->

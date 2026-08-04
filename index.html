@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <div data-include="barra.html"></div>
   <script src="js/include.js"></script>
@@ -16,61 +19,20 @@
   <!-- ══════════════════════════════
        HERO BANNER
   ══════════════════════════════ -->
-  <section class="hero" id="inicio">
+  <section class="hero hero-space" id="inicio">
+    <div class="stars" aria-hidden="true"></div>
+    <span class="shooting-star shooting-star-one" aria-hidden="true"></span>
+    <span class="shooting-star shooting-star-two" aria-hidden="true"></span>
+    <span class="shooting-star shooting-star-three" aria-hidden="true"></span>
     <div class="hero-inner">
-
-      <!-- Columna izquierda -->
       <div class="hero-left">
-
-        <!-- Badge de disponibilidad -->
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          DISPONIBLE PARA NUEVOS PROYECTOS
-        </div>
-
-        <!-- Titular -->
-        <h1 class="hero-title">
-          Soluciones que<br>
-          <span class="hero-accent">innovan</span> y escalan.
-        </h1>
-
-        <!-- Subtítulo -->
-        <p class="hero-sub">
-          Especialista en desarrollo de software, automatización con Google &amp; Microsoft
-          y sistemas de análisis de datos de alto rendimiento.
-        </p>
-
-        <!-- CTAs -->
+        <p class="hero-kicker">PORTAFOLIO DE JOHAN DUITAMA</p>
+        <h1 class="hero-title">Hola, soy <span class="hero-accent">Johan Duitama</span></h1>
+        <p class="hero-sub">Creo experiencias web y soluciones digitales modernas. Transformo ideas en productos funcionales, claros y escalables.</p>
         <div class="hero-ctas">
-          <a href="proyectos.html" class="hero-btn-primary">Ver proyectos</a>
-          <a href="contacto.html" class="hero-btn-secondary">Contáctame</a>
+          <a href="proyectos.html" class="hero-btn-primary">Ver mi trabajo</a>
         </div>
-
       </div>
-
-      <!-- Columna derecha — Estadísticas -->
-      <div class="hero-right">
-
-        <div class="hero-stat-card">
-          <span class="stat-number">10+</span>
-          <span class="stat-label">PROYECTOS ENTREGADOS</span>
-          <div class="stat-bar"></div>
-        </div>
-
-        <div class="hero-stat-card">
-          <span class="stat-number">100%</span>
-          <span class="stat-label">SATISFACCIÓN DEL CLIENTE</span>
-          <div class="stat-bar"></div>
-        </div>
-
-        <div class="hero-stat-card">
-          <span class="stat-number">3+</span>
-          <span class="stat-label">AÑOS DE EXPERIENCIA</span>
-          <div class="stat-bar"></div>
-        </div>
-
-      </div>
-
     </div>
   </section>
 
@@ -1203,6 +1165,44 @@ html, body {
   .welcome-section { padding: 60px 0 56px; }
 }
 
+/* Hero principal: escena espacial */
+:root { --space: #050710; --space-text: #eef0ff; --space-muted: #b4b6c7; --space-accent: #7c5ce1; }
+.hero.hero-space { isolation: isolate; position: relative; min-height: calc(100vh - 58px); overflow: hidden; border: 0; background: radial-gradient(circle at 50% 42%, #11152a 0, var(--space) 48%, #03040a 100%); }
+.hero.hero-space::before { content: ''; position: absolute; z-index: -2; inset: 0; opacity: .72; background-image: radial-gradient(circle, #f5f6ff 0 1px, transparent 1.7px), radial-gradient(circle, #c9ccdd 0 1px, transparent 1.5px), radial-gradient(circle, #fff 0 .8px, transparent 1.4px); background-size: 79px 79px, 127px 127px, 43px 43px; background-position: 8px 18px, 47px 38px, 19px 71px; }
+.stars { position: absolute; inset: 0; z-index: -1; background: radial-gradient(circle at 12% 65%, rgba(255,255,255,.8) 0 1px, transparent 2px), radial-gradient(circle at 77% 29%, rgba(255,255,255,.8) 0 1px, transparent 2px), radial-gradient(circle at 87% 77%, rgba(255,255,255,.65) 0 1px, transparent 2px); background-size: 250px 180px, 310px 260px, 170px 130px; opacity: .75; }
+.hero.hero-space .hero-inner { justify-content: center; min-height: calc(100vh - 58px); padding: 84px 24px; text-align: center; }
+.hero.hero-space .hero-left { align-items: center; max-width: 620px; gap: 17px; }
+.hero-kicker { margin: 0; color: #aca9c5; font-size: .67rem; font-weight: 700; letter-spacing: .15em; }
+.hero.hero-space .hero-title { max-width: 750px; color: var(--space-text); font-size: clamp(2.35rem, 5vw, 4rem); line-height: 1.08; }
+.hero.hero-space .hero-accent { color: var(--space-accent); }
+.hero.hero-space .hero-accent::after { display: none; }
+.hero.hero-space .hero-sub { color: var(--space-muted); max-width: 570px; font-size: clamp(.91rem, 1.5vw, 1.04rem); line-height: 1.55; }
+.hero.hero-space .hero-btn-primary { padding: 11px 25px; border-radius: 999px; background: linear-gradient(135deg, #9475f2, #6945d3); color: #fff; text-transform: none; font-size: .76rem; box-shadow: 0 8px 24px rgba(108,73,214,.3); }
+.hero.hero-space .hero-btn-primary:hover { color: #fff; box-shadow: 0 12px 30px rgba(108,73,214,.48); }
+.shooting-star { position: absolute; z-index: -1; width: 74px; height: 2px; border-radius: 50%; background: linear-gradient(90deg, transparent, #fff); box-shadow: 0 0 6px #fff, 0 0 15px rgba(255,255,255,.5); transform: rotate(35deg); opacity: .8; animation: shooting 7s linear infinite; }
+.shooting-star-one { top: 18%; left: 24%; animation-delay: -1s; }.shooting-star-two { top: 39%; left: 54%; width: 105px; animation-delay: -4s; }.shooting-star-three { top: 44%; left: 15%; width: 62px; animation-delay: -6s; }
+@keyframes shooting { 0%, 18% { opacity: 0; translate: -60px -40px; } 20% { opacity: .9; } 40%, 100% { opacity: 0; translate: 310px 205px; } }
+html[data-theme="light"] body { background: #f5f6fc !important; color: #24243d; }
+html[data-theme="light"] .hero.hero-space { background: radial-gradient(circle at 50% 40%, #f5f1ff 0, #e9ebf7 50%, #dde1f0 100%); }
+html[data-theme="light"] .hero.hero-space::before { opacity: .35; }
+html[data-theme="light"] .hero.hero-space .hero-title { color: #26243d; }
+html[data-theme="light"] .hero.hero-space .hero-sub, html[data-theme="light"] .hero-kicker { color: #62647a; }
+@media (max-width: 600px) { .hero.hero-space .hero-inner { padding: 70px 18px; } .shooting-star-two { left: 42%; } }
 </style>
+
+<script>
+document.addEventListener('click', function (event) {
+  var toggle = event.target.closest('#jd-theme-toggle');
+  if (!toggle) return;
+  var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  document.documentElement.setAttribute('data-theme', isLight ? 'dark' : 'light');
+  toggle.setAttribute('aria-pressed', String(!isLight));
+  toggle.setAttribute('aria-label', isLight ? 'Activar modo claro' : 'Activar modo oscuro');
+  try { localStorage.setItem('jd-theme', isLight ? 'dark' : 'light'); } catch (e) {}
+});
+document.addEventListener('DOMContentLoaded', function () {
+  try { if (localStorage.getItem('jd-theme') === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {}
+});
+</script>
 
 </html>
