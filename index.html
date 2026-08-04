@@ -390,6 +390,54 @@
   <script src="js/include.js"></script>
 </body>
 <style>
+
+  /* =============================================
+   SECCIÓN PROYECTOS
+============================================= */
+.projects-section { position: relative; isolation: isolate; overflow: hidden; padding: 105px 24px; background: radial-gradient(circle at 50% 42%, #11152a 0, var(--space) 48%, #03040a 100%); border-top: 1px solid rgba(255,255,255,.06); }
+.projects-section::before { content: ''; position: absolute; z-index: -1; inset: 0; opacity: .65; background-image: radial-gradient(circle at 6% 8%, rgba(255,255,255,.8) 0 1px, transparent 1.7px), radial-gradient(circle at 21% 84%, rgba(255,255,255,.84) 0 1px, transparent 1.7px), radial-gradient(circle at 42% 66%, rgba(255,255,255,.87) 0 1px, transparent 1.7px), radial-gradient(circle at 68% 74%, rgba(255,255,255,.83) 0 1px, transparent 1.7px), radial-gradient(circle at 89% 92%, rgba(255,255,255,.86) 0 1px, transparent 1.7px); background-repeat: no-repeat; }
+.projects-inner { max-width: 1080px; margin: 0 auto; }
+.projects-section .expertise-heading { max-width: 640px; }
+
+.projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+
+.project-card { display: flex; flex-direction: column; gap: 14px; padding: 16px; background: linear-gradient(145deg, rgba(21,24,42,.92), rgba(10,12,23,.94)); border: 1px solid rgba(255,255,255,.055); border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,.18); transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease; }
+.project-card:hover { transform: translateY(-6px); border-color: rgba(193,59,74,.4); box-shadow: 0 20px 38px rgba(0,0,0,.28), 0 0 28px rgba(163,33,50,.1); }
+
+.project-thumb { border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,.06); background: #0c0e1a; }
+.browser-bar { display: flex; align-items: center; gap: 5px; padding: 8px 10px; background: rgba(255,255,255,.03); }
+.browser-bar span { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.15); }
+.browser-bar span:first-child { background: #c1424f; }
+
+.project-thumb-preview { display: flex; flex-direction: column; justify-content: center; gap: 6px; height: 150px; padding: 20px; }
+.proj-preview-title { color: #f5e7e9; font-family: 'Inter', sans-serif; font-size: .98rem; font-weight: 700; }
+.proj-preview-sub { color: rgba(245,231,233,.65); font-family: 'Inter', sans-serif; font-size: .74rem; }
+.proj-preview-1 { background: linear-gradient(135deg, #2c0f16 0%, #6e1c28 60%, #a32132 100%); }
+.proj-preview-2 { background: linear-gradient(135deg, #1a1030 0%, #3a1c4d 60%, #5c2870 100%); }
+.proj-preview-3 { background: linear-gradient(135deg, #0f2418 0%, #1c4a33 60%, #237049 100%); }
+
+.project-tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 4px; }
+.tech-tag { padding: 4px 9px; color: #e7c7ca; background: rgba(163,33,50,.1); border: 1px solid rgba(193,59,74,.16); border-radius: 5px; font-family: 'Inter', sans-serif; font-size: .67rem; font-weight: 500; }
+
+.project-card h3 { margin: 0; padding: 0 4px; color: #eef0fb; font-family: 'Inter', sans-serif; font-size: 1.02rem; font-weight: 700; }
+.project-card p { margin: 0; padding: 0 4px; color: #b9bbc9; font-family: 'Inter', sans-serif; font-size: .84rem; line-height: 1.55; }
+
+.project-links { display: flex; align-items: center; gap: 10px; padding: 2px 4px 2px; margin-top: auto; }
+.project-link { display: grid; place-items: center; width: 30px; height: 30px; color: #b9bbc9; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 8px; transition: color .2s, border-color .2s, background .2s; }
+.project-link:hover { color: #f5e7e9; border-color: rgba(193,59,74,.5); background: rgba(163,33,50,.14); }
+
+.projects-cta { display: block; width: fit-content; margin: 48px auto 0; padding: 11px 25px; color: #fff7f7; background: linear-gradient(135deg, #b52f3f, #71111c); border: 1px solid rgba(232,116,128,.35); border-radius: 999px; box-shadow: 0 9px 24px rgba(99,14,25,.35); text-transform: none; font-size: .8rem; }
+.projects-cta:hover { color: #fff; background: linear-gradient(135deg, #cf4051, #8c1724); box-shadow: 0 12px 28px rgba(126,19,31,.52); }
+
+html[data-theme="light"] .projects-section { background: radial-gradient(circle at 50% 42%, #fff5f5 0, #f2e9ea 50%, #e7dddf 100%); }
+html[data-theme="light"] .projects-section::before { opacity: .22; }
+html[data-theme="light"] .project-card h3 { color: #292640; }
+html[data-theme="light"] .project-card p { color: #626478; }
+html[data-theme="light"] .project-card { background: rgba(255,255,255,.78); border-color: rgba(119,26,38,.1); }
+html[data-theme="light"] .project-link { color: #63657a; background: rgba(0,0,0,.03); border-color: rgba(119,26,38,.14); }
+
+@media (max-width: 820px) { .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .projects-section { padding: 70px 18px; } .projects-grid { grid-template-columns: 1fr; } }
 /* =============================================
    HERO BANNER — Negro / Dorado
 ============================================= */
