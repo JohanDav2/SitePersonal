@@ -81,7 +81,7 @@
         </p>
         <p class="about-desc about-desc-secondary">Desarrollo soluciones empresariales enfocadas en gestión documental, automatización de procesos, análisis de datos e inteligencia artificial.</p>
         <p class="about-proof"><span aria-hidden="true">✓</span> Automatización · Dashboards · IA · Sistemas empresariales</p>
-        <div class="about-skills" id="habilidades">
+        <div class="about-skills">
           <span class="skill-chip">PHP</span>
           <span class="skill-chip">JavaScript</span>
           <span class="skill-chip">MySQL</span>
@@ -108,6 +108,28 @@
           <div><h3>Análisis de datos</h3><p>Dashboards e indicadores que transforman datos en decisiones estratégicas.</p></div>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section class="skills-section" id="habilidades" aria-labelledby="skills-title">
+    <div class="skills-heading">
+      <span class="about-eyebrow">Mi stack</span>
+      <h2 id="skills-title">Habilidades <span>técnicas</span></h2>
+      <p>Próximamente añadiré las tecnologías y el nivel de dominio de cada una.</p>
+    </div>
+    <div class="skills-grid" aria-label="Habilidades por definir">
+      <article class="skill-level-card"><h3>Próximamente</h3><div class="skill-level-track"><span style="--level: 76%"></span></div><small>Por definir</small></article>
+      <article class="skill-level-card"><h3>Próximamente</h3><div class="skill-level-track"><span style="--level: 88%"></span></div><small>Por definir</small></article>
+      <article class="skill-level-card"><h3>Próximamente</h3><div class="skill-level-track"><span style="--level: 68%"></span></div><small>Por definir</small></article>
+      <article class="skill-level-card"><h3>Próximamente</h3><div class="skill-level-track"><span style="--level: 82%"></span></div><small>Por definir</small></article>
+      <article class="skill-level-card"><h3>Próximamente</h3><div class="skill-level-track"><span style="--level: 72%"></span></div><small>Por definir</small></article>
+      <article class="skill-level-card"><h3>Próximamente</h3><div class="skill-level-track"><span style="--level: 91%"></span></div><small>Por definir</small></article>
+      <article class="skill-level-card"><h3>Próximamente</h3><div class="skill-level-track"><span style="--level: 64%"></span></div><small>Por definir</small></article>
+      <article class="skill-level-card"><h3>Próximamente</h3><div class="skill-level-track"><span style="--level: 79%"></span></div><small>Por definir</small></article>
+      <article class="skill-level-card"><h3>Próximamente</h3><div class="skill-level-track"><span style="--level: 85%"></span></div><small>Por definir</small></article>
+      <article class="skill-level-card"><h3>Próximamente</h3><div class="skill-level-track"><span style="--level: 70%"></span></div><small>Por definir</small></article>
+      <article class="skill-level-card"><h3>Próximamente</h3><div class="skill-level-track"><span style="--level: 77%"></span></div><small>Por definir</small></article>
+      <article class="skill-level-card"><h3>Próximamente</h3><div class="skill-level-track"><span style="--level: 93%"></span></div><small>Por definir</small></article>
     </div>
   </section>
 
@@ -1357,6 +1379,29 @@ html[data-theme="light"] .about-section .hero-btn-secondary { color: #7b1623; ba
 .hero.hero-space::before, .about-section::before { opacity: .82; }
 .hero.hero-space .stars { opacity: .65; }
 html[data-theme="light"] .hero.hero-space::before, html[data-theme="light"] .about-section::before { opacity: .28; }
+
+/* Habilidades: estructura preparada para completar con el stack real */
+.skills-section { position: relative; isolation: isolate; overflow: hidden; padding: 105px 24px; background: radial-gradient(circle at 50% 42%, #11152a 0, var(--space) 48%, #03040a 100%); }
+.skills-section::before { content: ''; position: absolute; z-index: -1; inset: 0; opacity: .62; background-image: radial-gradient(circle at 5% 18%, rgba(255,255,255,.8) 0 1px, transparent 1.7px), radial-gradient(circle at 13% 72%, rgba(230,234,255,.65) 0 .8px, transparent 1.5px), radial-gradient(circle at 21% 42%, rgba(255,255,255,.84) 0 1px, transparent 1.7px), radial-gradient(circle at 33% 9%, rgba(230,234,255,.62) 0 .8px, transparent 1.5px), radial-gradient(circle at 47% 76%, rgba(255,255,255,.87) 0 1px, transparent 1.7px), radial-gradient(circle at 58% 21%, rgba(230,234,255,.62) 0 .8px, transparent 1.5px), radial-gradient(circle at 67% 58%, rgba(255,255,255,.83) 0 1px, transparent 1.7px), radial-gradient(circle at 79% 14%, rgba(230,234,255,.66) 0 .8px, transparent 1.5px), radial-gradient(circle at 88% 81%, rgba(255,255,255,.86) 0 1px, transparent 1.7px), radial-gradient(circle at 96% 39%, rgba(230,234,255,.65) 0 .8px, transparent 1.5px); background-repeat: no-repeat; }
+.skills-heading { max-width: 600px; margin: 0 auto 42px; text-align: center; }
+.skills-heading .about-eyebrow { color: #e0707b; }
+.skills-heading h2 { margin: 9px 0 11px; color: #f0f1fb; font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 800; letter-spacing: -.045em; }
+.skills-heading h2 span { color: #c23e4d; }
+.skills-heading p { margin: 0; color: #aeb0c2; font-size: .91rem; }
+.skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; max-width: 1080px; margin: 0 auto; }
+.skill-level-card { min-height: 124px; padding: 23px 24px 18px; background: rgba(13,16,29,.88); border: 1px solid rgba(255,255,255,.045); box-shadow: 0 12px 28px rgba(0,0,0,.15); transition: transform .25s ease, border-color .25s ease; }
+.skill-level-card:hover { transform: translateY(-4px); border-color: rgba(193,59,74,.3); }
+.skill-level-card h3 { margin: 0 0 18px; color: #dcddeb; font-size: 1rem; font-weight: 700; }
+.skill-level-track { height: 8px; overflow: hidden; background: rgba(255,255,255,.065); border-radius: 999px; }
+.skill-level-track span { display: block; width: var(--level); height: 100%; background: linear-gradient(90deg, #8e1d2b, #c84858); border-radius: inherit; box-shadow: 0 0 12px rgba(193,59,74,.32); }
+.skill-level-card small { display: block; margin-top: 10px; color: #bfc1cd; font-size: .72rem; text-align: right; }
+html[data-theme="light"] .skills-section { background: radial-gradient(circle at 50% 42%, #fff5f5 0, #f2e9ea 50%, #e7dddf 100%); }
+html[data-theme="light"] .skills-section::before { opacity: .22; }
+html[data-theme="light"] .skills-heading h2, html[data-theme="light"] .skill-level-card h3 { color: #292640; }
+html[data-theme="light"] .skills-heading p, html[data-theme="light"] .skill-level-card small { color: #626478; }
+html[data-theme="light"] .skill-level-card { background: rgba(255,255,255,.74); border-color: rgba(119,26,38,.1); }
+@media (max-width: 760px) { .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } }
+@media (max-width: 460px) { .skills-section { padding: 75px 18px; } .skills-grid { grid-template-columns: 1fr; } .skill-level-card { min-height: 110px; } }
 </style>
 
 <script>
