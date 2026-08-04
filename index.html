@@ -58,35 +58,52 @@
        SECCIÓN SOBRE MÍ
   ══════════════════════════════ -->
   <section class="about-section" id="sobre-mi">
+    <div class="about-section-heading">
+      <span>Sobre</span> mí
+    </div>
     <div class="about-inner">
-      <div class="about-photo-col">
-        <div class="about-photo-wrap">
-          <img src="https://drive.google.com/thumbnail?id=1zCVaD3cyQrwqjMhh7ZZU_AqfDfAitEMU" alt="Johan Duitama" class="about-photo">
-          <div class="about-photo-ring"></div>
-          <div class="about-badge"><span class="about-badge-dot"></span>Disponible</div>
-        </div>
-      </div>
       <div class="about-content-col">
-        <span class="about-eyebrow">Sobre mí</span>
-        <h2 class="about-title">Hola, soy <span class="about-name-gold">Johan Duitama</span></h2>
+        <div class="about-intro">
+          <div class="about-photo-col">
+            <div class="about-photo-wrap">
+              <img src="https://drive.google.com/thumbnail?id=1zCVaD3cyQrwqjMhh7ZZU_AqfDfAitEMU" alt="Johan Duitama" class="about-photo">
+              <div class="about-photo-ring"></div>
+              <div class="about-badge"><span class="about-badge-dot"></span>Disponible</div>
+            </div>
+          </div>
+          <div>
+            <span class="about-eyebrow">Ingeniero de sistemas</span>
+            <h2 class="about-title">Tecnología con propósito y <span class="about-name-gold">diseño</span></h2>
+          </div>
+        </div>
         <p class="about-desc">
-          Ingeniero de Sistemas apasionado por la innovación y la tecnología.
-          Me especializo en el desarrollo de software, automatización con herramientas
-          de Google &amp; Microsoft, y la creación de dashboards y sistemas de análisis
-          de datos que impulsan decisiones inteligentes.
+          Soy Johan Duitama, apasionado por crear soluciones digitales claras, útiles y escalables. Combino desarrollo web, automatización y análisis de datos para convertir retos reales en resultados medibles.
         </p>
+        <p class="about-desc about-desc-secondary">Me gusta aprender constantemente y cuidar cada detalle para que cada producto sea funcional, elegante y fácil de usar.</p>
         <div class="about-skills" id="habilidades">
           <span class="skill-chip">Desarrollo Web</span>
           <span class="skill-chip">Power BI</span>
           <span class="skill-chip">Apps Script</span>
           <span class="skill-chip">Google Workspace</span>
-          <span class="skill-chip">Microsoft 365</span>
-          <span class="skill-chip">Soporte Técnico</span>
         </div>
         <div class="about-ctas">
-          <a href="#proyectos" class="hero-btn-primary">Conoce más</a>
-          <a href="#contacto" class="hero-btn-secondary">Trabajemos juntos</a>
+          <a href="#contacto" class="hero-btn-primary">Hablemos</a>
+          <a href="#proyectos" class="hero-btn-secondary">Ver proyectos</a>
         </div>
+      </div>
+      <div class="about-services" aria-label="Áreas de especialidad">
+        <article class="about-service-card">
+          <span class="about-service-icon">&lt;/&gt;</span>
+          <div><h3>Desarrollo web</h3><p>Experiencias web modernas, rápidas y adaptables a cada pantalla.</p></div>
+        </article>
+        <article class="about-service-card">
+          <span class="about-service-icon">✦</span>
+          <div><h3>Automatización</h3><p>Procesos conectados para ahorrar tiempo y reducir tareas repetitivas.</p></div>
+        </article>
+        <article class="about-service-card">
+          <span class="about-service-icon">▥</span>
+          <div><h3>Análisis de datos</h3><p>Dashboards e información útil para tomar mejores decisiones.</p></div>
+        </article>
       </div>
     </div>
   </section>
@@ -1245,6 +1262,45 @@ html[data-theme="light"] .contact-section { background: radial-gradient(circle a
 html[data-theme="light"] .single-page-inner h2 { color: #292640; }
 html[data-theme="light"] .single-page-inner p { color: #63657a; }
 @media (max-width: 680px) { .space-nav { gap: 8px; padding: 0 14px; } .space-nav-links { gap: 0; overflow-x: auto; } .space-nav-links a { padding: 8px 7px; font-size: .62rem; white-space: nowrap; } .space-brand { font-size: .76rem; } }
+
+/* Sobre mí: misma atmósfera espacial del hero */
+.about-section { position: relative; isolation: isolate; overflow: hidden; padding: 92px 24px 105px; background: radial-gradient(circle at 50% 30%, #11152a 0, var(--space) 55%, #03040a 100%); border: 0; }
+.about-section::before { content: ''; position: absolute; z-index: -1; inset: 0; opacity: .55; background-image: radial-gradient(circle, #f5f6ff 0 1px, transparent 1.6px), radial-gradient(circle, #bfc3d6 0 .9px, transparent 1.5px); background-size: 91px 91px, 151px 151px; background-position: 9px 30px, 58px 11px; }
+.about-section-heading { margin: 0 auto 48px; color: #eef0ff; font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 800; line-height: 1; text-align: center; letter-spacing: -.045em; }
+.about-section-heading span { color: var(--space-accent); }
+.about-section .about-inner { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr); align-items: center; gap: 68px; max-width: 1060px; padding: 0; }
+.about-section .about-content-col { display: flex; gap: 18px; }
+.about-intro { display: flex; align-items: center; gap: 22px; }
+.about-section .about-photo-col { padding: 0; }
+.about-section .about-photo-wrap, .about-section .about-photo { width: 118px; height: 118px; }
+.about-section .about-photo { border-color: rgba(148,117,242,.8); box-shadow: 0 0 0 5px rgba(124,92,225,.14), 0 16px 34px rgba(0,0,0,.42); }
+.about-section .about-photo-wrap::before { background: #7c5ce1; opacity: .24; }
+.about-section .about-photo-ring { border-color: rgba(148,117,242,.58); }
+.about-section .about-badge { right: -14px; bottom: -7px; padding: 5px 9px; color: #dfd8ff; font-size: .56rem; background: #141127; border-color: rgba(148,117,242,.45); }
+.about-section .about-badge-dot { background: #9af0c6; box-shadow: 0 0 0 3px rgba(154,240,198,.15); }
+.about-section .about-eyebrow { color: #a893ff; font-size: .62rem; letter-spacing: .14em; }
+.about-section .about-title { margin: 5px 0 0; color: #eef0ff; font-size: clamp(1.55rem, 3vw, 2.35rem); line-height: 1.13; }
+.about-section .about-name-gold { color: #8d6dea; }
+.about-section .about-desc { max-width: 570px; color: #c3c5d2; line-height: 1.68; font-size: .94rem; }
+.about-section .about-desc-secondary { color: #a6a8b9; }
+.about-section .about-skills { gap: 8px; }
+.about-section .skill-chip { color: #d9d3f7; background: rgba(124,92,225,.10); border-color: rgba(148,117,242,.24); font-size: .68rem; }
+.about-section .skill-chip:hover { color: #fff; background: rgba(124,92,225,.22); border-color: rgba(148,117,242,.55); }
+.about-section .about-ctas { margin-top: 6px; }
+.about-section .hero-btn-secondary { color: #d7d2ec; border-color: rgba(180,171,230,.3); text-transform: none; font-size: .77rem; }
+.about-section .about-services { display: grid; gap: 16px; }
+.about-service-card { display: flex; align-items: flex-start; gap: 18px; min-height: 118px; padding: 25px; background: rgba(16,19,37,.78); border: 1px solid rgba(255,255,255,.055); box-shadow: 0 15px 40px rgba(0,0,0,.18); transition: transform .25s ease, border-color .25s ease; }
+.about-service-card:hover { transform: translateX(5px); border-color: rgba(148,117,242,.34); }
+.about-service-icon { display: grid; place-items: center; flex: 0 0 34px; width: 34px; height: 34px; color: #9b7cf2; background: rgba(124,92,225,.1); border-radius: 9px; font-size: 1.03rem; font-weight: 700; }
+.about-service-card h3 { margin: 0 0 5px; color: #f0f1fb; font-size: 1rem; font-weight: 700; }
+.about-service-card p { margin: 0; color: #c1c3d1; font-size: .88rem; line-height: 1.5; }
+html[data-theme="light"] .about-section { background: radial-gradient(circle at 50% 20%, #f5f1ff, #e8eaf5 55%, #dce0ef); }
+html[data-theme="light"] .about-section::before { opacity: .25; }
+html[data-theme="light"] .about-section-heading, html[data-theme="light"] .about-section .about-title, html[data-theme="light"] .about-service-card h3 { color: #292640; }
+html[data-theme="light"] .about-section .about-desc, html[data-theme="light"] .about-service-card p { color: #626478; }
+html[data-theme="light"] .about-service-card { background: rgba(255,255,255,.72); border-color: rgba(61,48,118,.1); }
+@media (max-width: 820px) { .about-section .about-inner { grid-template-columns: 1fr; gap: 38px; } .about-section .about-content-col { align-items: center; text-align: center; } .about-intro { justify-content: center; text-align: left; } .about-section .about-skills, .about-section .about-ctas { justify-content: center; } .about-section .about-services { grid-template-columns: repeat(3, 1fr); } .about-service-card { min-height: 180px; padding: 19px; flex-direction: column; gap: 11px; } }
+@media (max-width: 560px) { .about-section { padding: 70px 18px; } .about-section-heading { margin-bottom: 34px; } .about-intro { flex-direction: column; text-align: center; } .about-section .about-services { grid-template-columns: 1fr; } .about-service-card { min-height: 0; flex-direction: row; } .about-section .about-photo-wrap, .about-section .about-photo { width: 108px; height: 108px; } }
 </style>
 
 <script>
