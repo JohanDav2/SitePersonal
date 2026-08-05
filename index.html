@@ -879,7 +879,11 @@
           </div>
         </div>
 
-        <form class="contact-form-card" id="contactForm">
+        <form class="contact-form-card" id="contactForm" action="https://formsubmit.co/johandavid.duitama@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde tu sitio web de Johan Duitama">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+
           <h3 class="contact-form-title">Enviar un Mensaje</h3>
 
           <label class="contact-field-label" for="cf-name">Tu Nombre</label>
@@ -930,6 +934,86 @@
   <script>
     document.querySelectorAll('.jd-copyright').forEach(function (el) {
       el.innerHTML = el.innerHTML.replace(/©\s*\d{4}/, '© ' + new Date().getFullYear());
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var contactForm = document.getElementById('contactForm');
+      if (!contactForm) return;
+
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var submitBtn = contactForm.querySelector('.contact-submit-btn');
+        var originalBtnContent = submitBtn.innerHTML;
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Enviando... <span class="spinner-border spinner-border-sm ms-2" role="status" aria-hidden="true"></span>';
+
+        var existingAlert = contactForm.querySelector('.contact-form-alert');
+        if (existingAlert) existingAlert.remove();
+
+        var formData = new FormData(contactForm);
+        var data = {
+          name: formData.get('name'),
+          email: formData.get('email'),
+          message: formData.get('message'),
+          _subject: 'Nuevo mensaje de ' + formData.get('name') + ' desde tu Sitio Web',
+          _template: 'table',
+          _captcha: 'false'
+        };
+
+        fetch('https://formsubmit.co/ajax/johandavid.duitama@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (result) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnContent;
+
+          var successAlert = document.createElement('div');
+          successAlert.className = 'contact-form-alert alert mt-3 p-3 text-center';
+          successAlert.style.borderRadius = '12px';
+          successAlert.style.fontSize = '0.9rem';
+          successAlert.style.background = 'rgba(37, 211, 102, 0.15)';
+          successAlert.style.border = '1px solid rgba(37, 211, 102, 0.4)';
+          successAlert.style.color = '#3bf17f';
+          successAlert.innerHTML = '<strong>¡Mensaje enviado con éxito!</strong><br>Gracias por escribirme, te responderé pronto a tu correo.';
+
+          contactForm.appendChild(successAlert);
+          contactForm.reset();
+
+          setTimeout(function () {
+            if (successAlert) successAlert.remove();
+          }, 8000);
+        })
+        .catch(function (error) {
+          console.error('Error al enviar formulario:', error);
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnContent;
+
+          var errorAlert = document.createElement('div');
+          errorAlert.className = 'contact-form-alert alert mt-3 p-3 text-center';
+          errorAlert.style.borderRadius = '12px';
+          errorAlert.style.fontSize = '0.9rem';
+          errorAlert.style.background = 'rgba(193, 59, 74, 0.15)';
+          errorAlert.style.border = '1px solid rgba(193, 59, 74, 0.4)';
+          errorAlert.style.color = '#ff6b7a';
+          errorAlert.innerHTML = '<strong>Ocurrió un problema al enviar el mensaje.</strong><br>Por favor inténtalo de nuevo o contáctame por WhatsApp.';
+
+          contactForm.appendChild(errorAlert);
+
+          setTimeout(function () {
+            if (errorAlert) errorAlert.remove();
+          }, 8000);
+        });
+      });
     });
   </script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
