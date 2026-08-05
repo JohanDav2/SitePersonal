@@ -1,10 +1,12 @@
-document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
-    });
-});
+function updateCopyrightYear() {
+  var year = new Date().getFullYear();
+  document.querySelectorAll('.jd-copyright').forEach(function (el) {
+    el.innerHTML = el.innerHTML.replace(/©\s*\d{4}/, '© ' + year);
+  });
+  document.querySelectorAll('.jd-copyright-year').forEach(function (el) {
+    el.textContent = year;
+  });
+}
 
 function includeHTML() {
   let elements = document.querySelectorAll('[data-include]');
@@ -15,10 +17,14 @@ function includeHTML() {
         .then(response => response.text())
         .then(data => {
           element.innerHTML = data;
+          updateCopyrightYear();
         })
         .catch(error => console.error('Error loading file:', error));
     }
   });
 }
 
-window.addEventListener('DOMContentLoaded', includeHTML);
+document.addEventListener('DOMContentLoaded', function () {
+  includeHTML();
+  updateCopyrightYear();
+});

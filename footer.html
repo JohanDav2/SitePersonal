@@ -441,7 +441,7 @@
 
     <div class="jd-footer-bottom">
         <div class="jd-footer-bottom-inner">
-            <p class="jd-copyright">© 2024 <span>Johan David Duitama</span>. Todos los derechos reservados.</p>
+            <p class="jd-copyright">© <span class="jd-copyright-year"></span> <span>Johan David Duitama</span>. Todos los derechos reservados.</p>
         </div>
     </div>
 </footer>
@@ -537,7 +537,15 @@
 </div>
 
 <script>
-    document.querySelectorAll('.jd-copyright').forEach(function (el) {
-        el.innerHTML = el.innerHTML.replace(/©\s*\d{4}/, '© ' + new Date().getFullYear());
-    });
+    (function () {
+        var currentYear = new Date().getFullYear();
+        document.querySelectorAll('.jd-copyright-year').forEach(function (el) {
+            el.textContent = currentYear;
+        });
+        document.querySelectorAll('.jd-copyright').forEach(function (el) {
+            if (!el.querySelector('.jd-copyright-year')) {
+                el.innerHTML = el.innerHTML.replace(/©\s*\d{4}/, '© ' + currentYear);
+            }
+        });
+    })();
 </script>
