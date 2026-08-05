@@ -18,8 +18,8 @@
   <header class="space-nav" id="site-nav">
     <a class="space-brand" href="#inicio">
       <span class="space-brand-avatar">
-        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="16 18 22 12 16 6"></polyline>
           <polyline points="8 6 2 12 8 18"></polyline>
         </svg>
@@ -48,17 +48,23 @@
         <span>Contacto</span>
       </a>
     </nav>
-    <button class="space-theme-toggle" id="jd-theme-toggle" type="button" aria-label="Cambiar a Modo Claro" title="Cambiar Tema (Modo Claro / Oscuro)" aria-pressed="false">
-      <!-- Icono Sol (Modo Claro) -->
-      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="12" cy="12" r="4"></circle>
-        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
-      </svg>
-      <!-- Icono Luna (Modo Oscuro) -->
-      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-      </svg>
-    </button>
+    <div class="nav-right">
+      <a href="https://www.geasstech.com" target="_blank" rel="noopener" class="nav-geass-btn" title="Conoce Geass Tech">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+        <span>Geass Tech</span>
+      </a>
+      <button class="space-theme-toggle" id="jd-theme-toggle" type="button" aria-label="Cambiar a Modo Claro" title="Cambiar Tema (Modo Claro / Oscuro)" aria-pressed="false">
+        <!-- Icono Sol (Modo Oscuro - click para ir a claro) -->
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+        <!-- Icono Luna (Modo Claro - click para ir a oscuro) -->
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
   </header>
 
   <!-- ══════════════════════════════
@@ -2669,20 +2675,70 @@
   }
 
   .space-brand-avatar {
-    width: 28px;
-    height: 28px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #c13b4a, #71111c);
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #e04055 0%, #8c1724 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
-    box-shadow: 0 3px 10px rgba(163, 33, 50, 0.4);
+    box-shadow: 0 3px 12px rgba(193, 59, 74, 0.55), inset 0 1px 0 rgba(255,255,255,0.2);
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .space-brand-avatar svg {
+    display: block;
     flex-shrink: 0;
   }
 
   .space-brand span {
     color: var(--space-accent);
+  }
+
+  /* Botón Geass Tech */
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .nav-geass-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: .74rem;
+    font-weight: 700;
+    color: #c13b4a;
+    background: rgba(193, 59, 74, 0.1);
+    border: 1px solid rgba(193, 59, 74, 0.3);
+    border-radius: 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.01em;
+  }
+
+  .nav-geass-btn svg {
+    flex-shrink: 0;
+    opacity: 0.8;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .nav-geass-btn:hover {
+    color: #fff;
+    background: rgba(193, 59, 74, 0.28);
+    border-color: rgba(193, 59, 74, 0.65);
+    box-shadow: 0 0 14px rgba(193, 59, 74, 0.35);
+    transform: translateY(-1px);
+  }
+
+  .nav-geass-btn:hover svg {
+    opacity: 1;
+    transform: scale(1.1);
   }
 
   .space-nav-links {
@@ -2849,6 +2905,19 @@
     background: rgba(99, 102, 241, 0.15);
     border-color: rgba(99, 102, 241, 0.4);
     box-shadow: 0 0 16px rgba(99, 102, 241, 0.3);
+  }
+
+  html[data-theme="light"] .nav-geass-btn {
+    color: #9b1f2e;
+    background: rgba(193, 59, 74, 0.07);
+    border-color: rgba(193, 59, 74, 0.22);
+  }
+
+  html[data-theme="light"] .nav-geass-btn:hover {
+    color: #fff;
+    background: rgba(193, 59, 74, 0.85);
+    border-color: rgba(193, 59, 74, 0.85);
+    box-shadow: 0 4px 14px rgba(193, 59, 74, 0.3);
   }
 
   html[data-theme="light"] .single-page-section {
