@@ -169,74 +169,221 @@
         font-weight: 600;
     }
 
-    /* ── Modales ── */
-    .modal-content {
-        background: linear-gradient(160deg, #14172b 0%, #0a0c18 100%);
-        border: 1px solid var(--footer-border);
-        border-radius: 20px;
+    /* ── Modales Rediseñados ── */
+    .modal-backdrop.show {
+        opacity: 0.7;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+    .modal-custom-content {
+        background: linear-gradient(155deg, #121528 0%, #080a16 100%);
+        border: 1px solid rgba(193, 59, 74, 0.28);
+        border-radius: 24px;
         color: var(--footer-text);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(193, 59, 74, 0.12);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .modal-custom-content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--footer-accent), transparent);
+    }
+
+    .btn-close-modal {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #a5a8bc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        z-index: 10;
+    }
+
+    .btn-close-modal:hover {
+        background: rgba(193, 59, 74, 0.2);
+        border-color: rgba(193, 59, 74, 0.5);
+        color: #fff;
+        transform: rotate(90deg);
     }
 
     .modal-body .icon-container {
         width: 80px;
         height: 80px;
-        margin: 0 auto 20px;
-        background: rgba(163, 33, 50, 0.12);
-        border: 1px solid rgba(193, 59, 74, 0.24);
-        border-radius: 20px;
+        margin: 0 auto 16px;
+        border-radius: 22px;
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: transform 0.3s ease;
+        position: relative;
+    }
+
+    .icon-linkedin {
+        background: rgba(10, 102, 194, 0.12);
+        border: 1px solid rgba(10, 102, 194, 0.3);
+        box-shadow: 0 8px 24px rgba(10, 102, 194, 0.2);
+    }
+
+    .icon-whatsapp {
+        background: rgba(37, 211, 102, 0.12);
+        border: 1px solid rgba(37, 211, 102, 0.3);
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.2);
+    }
+
+    .icon-instagram {
+        background: rgba(225, 48, 108, 0.12);
+        border: 1px solid rgba(225, 48, 108, 0.3);
+        box-shadow: 0 8px 24px rgba(225, 48, 108, 0.2);
+    }
+
+    .modal-body .icon-container:hover {
+        transform: scale(1.05);
     }
 
     .modal-body img {
-        width: 40px !important;
-        height: 40px !important;
+        width: 42px !important;
+        height: 42px !important;
+        object-fit: contain;
+    }
+
+    .modal-badge {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 4px 14px;
+        border-radius: 20px;
+        margin-bottom: 4px;
+    }
+
+    .badge-linkedin {
+        background: rgba(10, 102, 194, 0.18);
+        color: #49a5ff;
+        border: 1px solid rgba(10, 102, 194, 0.35);
+    }
+
+    .badge-whatsapp {
+        background: rgba(37, 211, 102, 0.18);
+        color: #3bf17f;
+        border: 1px solid rgba(37, 211, 102, 0.35);
+    }
+
+    .badge-instagram {
+        background: rgba(225, 48, 108, 0.18);
+        color: #ff6897;
+        border: 1px solid rgba(225, 48, 108, 0.35);
     }
 
     .modal-title {
-        color: var(--footer-accent-light);
-        font-weight: 700;
+        color: #ffffff;
+        font-weight: 800;
+        font-size: 1.35rem;
+        letter-spacing: -0.01em;
     }
 
-    .modal-body .btn {
+    .modal-desc {
+        color: #a5a8bc;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .phone-number-box {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px dashed rgba(37, 211, 102, 0.4);
         border-radius: 12px;
-        padding: 12px 30px;
+        padding: 10px 16px;
+        display: inline-block;
+    }
+
+    .phone-number {
+        font-size: 1.1rem;
         font-weight: 700;
-        text-transform: uppercase;
-        font-size: 0.8rem;
+        color: #ffffff;
         letter-spacing: 0.05em;
-        transition: all 0.3s;
+    }
+
+    .modal-body .btn-action {
+        border-radius: 14px;
+        padding: 14px 28px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        letter-spacing: 0.03em;
+        transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
         border: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
     }
 
     .btn-linkedin {
-        background: linear-gradient(135deg, #b52f3f, #71111c);
-        color: white;
+        background: linear-gradient(135deg, #0A66C2 0%, #004182 100%);
+        color: #ffffff !important;
+        box-shadow: 0 8px 22px rgba(10, 102, 194, 0.38);
+    }
+
+    .btn-linkedin:hover {
+        background: linear-gradient(135deg, #1175dc 0%, #004d99 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(10, 102, 194, 0.55);
+        color: #ffffff !important;
     }
 
     .btn-whatsapp {
-        background: linear-gradient(135deg, #25d366, #128c4a);
-        color: white;
+        background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        color: #ffffff !important;
+        box-shadow: 0 8px 22px rgba(37, 211, 102, 0.38);
+    }
+
+    .btn-whatsapp:hover {
+        background: linear-gradient(135deg, #2be26f 0%, #159c8c 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(37, 211, 102, 0.55);
+        color: #ffffff !important;
     }
 
     .btn-instagram {
-        background: linear-gradient(45deg, #c13b4a 0%, #8c1724 50%, #71111c 100%);
-        color: white;
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        color: #ffffff !important;
+        box-shadow: 0 8px 22px rgba(225, 48, 108, 0.38);
     }
 
-    .btn:hover {
+    .btn-instagram:hover {
+        background: linear-gradient(45deg, #f79c3b 0%, #ed7145 25%, #e3304c 50%, #d42b6e 75%, #c41f91 100%);
         transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        opacity: 0.92;
+        box-shadow: 0 12px 28px rgba(225, 48, 108, 0.55);
+        color: #ffffff !important;
     }
 
-    .modal-body .btn-link {
-        color: var(--footer-text-muted) !important;
+    .btn-link-dismiss {
+        color: #8f92a8 !important;
+        font-size: 0.84rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        background: transparent;
+        border: none;
     }
 
-    .modal-body .btn-link:hover {
-        color: var(--footer-text) !important;
+    .btn-link-dismiss:hover {
+        color: #ffffff !important;
+        text-decoration: underline;
     }
 
     /* ── Responsive ── */
@@ -299,21 +446,31 @@
     </div>
 </footer>
 
-<!-- Modales (sin cambios en lógica) -->
+<!-- Modales Rediseñados -->
 <div class="modal fade" id="linkedinModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body text-center p-5">
-                <div class="icon-container">
+        <div class="modal-content modal-custom-content">
+            <button type="button" class="btn-close-modal" data-bs-dismiss="modal" aria-label="Cerrar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+            <div class="modal-body text-center p-4 p-md-5">
+                <div class="icon-container icon-linkedin">
                     <img src="https://lh3.googleusercontent.com/d/1rVGTplWM5Y7jx_CfnUJc0xDnelaxpKqg=w1000"
-                        alt="LinkedIn">
+                        alt="LinkedIn" />
                 </div>
-                <h4 class="modal-title mb-3">Red Profesional</h4>
-                <p class="text-muted mb-4">Conectemos en LinkedIn para explorar oportunidades de colaboración y
-                    networking profesional.</p>
+                <span class="modal-badge badge-linkedin">Red Profesional</span>
+                <h4 class="modal-title my-2">Conectemos en LinkedIn</h4>
+                <p class="modal-desc mb-4">Exploremos oportunidades de colaboración, networking profesional y proyectos innovadores.</p>
                 <a href="https://www.linkedin.com/in/johan-david-duitama-pedraza-4573a0304" target="_blank"
-                    class="btn btn-linkedin w-100 mb-2">Visitar Perfil</a>
-                <button type="button" class="btn btn-link text-muted" data-bs-dismiss="modal">Cerrar</button>
+                    rel="noopener" class="btn btn-action btn-linkedin w-100 mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="me-2"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+                    Visitar Perfil
+                </a>
+                <button type="button" class="btn btn-link btn-link-dismiss" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
@@ -321,19 +478,30 @@
 
 <div class="modal fade" id="whatsappModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body text-center p-5">
-                <div class="icon-container">
+        <div class="modal-content modal-custom-content">
+            <button type="button" class="btn-close-modal" data-bs-dismiss="modal" aria-label="Cerrar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+            <div class="modal-body text-center p-4 p-md-5">
+                <div class="icon-container icon-whatsapp">
                     <img src="https://lh3.googleusercontent.com/d/1XQWuFDGA2oexudK5oh7pCssi0kM0QiXa=w1000"
-                        alt="WhatsApp">
+                        alt="WhatsApp" />
                 </div>
-                <h4 class="modal-title mb-3">Contacto Directo</h4>
-                <p class="text-muted mb-4">Estoy disponible para consultas empresariales rápidas y soporte técnico
-                    especializado.</p>
-                <p class="fw-bold text-white mb-4">+57 318 282 4129</p>
-                <a href="https://wa.me/573182824129" target="_blank" class="btn btn-whatsapp w-100 mb-2">Enviar
-                    Mensaje</a>
-                <button type="button" class="btn btn-link text-muted" data-bs-dismiss="modal">Cerrar</button>
+                <span class="modal-badge badge-whatsapp">Contacto Directo</span>
+                <h4 class="modal-title my-2">Escríbeme por WhatsApp</h4>
+                <p class="modal-desc mb-3">Disponible para consultas empresariales rápidas, soporte técnico y proyectos.</p>
+                <div class="phone-number-box mb-4">
+                    <span class="phone-number">+57 318 282 4129</span>
+                </div>
+                <a href="https://wa.me/573182824129" target="_blank" rel="noopener" class="btn btn-action btn-whatsapp w-100 mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="me-2"><path d="M12.011 2c-5.506 0-9.989 4.478-9.989 9.984 0 1.76.459 3.474 1.33 4.982l-1.412 5.161 5.282-1.385c1.455.793 3.097 1.213 4.789 1.213 5.507 0 9.989-4.479 9.989-9.985 0-5.506-4.482-9.984-9.989-9.984zm5.792 14.161c-.244.685-1.42 1.309-1.96 1.365-.54.056-1.242.257-3.993-.847-3.526-1.417-5.772-5.011-5.949-5.247-.177-.236-1.427-1.9-1.427-3.624 0-1.723.902-2.571 1.222-2.923.32-.352.697-.44.929-.44.232 0 .464.003.666.012.213.01.498-.08.78.596.289.697.986 2.408 1.072 2.583.086.175.143.379.028.608-.115.229-.172.372-.343.571-.171.199-.36.444-.515.597-.171.171-.349.358-.15.701.199.343.885 1.46 1.899 2.364 1.304 1.162 2.405 1.523 2.748 1.695.343.172.544.143.744-.086.2-.229.856-.999 1.084-1.342.228-.343.456-.286.77-.171.314.114 1.996.941 2.338 1.112.342.171.57.257.656.4.086.143.086.828-.158 1.513z"/></svg>
+                    Iniciar Chat
+                </a>
+                <button type="button" class="btn btn-link btn-link-dismiss" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
@@ -341,18 +509,28 @@
 
 <div class="modal fade" id="instagramModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body text-center p-5">
-                <div class="icon-container">
+        <div class="modal-content modal-custom-content">
+            <button type="button" class="btn-close-modal" data-bs-dismiss="modal" aria-label="Cerrar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+            <div class="modal-body text-center p-4 p-md-5">
+                <div class="icon-container icon-instagram">
                     <img src="https://lh3.googleusercontent.com/d/1FroIP333H3aYzaAbeimg6iJ2IW3EaZg3=w1000"
-                        alt="Instagram">
+                        alt="Instagram" />
                 </div>
-                <h4 class="modal-title mb-3">Social & Creative</h4>
-                <p class="text-muted mb-4">Sígueme para ver actualizaciones diarias de mis proyectos y mi proceso
-                    creativo.</p>
-                <a href="https://www.instagram.com/johandav2" target="_blank"
-                    class="btn btn-instagram w-100 mb-2">Seguir en Instagram</a>
-                <button type="button" class="btn btn-link text-muted" data-bs-dismiss="modal">Cerrar</button>
+                <span class="modal-badge badge-instagram">Creatividad & Social</span>
+                <h4 class="modal-title my-2">Sígueme en Instagram</h4>
+                <p class="modal-desc mb-4">Descubre actualizaciones diarias de mis proyectos, proceso creativo y diseño.</p>
+                <a href="https://www.instagram.com/johandav2" target="_blank" rel="noopener"
+                    class="btn btn-action btn-instagram w-100 mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    Seguir en Instagram
+                </a>
+                <button type="button" class="btn btn-link btn-link-dismiss" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
