@@ -47,6 +47,10 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
         <span>Contacto</span>
       </a>
+      <a href="https://www.geasstech.com" target="_blank" rel="noopener" class="nav-geass-btn nav-geass-mobile" title="Conoce Geass Tech">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+        <span>Geass Tech</span>
+      </a>
     </nav>
     <div class="nav-right">
       <a href="https://www.geasstech.com" target="_blank" rel="noopener" class="nav-geass-btn nav-geass-desktop" title="Conoce Geass Tech">
@@ -2989,21 +2993,9 @@
     box-shadow: 0 4px 14px rgba(193, 59, 74, 0.3);
   }
 
-  html[data-theme="light"] .single-page-section {
-    background: #f4f5fb;
-    border-color: #dedfeb;
-  }
-
-  html[data-theme="light"] .contact-section {
-    background: radial-gradient(circle at 50% 0, #f8e9eb, #f4f5fb 65%);
-  }
-
-  html[data-theme="light"] .single-page-inner h2 {
-    color: #292640;
-  }
-
-  html[data-theme="light"] .single-page-inner p {
-    color: #63657a;
+  /* Geass Tech por defecto */
+  .nav-geass-mobile {
+    display: none !important;
   }
 
   @media (max-width: 680px) {
@@ -3012,25 +3004,26 @@
       padding: 0 14px;
     }
 
-    /* En móvil, el menú se convierte en panel lateral */
+    /* En móvil, el menú se convierte en panel lateral con contraste alto y scroll garantizado */
     .space-nav-links {
       position: fixed;
-      top: 58px;          /* exactamente debajo del nav */
+      top: 58px;
       right: 0;
-      bottom: 0;
-      left: auto;
+      width: min(290px, 82vw);
+      height: calc(100vh - 58px);
+      height: calc(100dvh - 58px);
       z-index: 999;
-      width: min(260px, 78vw);
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      padding: 20px 14px 40px;
-      background: #080a16;   /* sólido, sin transparencia */
-      border-left: 1px solid rgba(193, 59, 74, 0.22);
-      box-shadow: -8px 0 32px rgba(0, 0, 0, 0.55);
+      gap: 8px;
+      padding: 22px 14px 40px;
+      background: linear-gradient(180deg, #0c0f20 0%, #050713 100%);
+      border-left: 2px solid rgba(193, 59, 74, 0.55);
+      box-shadow: -12px 0 45px rgba(0, 0, 0, 0.85);
       transform: translateX(100%);
       transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
       overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     .space-nav-links.is-open {
@@ -3038,25 +3031,68 @@
     }
 
     .space-nav-links a {
-      padding: 13px 14px;
-      font-size: .85rem;
-      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      padding: 13px 16px;
+      font-size: .92rem;
+      font-weight: 600;
+      border-radius: 12px;
       gap: 12px;
       white-space: nowrap;
+      color: #f1f3ff;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: all 0.22s ease;
+      width: 100%;
+    }
+
+    .space-nav-links a:hover,
+    .space-nav-links a:focus {
+      color: #ffffff;
+      background: rgba(193, 59, 74, 0.18);
+      border-color: rgba(193, 59, 74, 0.40);
+    }
+
+    .space-nav-links a.is-active {
+      color: #ffffff;
+      background: linear-gradient(135deg, rgba(193, 59, 74, 0.32), rgba(120, 19, 31, 0.42));
+      border: 1px solid rgba(193, 59, 74, 0.65);
+      box-shadow: 0 4px 18px rgba(193, 59, 74, 0.25);
     }
 
     .space-nav-links a .nav-icon {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
+      color: #e04055;
+      flex-shrink: 0;
+      opacity: 0.95;
     }
 
-    /* Geass btn en mobile: ocultar en desktop rail, mostrar dentro del menú */
+    .space-nav-links a.is-active .nav-icon {
+      color: #ffffff;
+      opacity: 1;
+    }
+
     .nav-geass-desktop {
-      display: none;
+      display: none !important;
+    }
+
+    .space-nav-links .nav-geass-mobile {
+      display: inline-flex !important;
+      margin-top: 10px;
+      justify-content: center;
+      padding: 12px 16px;
+      font-size: .88rem;
+      font-weight: 700;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(193, 59, 74, 0.30), rgba(163, 33, 50, 0.45));
+      border: 1px solid rgba(193, 59, 74, 0.60);
+      color: #ffffff !important;
+      box-shadow: 0 4px 16px rgba(193, 59, 74, 0.30);
     }
 
     .space-brand {
-      font-size: .80rem;
+      font-size: .82rem;
     }
 
     /* Botón hamburguesa */
@@ -3066,27 +3102,27 @@
       justify-content: center;
       align-items: center;
       gap: 5px;
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       padding: 0;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 9px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
       cursor: pointer;
       transition: background 0.2s ease, border-color 0.2s ease;
       flex-shrink: 0;
     }
 
     .nav-hamburger:hover {
-      background: rgba(193, 59, 74, 0.22);
-      border-color: rgba(193, 59, 74, 0.5);
+      background: rgba(193, 59, 74, 0.25);
+      border-color: rgba(193, 59, 74, 0.6);
     }
 
     .ham-bar {
       display: block;
       width: 18px;
       height: 2px;
-      background: rgba(238, 240, 255, 0.85);
+      background: #ffffff;
       border-radius: 2px;
       transform-origin: center;
       transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
@@ -3110,9 +3146,12 @@
     .nav-mobile-overlay {
       display: block;
       position: fixed;
-      inset: 0;
+      top: 58px;
+      right: 0;
+      bottom: 0;
+      left: 0;
       z-index: 998;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.70);
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
@@ -3136,9 +3175,34 @@
 
   /* Modo claro para menú móvil */
   html[data-theme="light"] .space-nav-links {
-    background: #f7f8fc;
-    border-left-color: rgba(193, 59, 74, 0.18);
-    box-shadow: -8px 0 28px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(180deg, #ffffff 0%, #f4f5fd 100%);
+    border-left-color: rgba(193, 59, 74, 0.40);
+    box-shadow: -12px 0 40px rgba(0, 0, 0, 0.16);
+  }
+
+  html[data-theme="light"] .space-nav-links a {
+    color: #1e293b;
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.06);
+  }
+
+  html[data-theme="light"] .space-nav-links a:hover {
+    color: #0f172a;
+    background: rgba(193, 59, 74, 0.08);
+    border-color: rgba(193, 59, 74, 0.25);
+  }
+
+  html[data-theme="light"] .space-nav-links a.is-active {
+    color: #c13b4a;
+    background: rgba(193, 59, 74, 0.12);
+    border-color: rgba(193, 59, 74, 0.35);
+    box-shadow: 0 4px 14px rgba(193, 59, 74, 0.15);
+  }
+
+  html[data-theme="light"] .space-nav-links a.is-active {
+    color: #c13b4a;
+    background: rgba(193, 59, 74, 0.1);
+    border-color: rgba(193, 59, 74, 0.28);
   }
 
   html[data-theme="light"] .nav-hamburger {
@@ -3148,6 +3212,10 @@
 
   html[data-theme="light"] .ham-bar {
     background: rgba(15, 23, 42, 0.85);
+  }
+
+  html[data-theme="light"] .nav-mobile-overlay {
+    background: rgba(0, 0, 0, 0.45);
   }
 
   /* Sobre mí: misma atmósfera espacial del hero */
@@ -3467,15 +3535,17 @@
 
   @media (max-width: 560px) {
     .about-section {
-      padding: 70px 18px;
+      padding: 70px 16px;
     }
 
     .about-section-heading {
-      margin-bottom: 34px;
+      margin-bottom: 28px;
+      font-size: clamp(1.6rem, 7vw, 2rem);
     }
 
     .about-intro {
       flex-direction: column;
+      align-items: center;
       text-align: center;
     }
 
@@ -3486,12 +3556,27 @@
     .about-service-card {
       min-height: 0;
       flex-direction: row;
+      gap: 14px;
+      padding: 16px;
     }
 
     .about-section .about-photo-wrap,
     .about-section .about-photo {
-      width: 108px;
-      height: 108px;
+      width: 96px;
+      height: 96px;
+    }
+
+    .about-section .about-title {
+      font-size: clamp(1.25rem, 5.5vw, 1.65rem);
+    }
+
+    .about-section .about-desc {
+      font-size: .87rem;
+    }
+
+    .about-section .about-ctas {
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -4023,6 +4108,7 @@
     color: #6b5760;
   }
 
+  /* Especialidades responsive */
   @media (max-width: 920px) {
     .tech-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -4034,50 +4120,74 @@
   }
 
   @media (max-width: 720px) {
-
     .specialties-grid,
     .build-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .expertise-section {
-      padding: 80px 20px;
+      padding: 80px 18px;
     }
 
     .tech-block,
     .build-block {
-      margin-top: 70px;
+      margin-top: 60px;
     }
 
     .tech-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .expertise-heading {
+      margin-bottom: 32px;
+    }
   }
 
   @media (max-width: 480px) {
+    .expertise-section {
+      padding: 64px 16px;
+    }
 
     .specialties-grid,
-    .build-grid,
-    .tech-grid {
+    .build-grid {
       grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .tech-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
     }
 
     .specialty-card,
     .build-card {
       min-height: 0;
+      padding: 20px;
+    }
+
+    .tech-block,
+    .build-block {
+      margin-top: 48px;
     }
 
     .ai-highlight {
       align-items: flex-start;
-      padding: 23px;
-      gap: 16px;
+      flex-direction: column;
+      padding: 20px;
+      gap: 14px;
     }
 
     .ai-icon {
-      flex-basis: 46px;
-      width: 46px;
-      height: 46px;
-      font-size: 1.4rem;
+      flex-basis: 44px;
+      width: 44px;
+      height: 44px;
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .tech-grid {
+      grid-template-columns: 1fr;
     }
   }
 
@@ -4385,11 +4495,36 @@
 
   @media (max-width: 480px) {
     .contact-section-new {
-      padding: 70px 18px;
+      padding: 64px 16px;
+    }
+
+    .contact-heading {
+      margin-bottom: 36px;
     }
 
     .contact-form-card {
-      padding: 24px;
+      padding: 20px 16px;
+    }
+
+    .contact-info-item {
+      gap: 12px;
+    }
+
+    .contact-info-icon {
+      flex: 0 0 38px;
+      width: 38px;
+      height: 38px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .contact-section-new {
+      padding: 56px 14px;
+    }
+
+    .contact-submit-btn {
+      font-size: .82rem;
+      padding: 11px 18px;
     }
   }
 </style>
