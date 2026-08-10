@@ -47,14 +47,14 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
         <span>Contacto</span>
       </a>
-      <a href="https://www.geasstech.com" target="_blank" rel="noopener" class="nav-geass-btn nav-geass-mobile" title="Conoce Geass Tech">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+      <a href="https://johandav2.github.io/Geass-Tech/geass.html" target="_blank" rel="noopener" class="nav-geass-btn nav-geass-mobile" title="Conoce Geass Tech">
+        <img src="logo-blanco.png" alt="Geass Tech" class="nav-geass-logo">
         <span>Geass Tech</span>
       </a>
     </nav>
     <div class="nav-right">
-      <a href="https://www.geasstech.com" target="_blank" rel="noopener" class="nav-geass-btn nav-geass-desktop" title="Conoce Geass Tech">
-        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+      <a href="https://johandav2.github.io/Geass-Tech/geass.html" target="_blank" rel="noopener" class="nav-geass-btn nav-geass-desktop" title="Conoce Geass Tech">
+        <img src="logo-blanco.png" alt="Geass Tech" class="nav-geass-logo">
         <span>Geass Tech</span>
       </a>
       <button class="space-theme-toggle" id="jd-theme-toggle" type="button" aria-label="Cambiar a Modo Claro" title="Cambiar Tema (Modo Claro / Oscuro)" aria-pressed="false">
@@ -2475,37 +2475,39 @@
   .nav-geass-btn {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    font-size: .74rem;
+    gap: 8px;
+    padding: 7px 15px;
+    font-size: .78rem;
     font-weight: 700;
-    color: #c13b4a;
-    background: rgba(193, 59, 74, 0.1);
-    border: 1px solid rgba(193, 59, 74, 0.3);
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #c13b4a 0%, #8c1724 100%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 20px;
     text-decoration: none;
     white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(193, 59, 74, 0.40);
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     letter-spacing: 0.01em;
   }
 
-  .nav-geass-btn svg {
+  .nav-geass-logo {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
     flex-shrink: 0;
-    opacity: 0.8;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition: transform 0.25s ease;
   }
 
   .nav-geass-btn:hover {
-    color: #fff;
-    background: rgba(193, 59, 74, 0.28);
-    border-color: rgba(193, 59, 74, 0.65);
-    box-shadow: 0 0 14px rgba(193, 59, 74, 0.35);
-    transform: translateY(-1px);
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #d34555 0%, #a31c2c 100%);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 6px 20px rgba(193, 59, 74, 0.55);
+    transform: translateY(-2px) scale(1.02);
   }
 
-  .nav-geass-btn:hover svg {
-    opacity: 1;
-    transform: scale(1.1);
+  .nav-geass-btn:hover .nav-geass-logo {
+    transform: scale(1.15) rotate(-6deg);
   }
 
   .space-nav-links {
@@ -2675,16 +2677,17 @@
   }
 
   html[data-theme="light"] .nav-geass-btn {
-    color: #9b1f2e;
-    background: rgba(193, 59, 74, 0.07);
-    border-color: rgba(193, 59, 74, 0.22);
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #c13b4a 0%, #8c1724 100%);
+    border-color: rgba(193, 59, 74, 0.4);
+    box-shadow: 0 4px 14px rgba(193, 59, 74, 0.35);
   }
 
   html[data-theme="light"] .nav-geass-btn:hover {
-    color: #fff;
-    background: rgba(193, 59, 74, 0.85);
-    border-color: rgba(193, 59, 74, 0.85);
-    box-shadow: 0 4px 14px rgba(193, 59, 74, 0.3);
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #d34555 0%, #a31c2c 100%);
+    border-color: rgba(193, 59, 74, 0.6);
+    box-shadow: 0 6px 18px rgba(193, 59, 74, 0.45);
   }
 
   /* Geass Tech por defecto */
@@ -2775,14 +2778,14 @@
       display: inline-flex !important;
       margin-top: 10px;
       justify-content: center;
-      padding: 12px 16px;
-      font-size: .88rem;
+      padding: 13px 18px;
+      font-size: .90rem;
       font-weight: 700;
       border-radius: 12px;
-      background: linear-gradient(135deg, rgba(193, 59, 74, 0.30), rgba(163, 33, 50, 0.45));
-      border: 1px solid rgba(193, 59, 74, 0.60);
+      background: linear-gradient(135deg, #c13b4a 0%, #8c1724 100%);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       color: #ffffff !important;
-      box-shadow: 0 4px 16px rgba(193, 59, 74, 0.30);
+      box-shadow: 0 4px 18px rgba(193, 59, 74, 0.45);
     }
 
     .space-brand {
