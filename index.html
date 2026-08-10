@@ -2647,14 +2647,14 @@
   /* Hero responsive: mobile */
   @media (max-width: 600px) {
     .hero.hero-space {
-      min-height: 100svh;
+      min-height: auto;
     }
 
     .hero.hero-space .hero-inner {
-      min-height: 100svh;
-      padding: 72px 20px 56px;
+      min-height: auto;
+      padding: 100px 22px 72px;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .hero.hero-space .hero-left {
@@ -2691,7 +2691,7 @@
   /* Hero responsive: móviles muy pequeños (< 380px) */
   @media (max-width: 380px) {
     .hero.hero-space .hero-inner {
-      padding: 68px 16px 48px;
+      padding: 88px 16px 60px;
     }
 
     .hero.hero-space .hero-title {
@@ -3015,17 +3015,19 @@
     /* En móvil, el menú se convierte en panel lateral */
     .space-nav-links {
       position: fixed;
-      inset: 0 0 0 auto;
+      top: 58px;          /* exactamente debajo del nav */
+      right: 0;
+      bottom: 0;
+      left: auto;
       z-index: 999;
-      width: min(280px, 80vw);
+      width: min(260px, 78vw);
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      padding: 80px 16px 32px;
-      background: rgba(5, 7, 20, 0.97);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border-left: 1px solid rgba(255, 255, 255, 0.07);
+      gap: 6px;
+      padding: 20px 14px 40px;
+      background: #080a16;   /* sólido, sin transparencia */
+      border-left: 1px solid rgba(193, 59, 74, 0.22);
+      box-shadow: -8px 0 32px rgba(0, 0, 0, 0.55);
       transform: translateX(100%);
       transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
       overflow-y: auto;
@@ -3134,8 +3136,9 @@
 
   /* Modo claro para menú móvil */
   html[data-theme="light"] .space-nav-links {
-    background: rgba(255, 255, 255, 0.97);
-    border-left-color: rgba(0, 0, 0, 0.06);
+    background: #f7f8fc;
+    border-left-color: rgba(193, 59, 74, 0.18);
+    box-shadow: -8px 0 28px rgba(0, 0, 0, 0.12);
   }
 
   html[data-theme="light"] .nav-hamburger {
