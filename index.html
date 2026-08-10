@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -24,7 +24,8 @@
     <div class="loader-content">
       <div class="loader-brand">
         <span class="loader-brand-avatar">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="16 18 22 12 16 6"></polyline>
             <polyline points="8 6 2 12 8 18"></polyline>
           </svg>
@@ -33,12 +34,13 @@
       </div>
       <div class="loader-spinner-wrap">
         <svg class="loader-ring" viewBox="0 0 80 80" fill="none">
-          <circle cx="40" cy="40" r="34" stroke="rgba(255,255,255,0.07)" stroke-width="5"/>
-          <circle cx="40" cy="40" r="34" stroke="url(#loader-grad)" stroke-width="5" stroke-linecap="round" stroke-dasharray="160" stroke-dashoffset="120"/>
+          <circle cx="40" cy="40" r="34" stroke="rgba(255,255,255,0.07)" stroke-width="5" />
+          <circle cx="40" cy="40" r="34" stroke="url(#loader-grad)" stroke-width="5" stroke-linecap="round"
+            stroke-dasharray="160" stroke-dashoffset="120" />
           <defs>
             <linearGradient id="loader-grad" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#c13b4a"/>
-              <stop offset="100%" stop-color="#8c1724"/>
+              <stop offset="0%" stop-color="#c13b4a" />
+              <stop offset="100%" stop-color="#8c1724" />
             </linearGradient>
           </defs>
         </svg>
@@ -60,16 +62,19 @@
       justify-content: center;
       transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.55s;
     }
+
     #jd-loader.fade-out {
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
     }
+
     .loader-bg {
       position: absolute;
       inset: 0;
       background: radial-gradient(circle at 50% 44%, #11152a 0%, #050710 52%, #03040a 100%);
     }
+
     .loader-stars {
       position: absolute;
       inset: 0;
@@ -81,6 +86,7 @@
       background-position: 8px 18px, 47px 38px, 19px 71px;
       opacity: 0.45;
     }
+
     .loader-content {
       position: relative;
       display: flex;
@@ -89,15 +95,25 @@
       gap: 24px;
       animation: loaderFadeIn 0.5s ease both;
     }
+
     @keyframes loaderFadeIn {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     .loader-brand {
       display: flex;
       align-items: center;
       gap: 11px;
     }
+
     .loader-brand-avatar {
       width: 44px;
       height: 44px;
@@ -108,6 +124,7 @@
       justify-content: center;
       box-shadow: 0 6px 22px rgba(193, 59, 74, 0.45);
     }
+
     .loader-brand-name {
       font-family: 'Inter', sans-serif;
       font-size: 1.3rem;
@@ -115,30 +132,41 @@
       letter-spacing: -0.03em;
       color: #eef0ff;
     }
+
     .loader-brand-name span {
       color: #c13b4a;
     }
+
     .loader-spinner-wrap {
       position: relative;
       width: 80px;
       height: 80px;
     }
+
     .loader-ring {
       width: 80px;
       height: 80px;
       animation: loaderSpin 1.2s linear infinite;
     }
+
     @keyframes loaderSpin {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
+
     .loader-bar-wrap {
       width: 180px;
       height: 3px;
-      background: rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.08);
       border-radius: 99px;
       overflow: hidden;
     }
+
     .loader-bar {
       height: 100%;
       width: 0%;
@@ -146,11 +174,21 @@
       border-radius: 99px;
       animation: loaderProgress 1.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     }
+
     @keyframes loaderProgress {
-      0%   { width: 0%; }
-      60%  { width: 75%; }
-      100% { width: 100%; }
+      0% {
+        width: 0%;
+      }
+
+      60% {
+        width: 75%;
+      }
+
+      100% {
+        width: 100%;
+      }
     }
+
     .loader-label {
       font-family: 'Inter', sans-serif;
       font-size: 0.72rem;
@@ -165,8 +203,8 @@
   <header class="space-nav" id="site-nav">
     <a class="space-brand" href="#inicio">
       <span class="space-brand-avatar">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-          stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+          stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="16 18 22 12 16 6"></polyline>
           <polyline points="8 6 2 12 8 18"></polyline>
         </svg>
@@ -175,40 +213,64 @@
     </a>
     <nav class="space-nav-links" id="nav-menu" aria-label="Navegación principal">
       <a href="#inicio" class="is-active">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
         <span>Inicio</span>
       </a>
       <a href="#sobre-mi">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
         <span>Sobre mí</span>
       </a>
       <a href="#especialidades">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
+          <polygon
+            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
         <span>Especialidades</span>
       </a>
       <a href="#proyectos">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
+          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+        </svg>
         <span>Proyectos</span>
       </a>
       <a href="#contacto">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
+          <path d="m22 2-7 20-4-9-9-4Z" />
+          <path d="M22 2 11 13" />
+        </svg>
         <span>Contacto</span>
       </a>
-      <a href="https://johandav2.github.io/Geass-Tech/geass.html" target="_blank" rel="noopener" class="nav-geass-btn nav-geass-mobile" title="Conoce Geass Tech">
+      <a href="https://johandav2.github.io/Geass-Tech/geass.html" target="_blank" rel="noopener"
+        class="nav-geass-btn nav-geass-mobile" title="Conoce Geass Tech">
         <img src="logo-blanco.png" alt="Geass Tech" class="nav-geass-logo">
         <span>Geass Tech</span>
       </a>
     </nav>
     <div class="nav-right">
-      <a href="https://johandav2.github.io/Geass-Tech/geass.html" target="_blank" rel="noopener" class="nav-geass-btn nav-geass-desktop" title="Conoce Geass Tech">
+      <a href="https://johandav2.github.io/Geass-Tech/geass.html" target="_blank" rel="noopener"
+        class="nav-geass-btn nav-geass-desktop" title="Conoce Geass Tech">
         <img src="logo-blanco.png" alt="Geass Tech" class="nav-geass-logo">
         <span>Geass Tech</span>
       </a>
-      <button class="space-theme-toggle" id="jd-theme-toggle" type="button" aria-label="Cambiar a Modo Claro" title="Cambiar Tema (Modo Claro / Oscuro)" aria-pressed="false">
+      <button class="space-theme-toggle" id="jd-theme-toggle" type="button" aria-label="Cambiar a Modo Claro"
+        title="Cambiar Tema (Modo Claro / Oscuro)" aria-pressed="false">
         <!-- Icono Sol (Modo Oscuro - click para ir a claro) -->
         <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="12" r="4"></circle>
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41">
+          </path>
         </svg>
         <!-- Icono Luna (Modo Claro - click para ir a oscuro) -->
         <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
@@ -216,7 +278,8 @@
         </svg>
       </button>
       <!-- Botón hamburguesa (solo móvil) -->
-      <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+      <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="Abrir menú" aria-expanded="false"
+        aria-controls="nav-menu">
         <span class="ham-bar"></span>
         <span class="ham-bar"></span>
         <span class="ham-bar"></span>
@@ -814,7 +877,8 @@
           </div>
         </div>
 
-        <form class="contact-form-card" id="contactForm" action="https://formsubmit.co/johandavid.duitama@gmail.com" method="POST">
+        <form class="contact-form-card" id="contactForm" action="https://formsubmit.co/johandavid.duitama@gmail.com"
+          method="POST">
           <input type="hidden" name="_subject" value="Nuevo mensaje desde tu sitio web de Johan Duitama">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
@@ -846,26 +910,6 @@
     </div>
   </section>
 
-
-  <!-- ══════════════════════════════
-       MODAL DE VIDEO
-  ══════════════════════════════ -->
-  <div class="video-modal-backdrop" id="videoModal" role="dialog" aria-modal="true" aria-label="Presentación en video">
-    <div class="video-modal-box">
-      <button class="video-modal-close" id="btnCloseVideo" aria-label="Cerrar video">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-        </svg>
-      </button>
-      <div class="video-modal-frame">
-        <iframe id="videoIframe" src=""
-          data-src="https://drive.google.com/file/d/1Csqm_U564PTRh3hMKv2wCxAmb2gz-gN-/preview" frameborder="0"
-          allowfullscreen title="Presentación Johan Duitama"></iframe>
-      </div>
-    </div>
-  </div>
   <script>
     document.querySelectorAll('.jd-copyright').forEach(function (el) {
       el.innerHTML = el.innerHTML.replace(/©\s*\d{4}/, '© ' + new Date().getFullYear());
@@ -905,49 +949,49 @@
           },
           body: JSON.stringify(data)
         })
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (result) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalBtnContent;
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (result) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnContent;
 
-          var successAlert = document.createElement('div');
-          successAlert.className = 'contact-form-alert alert mt-3 p-3 text-center';
-          successAlert.style.borderRadius = '12px';
-          successAlert.style.fontSize = '0.9rem';
-          successAlert.style.background = 'rgba(37, 211, 102, 0.15)';
-          successAlert.style.border = '1px solid rgba(37, 211, 102, 0.4)';
-          successAlert.style.color = '#3bf17f';
-          successAlert.innerHTML = '<strong>¡Mensaje enviado con éxito!</strong><br>Gracias por escribirme, te responderé pronto a tu correo.';
+            var successAlert = document.createElement('div');
+            successAlert.className = 'contact-form-alert alert mt-3 p-3 text-center';
+            successAlert.style.borderRadius = '12px';
+            successAlert.style.fontSize = '0.9rem';
+            successAlert.style.background = 'rgba(37, 211, 102, 0.15)';
+            successAlert.style.border = '1px solid rgba(37, 211, 102, 0.4)';
+            successAlert.style.color = '#3bf17f';
+            successAlert.innerHTML = '<strong>¡Mensaje enviado con éxito!</strong><br>Gracias por escribirme, te responderé pronto a tu correo.';
 
-          contactForm.appendChild(successAlert);
-          contactForm.reset();
+            contactForm.appendChild(successAlert);
+            contactForm.reset();
 
-          setTimeout(function () {
-            if (successAlert) successAlert.remove();
-          }, 8000);
-        })
-        .catch(function (error) {
-          console.error('Error al enviar formulario:', error);
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalBtnContent;
+            setTimeout(function () {
+              if (successAlert) successAlert.remove();
+            }, 8000);
+          })
+          .catch(function (error) {
+            console.error('Error al enviar formulario:', error);
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnContent;
 
-          var errorAlert = document.createElement('div');
-          errorAlert.className = 'contact-form-alert alert mt-3 p-3 text-center';
-          errorAlert.style.borderRadius = '12px';
-          errorAlert.style.fontSize = '0.9rem';
-          errorAlert.style.background = 'rgba(193, 59, 74, 0.15)';
-          errorAlert.style.border = '1px solid rgba(193, 59, 74, 0.4)';
-          errorAlert.style.color = '#ff6b7a';
-          errorAlert.innerHTML = '<strong>Ocurrió un problema al enviar el mensaje.</strong><br>Por favor inténtalo de nuevo o contáctame por WhatsApp.';
+            var errorAlert = document.createElement('div');
+            errorAlert.className = 'contact-form-alert alert mt-3 p-3 text-center';
+            errorAlert.style.borderRadius = '12px';
+            errorAlert.style.fontSize = '0.9rem';
+            errorAlert.style.background = 'rgba(193, 59, 74, 0.15)';
+            errorAlert.style.border = '1px solid rgba(193, 59, 74, 0.4)';
+            errorAlert.style.color = '#ff6b7a';
+            errorAlert.innerHTML = '<strong>Ocurrió un problema al enviar el mensaje.</strong><br>Por favor inténtalo de nuevo o contáctame por WhatsApp.';
 
-          contactForm.appendChild(errorAlert);
+            contactForm.appendChild(errorAlert);
 
-          setTimeout(function () {
-            if (errorAlert) errorAlert.remove();
-          }, 8000);
-        });
+            setTimeout(function () {
+              if (errorAlert) errorAlert.remove();
+            }, 8000);
+          });
       });
     });
   </script>
@@ -1319,8 +1363,15 @@
   }
 
   @keyframes heroFadeIn {
-    from { opacity: 0; transform: translateY(18px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .hero-title {
@@ -1426,7 +1477,7 @@
     position: relative;
     z-index: 2;
     border: 3px solid rgba(193, 59, 74, 0.40);
-    box-shadow: 0 0 0 6px rgba(163, 33, 50, 0.10), 0 20px 40px rgba(0,0,0,0.45);
+    box-shadow: 0 0 0 6px rgba(163, 33, 50, 0.10), 0 20px 40px rgba(0, 0, 0, 0.45);
   }
 
   .about-photo-ring {
@@ -1439,7 +1490,9 @@
   }
 
   @keyframes ringRotate {
-    to { transform: rotate(360deg); }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
   .about-photo-wrap::before {
@@ -1469,7 +1522,7 @@
     letter-spacing: 0.06em;
     z-index: 3;
     white-space: nowrap;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.50);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.50);
   }
 
   .about-badge-dot {
@@ -1477,13 +1530,22 @@
     height: 7px;
     border-radius: 50%;
     background: #9af0c6;
-    box-shadow: 0 0 0 3px rgba(154,240,198,0.20);
+    box-shadow: 0 0 0 3px rgba(154, 240, 198, 0.20);
     animation: pulse 2s infinite;
   }
 
   @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50%       { transform: scale(1.25); opacity: 0.7; }
+
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    50% {
+      transform: scale(1.25);
+      opacity: 0.7;
+    }
   }
 
   .about-content-col {
@@ -1615,9 +1677,9 @@
     gap: 18px;
     padding: 22px;
     background: rgba(16, 19, 37, 0.70);
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
     transition: transform 0.25s ease, border-color 0.25s ease;
   }
 
@@ -1942,7 +2004,7 @@
     align-items: center;
     justify-content: center;
     color: #fff;
-    box-shadow: 0 3px 12px rgba(193, 59, 74, 0.55), inset 0 1px 0 rgba(255,255,255,0.2);
+    box-shadow: 0 3px 12px rgba(193, 59, 74, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     flex-shrink: 0;
     border: 1px solid rgba(255, 255, 255, 0.15);
   }
@@ -2315,18 +2377,20 @@
       border-radius: 2px;
       transform-origin: center;
       transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
-                  opacity 0.2s ease,
-                  width 0.2s ease;
+        opacity 0.2s ease,
+        width 0.2s ease;
     }
 
     /* Estado abierto: convierte en X */
     .nav-hamburger.is-active .ham-bar:nth-child(1) {
       transform: translateY(7px) rotate(45deg);
     }
+
     .nav-hamburger.is-active .ham-bar:nth-child(2) {
       opacity: 0;
       width: 0;
     }
+
     .nav-hamburger.is-active .ham-bar:nth-child(3) {
       transform: translateY(-7px) rotate(-45deg);
     }
@@ -2357,6 +2421,7 @@
     .nav-hamburger {
       display: none;
     }
+
     .nav-mobile-overlay {
       display: none;
     }
@@ -3376,6 +3441,7 @@
   }
 
   @media (max-width: 720px) {
+
     .specialties-grid,
     .build-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
