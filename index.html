@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -13,1028 +13,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
-</head>
-
-<body>
-  <!-- ══════════════════════════════
-       PANTALLA DE CARGA
-  ══════════════════════════════ -->
-  <div id="jd-loader" aria-hidden="true" role="status">
-    <div class="loader-bg"></div>
-    <div class="loader-stars"></div>
-    <div class="loader-content">
-      <div class="loader-brand">
-        <span class="loader-brand-avatar">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-            stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="16 18 22 12 16 6"></polyline>
-            <polyline points="8 6 2 12 8 18"></polyline>
-          </svg>
-        </span>
-        <span class="loader-brand-name">Johan<span>Duitama</span></span>
-      </div>
-      <div class="loader-spinner-wrap">
-        <svg class="loader-ring" viewBox="0 0 80 80" fill="none">
-          <circle cx="40" cy="40" r="34" stroke="rgba(255,255,255,0.07)" stroke-width="5" />
-          <circle cx="40" cy="40" r="34" stroke="url(#loader-grad)" stroke-width="5" stroke-linecap="round"
-            stroke-dasharray="160" stroke-dashoffset="120" />
-          <defs>
-            <linearGradient id="loader-grad" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#c13b4a" />
-              <stop offset="100%" stop-color="#8c1724" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-      <div class="loader-bar-wrap">
-        <div class="loader-bar"></div>
-      </div>
-      <p class="loader-label">Cargando portafolio…</p>
-    </div>
-  </div>
-
-  <style>
-    #jd-loader {
-      position: fixed;
-      inset: 0;
-      z-index: 99999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.55s;
-    }
-
-    #jd-loader.fade-out {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    .loader-bg {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 50% 44%, #11152a 0%, #050710 52%, #03040a 100%);
-    }
-
-    .loader-stars {
-      position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(circle, #f5f6ff 0 1px, transparent 1.7px),
-        radial-gradient(circle, #c9ccdd 0 1px, transparent 1.5px),
-        radial-gradient(circle, #fff 0 .8px, transparent 1.4px);
-      background-size: 79px 79px, 127px 127px, 43px 43px;
-      background-position: 8px 18px, 47px 38px, 19px 71px;
-      opacity: 0.45;
-    }
-
-    .loader-content {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-      animation: loaderFadeIn 0.5s ease both;
-    }
-
-    @keyframes loaderFadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(14px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .loader-brand {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-    }
-
-    .loader-brand-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 13px;
-      background: linear-gradient(135deg, #e04055 0%, #8c1724 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 22px rgba(193, 59, 74, 0.45);
-    }
-
-    .loader-brand-name {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: #eef0ff;
-    }
-
-    .loader-brand-name span {
-      color: #c13b4a;
-    }
-
-    .loader-spinner-wrap {
-      position: relative;
-      width: 80px;
-      height: 80px;
-    }
-
-    .loader-ring {
-      width: 80px;
-      height: 80px;
-      animation: loaderSpin 1.2s linear infinite;
-    }
-
-    @keyframes loaderSpin {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .loader-bar-wrap {
-      width: 180px;
-      height: 3px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 99px;
-      overflow: hidden;
-    }
-
-    .loader-bar {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, #c13b4a, #e04055);
-      border-radius: 99px;
-      animation: loaderProgress 1.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-
-    @keyframes loaderProgress {
-      0% {
-        width: 0%;
-      }
-
-      60% {
-        width: 75%;
-      }
-
-      100% {
-        width: 100%;
-      }
-    }
-
-    .loader-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      color: rgba(180, 182, 199, 0.7);
-      margin: 0;
-      text-transform: uppercase;
-    }
-  </style>
-
-  <header class="space-nav" id="site-nav">
-    <a class="space-brand" href="#inicio">
-      <span class="space-brand-avatar">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
-          stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="16 18 22 12 16 6"></polyline>
-          <polyline points="8 6 2 12 8 18"></polyline>
-        </svg>
-      </span>
-      JohanDuitama <span>Portfolio</span>
-    </a>
-    <nav class="space-nav-links" id="nav-menu" aria-label="Navegación principal">
-      <a href="#inicio" class="is-active">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
-          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-          <polyline points="9 22 9 12 15 12 15 22" />
-        </svg>
-        <span>Inicio</span>
-      </a>
-      <a href="#sobre-mi">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
-          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-          <circle cx="12" cy="7" r="4" />
-        </svg>
-        <span>Perfil</span>
-      </a>
-      <a href="#especialidades">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
-          <polygon
-            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-        </svg>
-        <span>Especialidades</span>
-      </a>
-      <a href="#proyectos">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
-          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
-        </svg>
-        <span>Proyectos</span>
-      </a>
-      <a href="#contacto">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
-          <path d="m22 2-7 20-4-9-9-4Z" />
-          <path d="M22 2 11 13" />
-        </svg>
-        <span>Contacto</span>
-      </a>
-      <a href="https://johandav2.github.io/geass-tech-info/info-tech.html#contacto" target="_blank" rel="noopener"
-        class="nav-geass-btn nav-geass-mobile" title="Conoce Geass Tech">
-        <img src="logo-blanco.png" alt="Geass Tech" class="nav-geass-logo">
-        <span>Geass Tech</span>
-      </a>
-    </nav>
-    <div class="nav-right">
-      <a href="https://johandav2.github.io/geass-tech-info/info-tech.html#contacto" target="_blank" rel="noopener"
-        class="nav-geass-btn nav-geass-desktop" title="Conoce Geass Tech">
-        <img src="logo-blanco.png" alt="Geass Tech" class="nav-geass-logo">
-        <span>Geass Tech</span>
-      </a>
-      <button class="space-theme-toggle" id="jd-theme-toggle" type="button" aria-label="Cambiar a Modo Claro"
-        title="Cambiar Tema (Modo Claro / Oscuro)" aria-pressed="false">
-        <!-- Icono Sol (Modo Oscuro - click para ir a claro) -->
-        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="4"></circle>
-          <path
-            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41">
-          </path>
-        </svg>
-        <!-- Icono Luna (Modo Claro - click para ir a oscuro) -->
-        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      </button>
-      <!-- Botón hamburguesa (solo móvil) -->
-      <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="Abrir menú" aria-expanded="false"
-        aria-controls="nav-menu">
-        <span class="ham-bar"></span>
-        <span class="ham-bar"></span>
-        <span class="ham-bar"></span>
-      </button>
-    </div>
-  </header>
-  <!-- Overlay fondo para cerrar menú móvil -->
-  <div class="nav-mobile-overlay" id="nav-overlay" aria-hidden="true"></div>
-
-  <!-- ══════════════════════════════
-       HERO BANNER
-  ══════════════════════════════ -->
-  <section class="hero hero-space" id="inicio">
-    <div class="stars" aria-hidden="true"></div>
-    <span class="shooting-star shooting-star-one" aria-hidden="true"></span>
-    <span class="shooting-star shooting-star-two" aria-hidden="true"></span>
-    <span class="shooting-star shooting-star-three" aria-hidden="true"></span>
-    <div class="hero-inner">
-      <div class="hero-left">
-        <p class="hero-kicker">PORTAFOLIO DE JOHAN DUITAMA</p>
-        <h1 class="hero-title">Hola, soy <span class="hero-accent">Johan Duitama</span></h1>
-        <p class="hero-sub">Creo experiencias web y soluciones digitales modernas. Transformo ideas en productos
-          funcionales, claros y escalables.</p>
-        <div class="hero-ctas">
-          <a href="#proyectos" class="hero-btn-primary">Ver mi trabajo</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ DIVISOR: Hero → Presentación ══ -->
-  <div class="section-divider">
-    <div class="divider-line"></div>
-    <span class="divider-dot"></span>
-    <div class="divider-line"></div>
-  </div>
-
-  <!-- ══════════════════════════════
-       SECCIÓN SOBRE MÍ
-  ══════════════════════════════ -->
-  <section class="about-section" id="sobre-mi">
-    <div class="about-section-heading">
-      <span>Sobre</span> mí
-    </div>
-    <div class="about-inner">
-      <div class="about-content-col">
-        <div class="about-intro">
-          <div class="about-photo-col">
-            <div class="about-photo-wrap">
-              <img src="https://drive.google.com/thumbnail?id=1zCVaD3cyQrwqjMhh7ZZU_AqfDfAitEMU" alt="Johan Duitama"
-                class="about-photo">
-              <div class="about-photo-ring"></div>
-              <div class="about-badge"><span class="about-badge-dot"></span>Disponible</div>
-            </div>
-          </div>
-          <div>
-            <span class="about-eyebrow">Ingeniero de sistemas</span>
-            <h2 class="about-title">Tecnología con propósito y <span class="about-name-gold">diseño</span></h2>
-          </div>
-        </div>
-        <p class="about-desc">
-          Soy Johan Duitama, ingeniero de sistemas especializado en crear plataformas empresariales que simplifican
-          procesos, automatizan tareas y convierten datos en información útil para la toma de decisiones. Disfruto
-          construir soluciones que combinan funcionalidad, rendimiento y una experiencia de usuario intuitiva.
-        </p>
-        <p class="about-desc about-desc-secondary">Desarrollo soluciones empresariales enfocadas en gestión documental,
-          automatización de procesos, análisis de datos e inteligencia artificial.</p>
-        <p class="about-proof"><span aria-hidden="true">✓</span> Automatización · Dashboards · IA · Sistemas
-          empresariales</p>
-        <div class="about-skills">
-          <span class="skill-chip">PHP</span>
-          <span class="skill-chip">JavaScript</span>
-          <span class="skill-chip">MySQL</span>
-          <span class="skill-chip">Power BI</span>
-          <span class="skill-chip">Google Apps Script</span>
-          <span class="skill-chip">Bootstrap</span>
-        </div>
-        <div class="about-ctas">
-          <a href="#contacto" class="hero-btn-primary">Contáctame</a>
-          <a href="#proyectos" class="hero-btn-secondary">Ver proyectos</a>
-        </div>
-      </div>
-      <div class="about-services" aria-label="Áreas de especialidad">
-        <article class="about-service-card">
-          <span class="about-service-icon">&lt;/&gt;</span>
-          <div>
-            <h3>Desarrollo web</h3>
-            <p>Plataformas empresariales escalables con foco en rendimiento y experiencia de usuario.</p>
-          </div>
-        </article>
-        <article class="about-service-card">
-          <span class="about-service-icon">✦</span>
-          <div>
-            <h3>Automatización</h3>
-            <p>Procesos con Google Apps Script, APIs y flujos personalizados para reducir trabajo manual.</p>
-          </div>
-        </article>
-        <article class="about-service-card">
-          <span class="about-service-icon">▥</span>
-          <div>
-            <h3>Análisis de datos</h3>
-            <p>Dashboards e indicadores que transforman datos en decisiones estratégicas.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="expertise-section" id="especialidades" aria-labelledby="expertise-title">
-    <div class="expertise-heading">
-      <span class="about-eyebrow">Cómo aporto valor</span>
-      <h2 id="expertise-title">Mis <span>especialidades</span></h2>
-      <p>Soluciones digitales pensadas para hacer más eficientes los procesos y las decisiones de tu organización.</p>
-    </div>
-    <div class="specialties-grid">
-      <article class="specialty-card"><span class="specialty-icon">⌘</span>
-        <h3>Desarrollo de Software</h3>
-        <p>Desarrollo de aplicaciones web modernas, escalables y enfocadas en resolver necesidades empresariales.</p>
-      </article>
-      <article class="specialty-card"><span class="specialty-icon">⚙</span>
-        <h3>Automatización de Procesos</h3>
-        <p>Integración de flujos de trabajo con Google Apps Script, APIs y herramientas que eliminan tareas repetitivas.
-        </p>
-      </article>
-      <article class="specialty-card"><span class="specialty-icon">▥</span>
-        <h3>Business Intelligence</h3>
-        <p>Dashboards, indicadores y análisis de datos para apoyar la toma de decisiones.</p>
-      </article>
-      <article class="specialty-card"><span class="specialty-icon">▦</span>
-        <h3>Sistemas Empresariales</h3>
-        <p>Diseño e implementación de módulos para gestión documental, indicadores, matrices, capacitaciones y control
-          operativo.</p>
-      </article>
-      <article class="specialty-card"><span class="specialty-icon">▤</span>
-        <h3>Bases de Datos</h3>
-        <p>Modelado, optimización y administración de bases de datos relacionales.</p>
-      </article>
-      <article class="specialty-card"><span class="specialty-icon">✦</span>
-        <h3>UI / UX</h3>
-        <p>Interfaces intuitivas, responsivas y centradas en la experiencia del usuario.</p>
-      </article>
-    </div>
-
-    <div class="tech-block" aria-labelledby="tech-title">
-      <div class="tech-block-heading"><span class="about-eyebrow">Herramientas</span>
-        <h3 id="tech-title">Tecnologías</h3>
-      </div>
-      <div class="tech-grid">
-        <article class="tech-group">
-          <h4>Frontend</h4>
-          <div><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Bootstrap</span><span>MDBootstrap</span>
-          </div>
-        </article>
-        <article class="tech-group">
-          <h4>Backend</h4>
-          <div><span>PHP</span><span>Java</span><span>Google Apps Script</span></div>
-        </article>
-        <article class="tech-group">
-          <h4>Bases de datos</h4>
-          <div><span>MySQL</span><span>MariaDB</span><span>Supabase</span></div>
-        </article>
-        <article class="tech-group">
-          <h4>Cloud &amp; herramientas</h4>
-          <div><span>Google Workspace</span><span>Google Cloud
-              Platform</span><span>Git</span><span>GitHub</span><span>VS Code</span></div>
-        </article>
-        <article class="tech-group">
-          <h4>Business Intelligence</h4>
-          <div><span>Power BI</span><span>Looker Studio</span><span>Excel Avanzado</span></div>
-        </article>
-      </div>
-    </div>
-
-    <div class="build-block" aria-labelledby="build-title">
-      <div class="tech-block-heading"><span class="about-eyebrow">Resultados</span>
-        <h3 id="build-title">Lo que construyo</h3>
-      </div>
-      <div class="build-grid">
-        <article class="build-card"><span>📋</span>
-          <h4>Sistemas de Gestión</h4>
-          <p>Indicadores, matrices legales, gestión documental y procesos empresariales.</p>
-        </article>
-        <article class="build-card"><span>📈</span>
-          <h4>Dashboards</h4>
-          <p>Visualización de información para facilitar la toma de decisiones.</p>
-        </article>
-        <article class="build-card"><span>⚡</span>
-          <h4>Automatización</h4>
-          <p>Flujos automáticos que reducen trabajo manual y aumentan la productividad.</p>
-        </article>
-        <article class="build-card"><span>🧠</span>
-          <h4>Gestión del Conocimiento</h4>
-          <p>Bases de conocimiento, buscadores inteligentes y documentación centralizada.</p>
-        </article>
-        <article class="build-card"><span>🔐</span>
-          <h4>Seguridad y Usuarios</h4>
-          <p>Autenticación, roles, permisos y control de acceso.</p>
-        </article>
-        <article class="build-card"><span>☁️</span>
-          <h4>Integraciones</h4>
-          <p>Google Workspace, APIs REST, Supabase y servicios en la nube.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="projects-section" id="proyectos">
-    <div class="projects-inner">
-      <div class="expertise-heading mb-5">
-        <span class="about-eyebrow">Portafolio de Soluciones</span>
-        <h2>Mis <span>Proyectos</span></h2>
-        <p>Plataformas empresariales, automatización avanzada de procesos y sistemas de gestión organizados por áreas
-          especializadas.</p>
-      </div>
-
-      <!-- ==================== CATEGORÍA 01: Desarrollo de Software ==================== -->
-      <div class="project-category-block mb-5">
-        <div class="expertise-heading text-start ms-0 mb-4" style="max-width: 100%;">
-          <span class="about-eyebrow">Categoría 01</span>
-          <h3 class="fs-2 text-white fw-bold m-0">Desarrollo de <span
-              style="color: var(--space-accent);">Software</span></h3>
-          <p class="mt-2" style="color: #b4b6c7;">Plataformas empresariales diseñadas para centralizar procesos,
-            optimizar la gestión de la información y facilitar la toma de decisiones.</p>
-        </div>
-
-        <div class="marquee-wrapper">
-          <div class="marquee-viewport">
-            <div class="marquee-track">
-              <!-- Set original -->
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-1"><span class="proj-preview-title">Gestión de
-                      Indicadores</span><span class="proj-preview-sub">KPIs & Dashboards</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">KPIs</span><span
-                    class="tech-tag">Dashboards</span><span class="tech-tag">BI</span></div>
-                <h3>Gestión de Indicadores</h3>
-                <p>Centraliza la definición, seguimiento y evaluación de indicadores mediante dashboards, metas y
-                  reportes en tiempo real.</p>
-              </article>
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-2"><span class="proj-preview-title">Gestión
-                      Documental</span><span class="proj-preview-sub">Documentos & Versiones</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">Documentos</span><span
-                    class="tech-tag">Trazabilidad</span><span class="tech-tag">Permisos</span></div>
-                <h3>📄 Gestión Documental</h3>
-                <p>Organiza, controla y versiona documentos empresariales con permisos, trazabilidad y acceso
-                  centralizado.</p>
-              </article>
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-3"><span class="proj-preview-title">Matriz
-                      Legal</span><span class="proj-preview-sub">Cumplimiento Normativo</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">Legal</span><span
-                    class="tech-tag">Normatividad</span><span class="tech-tag">Auditoría</span></div>
-                <h3>⚖️ Matriz Legal</h3>
-                <p>Administra requisitos legales, realiza seguimiento a su cumplimiento y facilita el control normativo
-                  de la organización.</p>
-              </article>
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-4"><span class="proj-preview-title">Matriz de
-                      Peligros</span><span class="proj-preview-sub">SST & Riesgos Laborales</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">SST</span><span class="tech-tag">Riesgos</span><span
-                    class="tech-tag">Prevención</span></div>
-                <h3>🦺 Matriz de Peligros</h3>
-                <p>Identifica, evalúa y controla riesgos laborales mediante matrices dinámicas y planes de intervención.
-                </p>
-              </article>
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-5"><span class="proj-preview-title">Gestión de
-                      Activos</span><span class="proj-preview-sub">Inventarios & Mantenimiento</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">Activos</span><span
-                    class="tech-tag">Inventario</span><span class="tech-tag">Costos</span></div>
-                <h3>🏷️ Gestión de Activos</h3>
-                <p>Controla el inventario, mantenimiento, costos y ciclo de vida de los activos de la empresa.</p>
-              </article>
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-1"><span class="proj-preview-title">Plan de
-                      Capacitaciones</span><span class="proj-preview-sub">Formación & Cursos</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">Formación</span><span
-                    class="tech-tag">Evaluaciones</span><span class="tech-tag">Cursos</span></div>
-                <h3>🎓 Plan de Capacitaciones</h3>
-                <p>Gestiona programas de formación, asignación de cursos, evaluaciones y seguimiento del aprendizaje.
-                </p>
-              </article>
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-2"><span class="proj-preview-title">Gestión del
-                      Conocimiento</span><span class="proj-preview-sub">Base de Conocimiento</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">Wiki</span><span
-                    class="tech-tag">Procedimientos</span><span class="tech-tag">Prácticas</span></div>
-                <h3>🧠 Gestión del Conocimiento</h3>
-                <p>Centraliza información, procedimientos y buenas prácticas para facilitar el acceso al conocimiento
-                  organizacional.</p>
-              </article>
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-3"><span class="proj-preview-title">Recursos
-                      Humanos</span><span class="proj-preview-sub">Talento Humano & Perfiles</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">RRHH</span><span class="tech-tag">Perfiles</span><span
-                    class="tech-tag">Colaboradores</span></div>
-                <h3>👥 Gestión de Recursos Humanos</h3>
-                <p>Administra colaboradores, perfiles, procesos internos y documentación relacionada con el talento
-                  humano.</p>
-              </article>
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-4"><span class="proj-preview-title">Planes de
-                      Acción</span><span class="proj-preview-sub">Mejora Continua</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">Planificación</span><span
-                    class="tech-tag">Acciones</span><span class="tech-tag">Mejora</span></div>
-                <h3>✅ Planes de Acción</h3>
-                <p>Permite planificar, asignar y realizar seguimiento a acciones correctivas, preventivas y de mejora.
-                </p>
-              </article>
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-5"><span class="proj-preview-title">Control de
-                      Asistencia</span><span class="proj-preview-sub">Monitoreo & Reportes</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">Asistencia</span><span
-                    class="tech-tag">Estadísticas</span><span class="tech-tag">Reportes</span></div>
-                <h3>📅 Control de Asistencia</h3>
-                <p>Registra y monitorea la asistencia de colaboradores mediante reportes y estadísticas en tiempo real.
-                </p>
-              </article>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ==================== CATEGORÍA 02: Automatización con Excel y Hojas de Cálculo ==================== -->
-      <div class="project-category-block mb-5">
-        <div class="expertise-heading text-start ms-0 mb-4" style="max-width: 100%;">
-          <span class="about-eyebrow">Categoría 02</span>
-          <h3 class="fs-2 text-white fw-bold m-0">Automatización con <span style="color: var(--space-accent);">Excel y
-              Hojas de Cálculo</span></h3>
-          <p class="mt-2" style="color: #b4b6c7;">Soluciones orientadas a reducir tareas manuales mediante
-            automatización, generación de reportes y procesamiento inteligente de datos.</p>
-        </div>
-
-        <div class="marquee-wrapper">
-          <div class="marquee-viewport">
-            <div class="marquee-track">
-              <!-- Set original -->
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-1"><span class="proj-preview-title">Dashboards en
-                      Excel</span><span class="proj-preview-sub">Paneles Interactivos</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">Excel</span><span
-                    class="tech-tag">Dashboards</span><span class="tech-tag">Indicadores</span></div>
-                <h3>Dashboards en Excel</h3>
-                <p>Desarrollo de paneles interactivos para visualizar indicadores y facilitar el análisis de
-                  información.</p>
-              </article>
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-2"><span class="proj-preview-title">Automatización de
-                      Procesos</span><span class="proj-preview-sub">Macros & Apps Script</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">Macros</span><span class="tech-tag">Apps
-                    Script</span><span class="tech-tag">VBA</span></div>
-                <h3>⚡ Automatización de Procesos</h3>
-                <p>Automatización de tareas repetitivas mediante macros, fórmulas avanzadas y Google Apps Script.</p>
-              </article>
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-3"><span class="proj-preview-title">Reportes
-                      Automáticos</span><span class="proj-preview-sub">Consolidación de Datos</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">Reportes</span><span class="tech-tag">ETL</span><span
-                    class="tech-tag">Automatización</span></div>
-                <h3>📋 Reportes Automáticos</h3>
-                <p>Generación automática de informes y consolidación de datos desde múltiples fuentes.</p>
-              </article>
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-4"><span class="proj-preview-title">Google
-                      Workspace</span><span class="proj-preview-sub">Sheets, Forms, Drive & APIs</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">Google Sheets</span><span
-                    class="tech-tag">Forms</span><span class="tech-tag">Gmail & Calendar</span></div>
-                <h3>🔄 Integración con Google Workspace</h3>
-                <p>Automatización de procesos utilizando Google Sheets, Forms, Drive, Gmail y Calendar.</p>
-              </article>
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-5"><span class="proj-preview-title">Plantillas
-                      Inteligentes</span><span class="proj-preview-sub">Hojas Dinámicas & Control</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">Plantillas</span><span
-                    class="tech-tag">Inventario</span><span class="tech-tag">Control Operativo</span></div>
-                <h3>📑 Plantillas Inteligentes</h3>
-                <p>Creación de hojas de cálculo dinámicas para seguimiento de proyectos, inventarios y control
-                  operativo.</p>
-              </article>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ==================== CATEGORÍA 03: Evolución de Plataformas ==================== -->
-      <div class="project-category-block mb-4">
-        <div class="expertise-heading text-start ms-0 mb-4" style="max-width: 100%;">
-          <span class="about-eyebrow">Categoría 03</span>
-          <h3 class="fs-2 text-white fw-bold m-0">Evolución de <span
-              style="color: var(--space-accent);">Plataformas</span></h3>
-          <p class="mt-2" style="color: #b4b6c7;">Evolución continua de sistemas empresariales mediante nuevas
-            funcionalidades, optimización de procesos y mejoras en la experiencia de usuario.</p>
-        </div>
-
-        <div class="marquee-wrapper">
-          <div class="marquee-viewport">
-            <div class="marquee-track">
-              <!-- Set original -->
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-1"><span class="proj-preview-title">Nuevas
-                      Funcionalidades</span><span class="proj-preview-sub">Módulos & Escalabilidad</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">Módulos</span><span
-                    class="tech-tag">Mejoras</span><span class="tech-tag">Escalabilidad</span></div>
-                <h3>Nuevas Funcionalidades</h3>
-                <p>Desarrollo de módulos y características que amplían las capacidades de plataformas existentes.</p>
-              </article>
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-2"><span class="proj-preview-title">Optimización de
-                      Procesos</span><span class="proj-preview-sub">Rendimiento & Tiempos</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">Optimización</span><span
-                    class="tech-tag">Rendimiento</span><span class="tech-tag">Flujos</span></div>
-                <h3>⚙️ Optimización de Procesos</h3>
-                <p>Mejoras orientadas a simplificar flujos de trabajo, aumentar el rendimiento y reducir tiempos
-                  operativos.</p>
-              </article>
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-3"><span class="proj-preview-title">Rediseño de
-                      Interfaces</span><span class="proj-preview-sub">UI/UX & Responsivo</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">UI/UX</span><span class="tech-tag">Diseño</span><span
-                    class="tech-tag">Responsivo</span></div>
-                <h3>🎨 Rediseño de Interfaces</h3>
-                <p>Actualización de la experiencia de usuario mediante interfaces modernas, intuitivas y responsivas.
-                </p>
-              </article>
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-4"><span class="proj-preview-title">Seguridad y
-                      Permisos</span><span class="proj-preview-sub">Roles & Accesos</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">Seguridad</span><span
-                    class="tech-tag">Roles</span><span class="tech-tag">Permisos</span></div>
-                <h3>🔒 Seguridad y Permisos</h3>
-                <p>Implementación de controles de acceso, roles y permisos para garantizar la seguridad de la
-                  información.</p>
-              </article>
-              <article class="project-card">
-                <div class="project-thumb">
-                  <div class="browser-bar"><span></span><span></span><span></span></div>
-                  <div class="project-thumb-preview proj-preview-5"><span class="proj-preview-title">Reportes y
-                      Analítica</span><span class="proj-preview-sub">Analítica & Toma de Decisiones</span></div>
-                </div>
-                <div class="project-tags"><span class="tech-tag">Analítica</span><span
-                    class="tech-tag">Reportes</span><span class="tech-tag">Toma de Decisiones</span></div>
-                <h3>📊 Reportes y Analítica</h3>
-                <p>Incorporación de dashboards, indicadores y herramientas de análisis para mejorar la toma de
-                  decisiones.</p>
-              </article>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="contact-section-new" id="contacto">
-    <div class="contact-inner">
-      <div class="expertise-heading contact-heading">
-        <h2>Ponte en <span>Contacto</span></h2>
-        <p>¿Tienes un proyecto en mente o quieres colaborar? Escríbeme, siempre estoy abierto a nuevas oportunidades.
-        </p>
-      </div>
-
-      <div class="contact-grid">
-
-        <div class="contact-info-col">
-          <h3 class="contact-col-title">Información de Contacto</h3>
-          <div class="contact-info-list">
-            <div class="contact-info-item">
-              <span class="contact-info-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="4" width="20" height="16" rx="2" />
-                  <path d="m22 7-10 6L2 7" />
-                </svg>
-              </span>
-              <div>
-                <span class="contact-info-label">Email</span>
-                <span class="contact-info-value">johandavid.duitama@gmail.com</span>
-              </div>
-            </div>
-
-            <div class="contact-info-item">
-              <span class="contact-info-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-              </span>
-              <div>
-                <span class="contact-info-label">Teléfono</span>
-                <span class="contact-info-value">+57 318 282 4129</span>
-              </div>
-            </div>
-
-            <div class="contact-info-item">
-              <span class="contact-info-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-              </span>
-              <div>
-                <span class="contact-info-label">Ubicación</span>
-                <span class="contact-info-value">Colombia</span>
-              </div>
-            </div>
-          </div>
-
-          <h3 class="contact-col-title contact-social-title">Conecta Conmigo</h3>
-          <div class="contact-social-list">
-            <button type="button" class="contact-social-link" data-bs-toggle="modal" data-bs-target="#linkedinModal"
-              aria-label="LinkedIn" title="LinkedIn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z" />
-              </svg>
-            </button>
-            <button type="button" class="contact-social-link" data-bs-toggle="modal" data-bs-target="#whatsappModal"
-              aria-label="WhatsApp" title="WhatsApp">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M12.011 2c-5.506 0-9.989 4.478-9.989 9.984 0 1.76.459 3.474 1.33 4.982l-1.412 5.161 5.282-1.385c1.455.793 3.097 1.213 4.789 1.213 5.507 0 9.989-4.479 9.989-9.985 0-5.506-4.482-9.984-9.989-9.984zm5.792 14.161c-.244.685-1.42 1.309-1.96 1.365-.54.056-1.242.257-3.993-.847-3.526-1.417-5.772-5.011-5.949-5.247-.177-.236-1.427-1.9-1.427-3.624 0-1.723.902-2.571 1.222-2.923.32-.352.697-.44.929-.44.232 0 .464.003.666.012.213.01.498-.08.78.596.289.697.986 2.408 1.072 2.583.086.175.143.379.028.608-.115.229-.172.372-.343.571-.171.199-.36.444-.515.597-.171.171-.349.358-.15.701.199.343.885 1.46 1.899 2.364 1.304 1.162 2.405 1.523 2.748 1.695.343.172.544.143.744-.086.2-.229.856-.999 1.084-1.342.228-.343.456-.286.77-.171.314.114 1.996.941 2.338 1.112.342.171.57.257.656.4.086.143.086.828-.158 1.513z" />
-              </svg>
-            </button>
-            <button type="button" class="contact-social-link" data-bs-toggle="modal" data-bs-target="#instagramModal"
-              aria-label="Instagram" title="Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" />
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <form class="contact-form-card" id="contactForm" action="https://formsubmit.co/johandavid.duitama@gmail.com"
-          method="POST">
-          <input type="hidden" name="_subject" value="Nuevo mensaje desde tu sitio web de Johan Duitama">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-
-          <h3 class="contact-form-title">Enviar un Mensaje</h3>
-
-          <label class="contact-field-label" for="cf-name">Tu Nombre</label>
-          <input class="contact-input" id="cf-name" name="name" type="text" placeholder="Johan Duitama..." required>
-
-          <label class="contact-field-label" for="cf-email">Tu Email</label>
-          <input class="contact-input" id="cf-email" name="email" type="email" placeholder="correo@ejemplo.com"
-            required>
-
-          <label class="contact-field-label" for="cf-message">Tu Mensaje</label>
-          <textarea class="contact-input contact-textarea" id="cf-message" name="message" rows="4"
-            placeholder="Hola, me gustaría hablar sobre..." required></textarea>
-
-          <button type="submit" class="contact-submit-btn">
-            Enviar Mensaje
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="22" y1="2" x2="11" y2="13" />
-              <polygon points="22 2 15 22 11 13 2 9 22 2" />
-            </svg>
-          </button>
-        </form>
-
-      </div>
-    </div>
-  </section>
-
-  <script>
-    document.querySelectorAll('.jd-copyright').forEach(function (el) {
-      el.innerHTML = el.innerHTML.replace(/©\s*\d{4}/, '© ' + new Date().getFullYear());
-    });
-
-    document.addEventListener('DOMContentLoaded', function () {
-      var contactForm = document.getElementById('contactForm');
-      if (!contactForm) return;
-
-      contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        var submitBtn = contactForm.querySelector('.contact-submit-btn');
-        var originalBtnContent = submitBtn.innerHTML;
-
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Enviando... <span class="spinner-border spinner-border-sm ms-2" role="status" aria-hidden="true"></span>';
-
-        var existingAlert = contactForm.querySelector('.contact-form-alert');
-        if (existingAlert) existingAlert.remove();
-
-        var formData = new FormData(contactForm);
-        var data = {
-          name: formData.get('name'),
-          email: formData.get('email'),
-          message: formData.get('message'),
-          _subject: 'Nuevo mensaje de ' + formData.get('name') + ' desde tu Sitio Web',
-          _template: 'table',
-          _captcha: 'false'
-        };
-
-        fetch('https://formsubmit.co/ajax/johandavid.duitama@gmail.com', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(data)
-        })
-          .then(function (response) {
-            return response.json();
-          })
-          .then(function (result) {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalBtnContent;
-
-            var successAlert = document.createElement('div');
-            successAlert.className = 'contact-form-alert alert mt-3 p-3 text-center';
-            successAlert.style.borderRadius = '12px';
-            successAlert.style.fontSize = '0.9rem';
-            successAlert.style.background = 'rgba(37, 211, 102, 0.15)';
-            successAlert.style.border = '1px solid rgba(37, 211, 102, 0.4)';
-            successAlert.style.color = '#3bf17f';
-            successAlert.innerHTML = '<strong>¡Mensaje enviado con éxito!</strong><br>Gracias por escribirme, te responderé pronto a tu correo.';
-
-            contactForm.appendChild(successAlert);
-            contactForm.reset();
-
-            setTimeout(function () {
-              if (successAlert) successAlert.remove();
-            }, 8000);
-          })
-          .catch(function (error) {
-            console.error('Error al enviar formulario:', error);
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalBtnContent;
-
-            var errorAlert = document.createElement('div');
-            errorAlert.className = 'contact-form-alert alert mt-3 p-3 text-center';
-            errorAlert.style.borderRadius = '12px';
-            errorAlert.style.fontSize = '0.9rem';
-            errorAlert.style.background = 'rgba(193, 59, 74, 0.15)';
-            errorAlert.style.border = '1px solid rgba(193, 59, 74, 0.4)';
-            errorAlert.style.color = '#ff6b7a';
-            errorAlert.innerHTML = '<strong>Ocurrió un problema al enviar el mensaje.</strong><br>Por favor inténtalo de nuevo o contáctame por WhatsApp.';
-
-            contactForm.appendChild(errorAlert);
-
-            setTimeout(function () {
-              if (errorAlert) errorAlert.remove();
-            }, 8000);
-          });
-      });
-    });
-  </script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
-  <script>
-    (function () {
-      var modal = document.getElementById('videoModal');
-      var iframe = document.getElementById('videoIframe');
-      var btnOpen = document.getElementById('btnOpenVideo');
-      var btnClose = document.getElementById('btnCloseVideo');
-
-      function openModal() {
-        iframe.src = iframe.getAttribute('data-src');
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeModal() {
-        modal.classList.remove('open');
-        iframe.src = '';
-        document.body.style.overflow = '';
-      }
-
-      btnOpen.addEventListener('click', openModal);
-      btnClose.addEventListener('click', closeModal);
-
-      modal.addEventListener('click', function (e) {
-        if (e.target === modal) closeModal();
-      });
-
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeModal();
-      });
-    })();
-  </script>
-  <div data-include="footer.html"></div>
-  <script src="js/include.js"></script>
-</body>
 <style>
   /* =============================================
    SECCIÓN PROYECTOS
@@ -3851,6 +2829,1028 @@
     }
   }
 </style>
+</head>
+
+<body>
+  <!-- ══════════════════════════════
+       PANTALLA DE CARGA
+  ══════════════════════════════ -->
+  <div id="jd-loader" aria-hidden="true" role="status">
+    <div class="loader-bg"></div>
+    <div class="loader-stars"></div>
+    <div class="loader-content">
+      <div class="loader-brand">
+        <span class="loader-brand-avatar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+            stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </span>
+        <span class="loader-brand-name">Johan<span>Duitama</span></span>
+      </div>
+      <div class="loader-spinner-wrap">
+        <svg class="loader-ring" viewBox="0 0 80 80" fill="none">
+          <circle cx="40" cy="40" r="34" stroke="rgba(255,255,255,0.07)" stroke-width="5" />
+          <circle cx="40" cy="40" r="34" stroke="url(#loader-grad)" stroke-width="5" stroke-linecap="round"
+            stroke-dasharray="160" stroke-dashoffset="120" />
+          <defs>
+            <linearGradient id="loader-grad" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#c13b4a" />
+              <stop offset="100%" stop-color="#8c1724" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"></div>
+      </div>
+      <p class="loader-label">Cargando portafolio…</p>
+    </div>
+  </div>
+
+  <style>
+    #jd-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.55s;
+    }
+
+    #jd-loader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loader-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 44%, #11152a 0%, #050710 52%, #03040a 100%);
+    }
+
+    .loader-stars {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, #f5f6ff 0 1px, transparent 1.7px),
+        radial-gradient(circle, #c9ccdd 0 1px, transparent 1.5px),
+        radial-gradient(circle, #fff 0 .8px, transparent 1.4px);
+      background-size: 79px 79px, 127px 127px, 43px 43px;
+      background-position: 8px 18px, 47px 38px, 19px 71px;
+      opacity: 0.45;
+    }
+
+    .loader-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      animation: loaderFadeIn 0.5s ease both;
+    }
+
+    @keyframes loaderFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .loader-brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .loader-brand-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, #e04055 0%, #8c1724 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 22px rgba(193, 59, 74, 0.45);
+    }
+
+    .loader-brand-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #eef0ff;
+    }
+
+    .loader-brand-name span {
+      color: #c13b4a;
+    }
+
+    .loader-spinner-wrap {
+      position: relative;
+      width: 80px;
+      height: 80px;
+    }
+
+    .loader-ring {
+      width: 80px;
+      height: 80px;
+      animation: loaderSpin 1.2s linear infinite;
+    }
+
+    @keyframes loaderSpin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loader-bar-wrap {
+      width: 180px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .loader-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #c13b4a, #e04055);
+      border-radius: 99px;
+      animation: loaderProgress 1.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    @keyframes loaderProgress {
+      0% {
+        width: 0%;
+      }
+
+      60% {
+        width: 75%;
+      }
+
+      100% {
+        width: 100%;
+      }
+    }
+
+    .loader-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: rgba(180, 182, 199, 0.7);
+      margin: 0;
+      text-transform: uppercase;
+    }
+  </style>
+
+  <header class="space-nav" id="site-nav">
+    <a class="space-brand" href="#inicio">
+      <span class="space-brand-avatar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+          stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+      </span>
+      JohanDuitama <span>Portfolio</span>
+    </a>
+    <nav class="space-nav-links" id="nav-menu" aria-label="Navegación principal">
+      <a href="#inicio" class="is-active">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+        <span>Inicio</span>
+      </a>
+      <a href="#sobre-mi">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+        <span>Perfil</span>
+      </a>
+      <a href="#especialidades">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
+          <polygon
+            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+        <span>Especialidades</span>
+      </a>
+      <a href="#proyectos">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
+          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+        </svg>
+        <span>Proyectos</span>
+      </a>
+      <a href="#contacto">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon">
+          <path d="m22 2-7 20-4-9-9-4Z" />
+          <path d="M22 2 11 13" />
+        </svg>
+        <span>Contacto</span>
+      </a>
+      <a href="https://johandav2.github.io/geass-tech-info/info-tech.html#contacto" target="_blank" rel="noopener"
+        class="nav-geass-btn nav-geass-mobile" title="Conoce Geass Tech">
+        <img src="logo-blanco.png" alt="Geass Tech" class="nav-geass-logo">
+        <span>Geass Tech</span>
+      </a>
+    </nav>
+    <div class="nav-right">
+      <a href="https://johandav2.github.io/geass-tech-info/info-tech.html#contacto" target="_blank" rel="noopener"
+        class="nav-geass-btn nav-geass-desktop" title="Conoce Geass Tech">
+        <img src="logo-blanco.png" alt="Geass Tech" class="nav-geass-logo">
+        <span>Geass Tech</span>
+      </a>
+      <button class="space-theme-toggle" id="jd-theme-toggle" type="button" aria-label="Cambiar a Modo Claro"
+        title="Cambiar Tema (Modo Claro / Oscuro)" aria-pressed="false">
+        <!-- Icono Sol (Modo Oscuro - click para ir a claro) -->
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41">
+          </path>
+        </svg>
+        <!-- Icono Luna (Modo Claro - click para ir a oscuro) -->
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      <!-- Botón hamburguesa (solo móvil) -->
+      <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="Abrir menú" aria-expanded="false"
+        aria-controls="nav-menu">
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+        <span class="ham-bar"></span>
+      </button>
+    </div>
+  </header>
+  <!-- Overlay fondo para cerrar menú móvil -->
+  <div class="nav-mobile-overlay" id="nav-overlay" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════
+       HERO BANNER
+  ══════════════════════════════ -->
+  <section class="hero hero-space" id="inicio">
+    <div class="stars" aria-hidden="true"></div>
+    <span class="shooting-star shooting-star-one" aria-hidden="true"></span>
+    <span class="shooting-star shooting-star-two" aria-hidden="true"></span>
+    <span class="shooting-star shooting-star-three" aria-hidden="true"></span>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <p class="hero-kicker">PORTAFOLIO DE JOHAN DUITAMA</p>
+        <h1 class="hero-title">Hola, soy <span class="hero-accent">Johan Duitama</span></h1>
+        <p class="hero-sub">Creo experiencias web y soluciones digitales modernas. Transformo ideas en productos
+          funcionales, claros y escalables.</p>
+        <div class="hero-ctas">
+          <a href="#proyectos" class="hero-btn-primary">Ver mi trabajo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DIVISOR: Hero → Presentación ══ -->
+  <div class="section-divider">
+    <div class="divider-line"></div>
+    <span class="divider-dot"></span>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- ══════════════════════════════
+       SECCIÓN SOBRE MÍ
+  ══════════════════════════════ -->
+  <section class="about-section" id="sobre-mi">
+    <div class="about-section-heading">
+      <span>Sobre</span> mí
+    </div>
+    <div class="about-inner">
+      <div class="about-content-col">
+        <div class="about-intro">
+          <div class="about-photo-col">
+            <div class="about-photo-wrap">
+              <img src="foto hv.png" alt="Johan Duitama"
+                class="about-photo">
+              <div class="about-photo-ring"></div>
+              <div class="about-badge"><span class="about-badge-dot"></span>Disponible</div>
+            </div>
+          </div>
+          <div>
+            <span class="about-eyebrow">Ingeniero de sistemas</span>
+            <h2 class="about-title">Tecnología con propósito y <span class="about-name-gold">diseño</span></h2>
+          </div>
+        </div>
+        <p class="about-desc">
+          Soy Johan Duitama, ingeniero de sistemas especializado en crear plataformas empresariales que simplifican
+          procesos, automatizan tareas y convierten datos en información útil para la toma de decisiones. Disfruto
+          construir soluciones que combinan funcionalidad, rendimiento y una experiencia de usuario intuitiva.
+        </p>
+        <p class="about-desc about-desc-secondary">Desarrollo soluciones empresariales enfocadas en gestión documental,
+          automatización de procesos, análisis de datos e inteligencia artificial.</p>
+        <p class="about-proof"><span aria-hidden="true">✓</span> Automatización · Dashboards · IA · Sistemas
+          empresariales</p>
+        <div class="about-skills">
+          <span class="skill-chip">PHP</span>
+          <span class="skill-chip">JavaScript</span>
+          <span class="skill-chip">MySQL</span>
+          <span class="skill-chip">Power BI</span>
+          <span class="skill-chip">Google Apps Script</span>
+          <span class="skill-chip">Bootstrap</span>
+        </div>
+        <div class="about-ctas">
+          <a href="#contacto" class="hero-btn-primary">Contáctame</a>
+          <a href="#proyectos" class="hero-btn-secondary">Ver proyectos</a>
+        </div>
+      </div>
+      <div class="about-services" aria-label="Áreas de especialidad">
+        <article class="about-service-card">
+          <span class="about-service-icon">&lt;/&gt;</span>
+          <div>
+            <h3>Desarrollo web</h3>
+            <p>Plataformas empresariales escalables con foco en rendimiento y experiencia de usuario.</p>
+          </div>
+        </article>
+        <article class="about-service-card">
+          <span class="about-service-icon">✦</span>
+          <div>
+            <h3>Automatización</h3>
+            <p>Procesos con Google Apps Script, APIs y flujos personalizados para reducir trabajo manual.</p>
+          </div>
+        </article>
+        <article class="about-service-card">
+          <span class="about-service-icon">▥</span>
+          <div>
+            <h3>Análisis de datos</h3>
+            <p>Dashboards e indicadores que transforman datos en decisiones estratégicas.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="expertise-section" id="especialidades" aria-labelledby="expertise-title">
+    <div class="expertise-heading">
+      <span class="about-eyebrow">Cómo aporto valor</span>
+      <h2 id="expertise-title">Mis <span>especialidades</span></h2>
+      <p>Soluciones digitales pensadas para hacer más eficientes los procesos y las decisiones de tu organización.</p>
+    </div>
+    <div class="specialties-grid">
+      <article class="specialty-card"><span class="specialty-icon">⌘</span>
+        <h3>Desarrollo de Software</h3>
+        <p>Desarrollo de aplicaciones web modernas, escalables y enfocadas en resolver necesidades empresariales.</p>
+      </article>
+      <article class="specialty-card"><span class="specialty-icon">⚙</span>
+        <h3>Automatización de Procesos</h3>
+        <p>Integración de flujos de trabajo con Google Apps Script, APIs y herramientas que eliminan tareas repetitivas.
+        </p>
+      </article>
+      <article class="specialty-card"><span class="specialty-icon">▥</span>
+        <h3>Business Intelligence</h3>
+        <p>Dashboards, indicadores y análisis de datos para apoyar la toma de decisiones.</p>
+      </article>
+      <article class="specialty-card"><span class="specialty-icon">▦</span>
+        <h3>Sistemas Empresariales</h3>
+        <p>Diseño e implementación de módulos para gestión documental, indicadores, matrices, capacitaciones y control
+          operativo.</p>
+      </article>
+      <article class="specialty-card"><span class="specialty-icon">▤</span>
+        <h3>Bases de Datos</h3>
+        <p>Modelado, optimización y administración de bases de datos relacionales.</p>
+      </article>
+      <article class="specialty-card"><span class="specialty-icon">✦</span>
+        <h3>UI / UX</h3>
+        <p>Interfaces intuitivas, responsivas y centradas en la experiencia del usuario.</p>
+      </article>
+    </div>
+
+    <div class="tech-block" aria-labelledby="tech-title">
+      <div class="tech-block-heading"><span class="about-eyebrow">Herramientas</span>
+        <h3 id="tech-title">Tecnologías</h3>
+      </div>
+      <div class="tech-grid">
+        <article class="tech-group">
+          <h4>Frontend</h4>
+          <div><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Bootstrap</span><span>MDBootstrap</span>
+          </div>
+        </article>
+        <article class="tech-group">
+          <h4>Backend</h4>
+          <div><span>PHP</span><span>Java</span><span>Google Apps Script</span></div>
+        </article>
+        <article class="tech-group">
+          <h4>Bases de datos</h4>
+          <div><span>MySQL</span><span>MariaDB</span><span>Supabase</span></div>
+        </article>
+        <article class="tech-group">
+          <h4>Cloud &amp; herramientas</h4>
+          <div><span>Google Workspace</span><span>Google Cloud
+              Platform</span><span>Git</span><span>GitHub</span><span>VS Code</span></div>
+        </article>
+        <article class="tech-group">
+          <h4>Business Intelligence</h4>
+          <div><span>Power BI</span><span>Looker Studio</span><span>Excel Avanzado</span></div>
+        </article>
+      </div>
+    </div>
+
+    <div class="build-block" aria-labelledby="build-title">
+      <div class="tech-block-heading"><span class="about-eyebrow">Resultados</span>
+        <h3 id="build-title">Lo que construyo</h3>
+      </div>
+      <div class="build-grid">
+        <article class="build-card"><span>📋</span>
+          <h4>Sistemas de Gestión</h4>
+          <p>Indicadores, matrices legales, gestión documental y procesos empresariales.</p>
+        </article>
+        <article class="build-card"><span>📈</span>
+          <h4>Dashboards</h4>
+          <p>Visualización de información para facilitar la toma de decisiones.</p>
+        </article>
+        <article class="build-card"><span>⚡</span>
+          <h4>Automatización</h4>
+          <p>Flujos automáticos que reducen trabajo manual y aumentan la productividad.</p>
+        </article>
+        <article class="build-card"><span>🧠</span>
+          <h4>Gestión del Conocimiento</h4>
+          <p>Bases de conocimiento, buscadores inteligentes y documentación centralizada.</p>
+        </article>
+        <article class="build-card"><span>🔐</span>
+          <h4>Seguridad y Usuarios</h4>
+          <p>Autenticación, roles, permisos y control de acceso.</p>
+        </article>
+        <article class="build-card"><span>☁️</span>
+          <h4>Integraciones</h4>
+          <p>Google Workspace, APIs REST, Supabase y servicios en la nube.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-section" id="proyectos">
+    <div class="projects-inner">
+      <div class="expertise-heading mb-5">
+        <span class="about-eyebrow">Portafolio de Soluciones</span>
+        <h2>Mis <span>Proyectos</span></h2>
+        <p>Plataformas empresariales, automatización avanzada de procesos y sistemas de gestión organizados por áreas
+          especializadas.</p>
+      </div>
+
+      <!-- ==================== CATEGORÍA 01: Desarrollo de Software ==================== -->
+      <div class="project-category-block mb-5">
+        <div class="expertise-heading text-start ms-0 mb-4" style="max-width: 100%;">
+          <span class="about-eyebrow">Categoría 01</span>
+          <h3 class="fs-2 text-white fw-bold m-0">Desarrollo de <span
+              style="color: var(--space-accent);">Software</span></h3>
+          <p class="mt-2" style="color: #b4b6c7;">Plataformas empresariales diseñadas para centralizar procesos,
+            optimizar la gestión de la información y facilitar la toma de decisiones.</p>
+        </div>
+
+        <div class="marquee-wrapper">
+          <div class="marquee-viewport">
+            <div class="marquee-track">
+              <!-- Set original -->
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-1"><span class="proj-preview-title">Gestión de
+                      Indicadores</span><span class="proj-preview-sub">KPIs & Dashboards</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">KPIs</span><span
+                    class="tech-tag">Dashboards</span><span class="tech-tag">BI</span></div>
+                <h3>Gestión de Indicadores</h3>
+                <p>Centraliza la definición, seguimiento y evaluación de indicadores mediante dashboards, metas y
+                  reportes en tiempo real.</p>
+              </article>
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-2"><span class="proj-preview-title">Gestión
+                      Documental</span><span class="proj-preview-sub">Documentos & Versiones</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">Documentos</span><span
+                    class="tech-tag">Trazabilidad</span><span class="tech-tag">Permisos</span></div>
+                <h3>📄 Gestión Documental</h3>
+                <p>Organiza, controla y versiona documentos empresariales con permisos, trazabilidad y acceso
+                  centralizado.</p>
+              </article>
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-3"><span class="proj-preview-title">Matriz
+                      Legal</span><span class="proj-preview-sub">Cumplimiento Normativo</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">Legal</span><span
+                    class="tech-tag">Normatividad</span><span class="tech-tag">Auditoría</span></div>
+                <h3>⚖️ Matriz Legal</h3>
+                <p>Administra requisitos legales, realiza seguimiento a su cumplimiento y facilita el control normativo
+                  de la organización.</p>
+              </article>
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-4"><span class="proj-preview-title">Matriz de
+                      Peligros</span><span class="proj-preview-sub">SST & Riesgos Laborales</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">SST</span><span class="tech-tag">Riesgos</span><span
+                    class="tech-tag">Prevención</span></div>
+                <h3>🦺 Matriz de Peligros</h3>
+                <p>Identifica, evalúa y controla riesgos laborales mediante matrices dinámicas y planes de intervención.
+                </p>
+              </article>
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-5"><span class="proj-preview-title">Gestión de
+                      Activos</span><span class="proj-preview-sub">Inventarios & Mantenimiento</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">Activos</span><span
+                    class="tech-tag">Inventario</span><span class="tech-tag">Costos</span></div>
+                <h3>🏷️ Gestión de Activos</h3>
+                <p>Controla el inventario, mantenimiento, costos y ciclo de vida de los activos de la empresa.</p>
+              </article>
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-1"><span class="proj-preview-title">Plan de
+                      Capacitaciones</span><span class="proj-preview-sub">Formación & Cursos</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">Formación</span><span
+                    class="tech-tag">Evaluaciones</span><span class="tech-tag">Cursos</span></div>
+                <h3>🎓 Plan de Capacitaciones</h3>
+                <p>Gestiona programas de formación, asignación de cursos, evaluaciones y seguimiento del aprendizaje.
+                </p>
+              </article>
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-2"><span class="proj-preview-title">Gestión del
+                      Conocimiento</span><span class="proj-preview-sub">Base de Conocimiento</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">Wiki</span><span
+                    class="tech-tag">Procedimientos</span><span class="tech-tag">Prácticas</span></div>
+                <h3>🧠 Gestión del Conocimiento</h3>
+                <p>Centraliza información, procedimientos y buenas prácticas para facilitar el acceso al conocimiento
+                  organizacional.</p>
+              </article>
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-3"><span class="proj-preview-title">Recursos
+                      Humanos</span><span class="proj-preview-sub">Talento Humano & Perfiles</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">RRHH</span><span class="tech-tag">Perfiles</span><span
+                    class="tech-tag">Colaboradores</span></div>
+                <h3>👥 Gestión de Recursos Humanos</h3>
+                <p>Administra colaboradores, perfiles, procesos internos y documentación relacionada con el talento
+                  humano.</p>
+              </article>
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-4"><span class="proj-preview-title">Planes de
+                      Acción</span><span class="proj-preview-sub">Mejora Continua</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">Planificación</span><span
+                    class="tech-tag">Acciones</span><span class="tech-tag">Mejora</span></div>
+                <h3>✅ Planes de Acción</h3>
+                <p>Permite planificar, asignar y realizar seguimiento a acciones correctivas, preventivas y de mejora.
+                </p>
+              </article>
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-5"><span class="proj-preview-title">Control de
+                      Asistencia</span><span class="proj-preview-sub">Monitoreo & Reportes</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">Asistencia</span><span
+                    class="tech-tag">Estadísticas</span><span class="tech-tag">Reportes</span></div>
+                <h3>📅 Control de Asistencia</h3>
+                <p>Registra y monitorea la asistencia de colaboradores mediante reportes y estadísticas en tiempo real.
+                </p>
+              </article>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== CATEGORÍA 02: Automatización con Excel y Hojas de Cálculo ==================== -->
+      <div class="project-category-block mb-5">
+        <div class="expertise-heading text-start ms-0 mb-4" style="max-width: 100%;">
+          <span class="about-eyebrow">Categoría 02</span>
+          <h3 class="fs-2 text-white fw-bold m-0">Automatización con <span style="color: var(--space-accent);">Excel y
+              Hojas de Cálculo</span></h3>
+          <p class="mt-2" style="color: #b4b6c7;">Soluciones orientadas a reducir tareas manuales mediante
+            automatización, generación de reportes y procesamiento inteligente de datos.</p>
+        </div>
+
+        <div class="marquee-wrapper">
+          <div class="marquee-viewport">
+            <div class="marquee-track">
+              <!-- Set original -->
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-1"><span class="proj-preview-title">Dashboards en
+                      Excel</span><span class="proj-preview-sub">Paneles Interactivos</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">Excel</span><span
+                    class="tech-tag">Dashboards</span><span class="tech-tag">Indicadores</span></div>
+                <h3>Dashboards en Excel</h3>
+                <p>Desarrollo de paneles interactivos para visualizar indicadores y facilitar el análisis de
+                  información.</p>
+              </article>
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-2"><span class="proj-preview-title">Automatización de
+                      Procesos</span><span class="proj-preview-sub">Macros & Apps Script</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">Macros</span><span class="tech-tag">Apps
+                    Script</span><span class="tech-tag">VBA</span></div>
+                <h3>⚡ Automatización de Procesos</h3>
+                <p>Automatización de tareas repetitivas mediante macros, fórmulas avanzadas y Google Apps Script.</p>
+              </article>
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-3"><span class="proj-preview-title">Reportes
+                      Automáticos</span><span class="proj-preview-sub">Consolidación de Datos</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">Reportes</span><span class="tech-tag">ETL</span><span
+                    class="tech-tag">Automatización</span></div>
+                <h3>📋 Reportes Automáticos</h3>
+                <p>Generación automática de informes y consolidación de datos desde múltiples fuentes.</p>
+              </article>
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-4"><span class="proj-preview-title">Google
+                      Workspace</span><span class="proj-preview-sub">Sheets, Forms, Drive & APIs</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">Google Sheets</span><span
+                    class="tech-tag">Forms</span><span class="tech-tag">Gmail & Calendar</span></div>
+                <h3>🔄 Integración con Google Workspace</h3>
+                <p>Automatización de procesos utilizando Google Sheets, Forms, Drive, Gmail y Calendar.</p>
+              </article>
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-5"><span class="proj-preview-title">Plantillas
+                      Inteligentes</span><span class="proj-preview-sub">Hojas Dinámicas & Control</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">Plantillas</span><span
+                    class="tech-tag">Inventario</span><span class="tech-tag">Control Operativo</span></div>
+                <h3>📑 Plantillas Inteligentes</h3>
+                <p>Creación de hojas de cálculo dinámicas para seguimiento de proyectos, inventarios y control
+                  operativo.</p>
+              </article>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== CATEGORÍA 03: Evolución de Plataformas ==================== -->
+      <div class="project-category-block mb-4">
+        <div class="expertise-heading text-start ms-0 mb-4" style="max-width: 100%;">
+          <span class="about-eyebrow">Categoría 03</span>
+          <h3 class="fs-2 text-white fw-bold m-0">Evolución de <span
+              style="color: var(--space-accent);">Plataformas</span></h3>
+          <p class="mt-2" style="color: #b4b6c7;">Evolución continua de sistemas empresariales mediante nuevas
+            funcionalidades, optimización de procesos y mejoras en la experiencia de usuario.</p>
+        </div>
+
+        <div class="marquee-wrapper">
+          <div class="marquee-viewport">
+            <div class="marquee-track">
+              <!-- Set original -->
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-1"><span class="proj-preview-title">Nuevas
+                      Funcionalidades</span><span class="proj-preview-sub">Módulos & Escalabilidad</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">Módulos</span><span
+                    class="tech-tag">Mejoras</span><span class="tech-tag">Escalabilidad</span></div>
+                <h3>Nuevas Funcionalidades</h3>
+                <p>Desarrollo de módulos y características que amplían las capacidades de plataformas existentes.</p>
+              </article>
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-2"><span class="proj-preview-title">Optimización de
+                      Procesos</span><span class="proj-preview-sub">Rendimiento & Tiempos</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">Optimización</span><span
+                    class="tech-tag">Rendimiento</span><span class="tech-tag">Flujos</span></div>
+                <h3>⚙️ Optimización de Procesos</h3>
+                <p>Mejoras orientadas a simplificar flujos de trabajo, aumentar el rendimiento y reducir tiempos
+                  operativos.</p>
+              </article>
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-3"><span class="proj-preview-title">Rediseño de
+                      Interfaces</span><span class="proj-preview-sub">UI/UX & Responsivo</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">UI/UX</span><span class="tech-tag">Diseño</span><span
+                    class="tech-tag">Responsivo</span></div>
+                <h3>🎨 Rediseño de Interfaces</h3>
+                <p>Actualización de la experiencia de usuario mediante interfaces modernas, intuitivas y responsivas.
+                </p>
+              </article>
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-4"><span class="proj-preview-title">Seguridad y
+                      Permisos</span><span class="proj-preview-sub">Roles & Accesos</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">Seguridad</span><span
+                    class="tech-tag">Roles</span><span class="tech-tag">Permisos</span></div>
+                <h3>🔒 Seguridad y Permisos</h3>
+                <p>Implementación de controles de acceso, roles y permisos para garantizar la seguridad de la
+                  información.</p>
+              </article>
+              <article class="project-card">
+                <div class="project-thumb">
+                  <div class="browser-bar"><span></span><span></span><span></span></div>
+                  <div class="project-thumb-preview proj-preview-5"><span class="proj-preview-title">Reportes y
+                      Analítica</span><span class="proj-preview-sub">Analítica & Toma de Decisiones</span></div>
+                </div>
+                <div class="project-tags"><span class="tech-tag">Analítica</span><span
+                    class="tech-tag">Reportes</span><span class="tech-tag">Toma de Decisiones</span></div>
+                <h3>📊 Reportes y Analítica</h3>
+                <p>Incorporación de dashboards, indicadores y herramientas de análisis para mejorar la toma de
+                  decisiones.</p>
+              </article>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="contact-section-new" id="contacto">
+    <div class="contact-inner">
+      <div class="expertise-heading contact-heading">
+        <h2>Ponte en <span>Contacto</span></h2>
+        <p>¿Tienes un proyecto en mente o quieres colaborar? Escríbeme, siempre estoy abierto a nuevas oportunidades.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-info-col">
+          <h3 class="contact-col-title">Información de Contacto</h3>
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <span class="contact-info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-10 6L2 7" />
+                </svg>
+              </span>
+              <div>
+                <span class="contact-info-label">Email</span>
+                <span class="contact-info-value">johandavid.duitama@gmail.com</span>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <span class="contact-info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </span>
+              <div>
+                <span class="contact-info-label">Teléfono</span>
+                <span class="contact-info-value">+57 318 282 4129</span>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <span class="contact-info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
+              <div>
+                <span class="contact-info-label">Ubicación</span>
+                <span class="contact-info-value">Colombia</span>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="contact-col-title contact-social-title">Conecta Conmigo</h3>
+          <div class="contact-social-list">
+            <button type="button" class="contact-social-link" data-bs-toggle="modal" data-bs-target="#linkedinModal"
+              aria-label="LinkedIn" title="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z" />
+              </svg>
+            </button>
+            <button type="button" class="contact-social-link" data-bs-toggle="modal" data-bs-target="#whatsappModal"
+              aria-label="WhatsApp" title="WhatsApp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12.011 2c-5.506 0-9.989 4.478-9.989 9.984 0 1.76.459 3.474 1.33 4.982l-1.412 5.161 5.282-1.385c1.455.793 3.097 1.213 4.789 1.213 5.507 0 9.989-4.479 9.989-9.985 0-5.506-4.482-9.984-9.989-9.984zm5.792 14.161c-.244.685-1.42 1.309-1.96 1.365-.54.056-1.242.257-3.993-.847-3.526-1.417-5.772-5.011-5.949-5.247-.177-.236-1.427-1.9-1.427-3.624 0-1.723.902-2.571 1.222-2.923.32-.352.697-.44.929-.44.232 0 .464.003.666.012.213.01.498-.08.78.596.289.697.986 2.408 1.072 2.583.086.175.143.379.028.608-.115.229-.172.372-.343.571-.171.199-.36.444-.515.597-.171.171-.349.358-.15.701.199.343.885 1.46 1.899 2.364 1.304 1.162 2.405 1.523 2.748 1.695.343.172.544.143.744-.086.2-.229.856-.999 1.084-1.342.228-.343.456-.286.77-.171.314.114 1.996.941 2.338 1.112.342.171.57.257.656.4.086.143.086.828-.158 1.513z" />
+              </svg>
+            </button>
+            <button type="button" class="contact-social-link" data-bs-toggle="modal" data-bs-target="#instagramModal"
+              aria-label="Instagram" title="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <form class="contact-form-card" id="contactForm" action="https://formsubmit.co/johandavid.duitama@gmail.com"
+          method="POST">
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde tu sitio web de Johan Duitama">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+
+          <h3 class="contact-form-title">Enviar un Mensaje</h3>
+
+          <label class="contact-field-label" for="cf-name">Tu Nombre</label>
+          <input class="contact-input" id="cf-name" name="name" type="text" placeholder="Johan Duitama..." required>
+
+          <label class="contact-field-label" for="cf-email">Tu Email</label>
+          <input class="contact-input" id="cf-email" name="email" type="email" placeholder="correo@ejemplo.com"
+            required>
+
+          <label class="contact-field-label" for="cf-message">Tu Mensaje</label>
+          <textarea class="contact-input contact-textarea" id="cf-message" name="message" rows="4"
+            placeholder="Hola, me gustaría hablar sobre..." required></textarea>
+
+          <button type="submit" class="contact-submit-btn">
+            Enviar Mensaje
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13" />
+              <polygon points="22 2 15 22 11 13 2 9 22 2" />
+            </svg>
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('.jd-copyright').forEach(function (el) {
+      el.innerHTML = el.innerHTML.replace(/©\s*\d{4}/, '© ' + new Date().getFullYear());
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var contactForm = document.getElementById('contactForm');
+      if (!contactForm) return;
+
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var submitBtn = contactForm.querySelector('.contact-submit-btn');
+        var originalBtnContent = submitBtn.innerHTML;
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Enviando... <span class="spinner-border spinner-border-sm ms-2" role="status" aria-hidden="true"></span>';
+
+        var existingAlert = contactForm.querySelector('.contact-form-alert');
+        if (existingAlert) existingAlert.remove();
+
+        var formData = new FormData(contactForm);
+        var data = {
+          name: formData.get('name'),
+          email: formData.get('email'),
+          message: formData.get('message'),
+          _subject: 'Nuevo mensaje de ' + formData.get('name') + ' desde tu Sitio Web',
+          _template: 'table',
+          _captcha: 'false'
+        };
+
+        fetch('https://formsubmit.co/ajax/johandavid.duitama@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (result) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnContent;
+
+            var successAlert = document.createElement('div');
+            successAlert.className = 'contact-form-alert alert mt-3 p-3 text-center';
+            successAlert.style.borderRadius = '12px';
+            successAlert.style.fontSize = '0.9rem';
+            successAlert.style.background = 'rgba(37, 211, 102, 0.15)';
+            successAlert.style.border = '1px solid rgba(37, 211, 102, 0.4)';
+            successAlert.style.color = '#3bf17f';
+            successAlert.innerHTML = '<strong>¡Mensaje enviado con éxito!</strong><br>Gracias por escribirme, te responderé pronto a tu correo.';
+
+            contactForm.appendChild(successAlert);
+            contactForm.reset();
+
+            setTimeout(function () {
+              if (successAlert) successAlert.remove();
+            }, 8000);
+          })
+          .catch(function (error) {
+            console.error('Error al enviar formulario:', error);
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnContent;
+
+            var errorAlert = document.createElement('div');
+            errorAlert.className = 'contact-form-alert alert mt-3 p-3 text-center';
+            errorAlert.style.borderRadius = '12px';
+            errorAlert.style.fontSize = '0.9rem';
+            errorAlert.style.background = 'rgba(193, 59, 74, 0.15)';
+            errorAlert.style.border = '1px solid rgba(193, 59, 74, 0.4)';
+            errorAlert.style.color = '#ff6b7a';
+            errorAlert.innerHTML = '<strong>Ocurrió un problema al enviar el mensaje.</strong><br>Por favor inténtalo de nuevo o contáctame por WhatsApp.';
+
+            contactForm.appendChild(errorAlert);
+
+            setTimeout(function () {
+              if (errorAlert) errorAlert.remove();
+            }, 8000);
+          });
+      });
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
+  <script>
+    (function () {
+      var modal = document.getElementById('videoModal');
+      var iframe = document.getElementById('videoIframe');
+      var btnOpen = document.getElementById('btnOpenVideo');
+      var btnClose = document.getElementById('btnCloseVideo');
+
+      function openModal() {
+        iframe.src = iframe.getAttribute('data-src');
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.remove('open');
+        iframe.src = '';
+        document.body.style.overflow = '';
+      }
+
+      btnOpen.addEventListener('click', openModal);
+      btnClose.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) closeModal();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeModal();
+      });
+    })();
+  </script>
+  <div data-include="footer.html"></div>
+  <script src="js/include.js"></script>
+</body>
 
 <script>
   // Evento Tema Modo Claro / Oscuro
